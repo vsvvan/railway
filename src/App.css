@@ -1,5 +1,4 @@
 .App {
-  text-align: center;
 }
 
 .App-logo {
@@ -7,32 +6,34 @@
   pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.header {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  height: 40px;
+  padding: 15px 0;
+  text-align: center;
+  background: #0773D7;
+}
+.SignButton {
+  color: #FFFFFF;
+  background: #002664;
+  height: 40px;
+  width: 150px;
+  font-weight: bold;
+  font-size: 18px;
+  border-radius: 12px;
+}
+.IconLayout {
+  height: 40px;
+  background: #002664;
+  width: 40px;
+}
+.LanguageChange {
+  color: #FFFFFF;
+ margin: 0 20px;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.CartIcon {
+  width: 32px;
+  height: 32px;
+  padding-top: 4px;
 }
