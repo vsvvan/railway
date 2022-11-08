@@ -2,38 +2,93 @@
 }
 
 .App-logo {
-  height: 40vmin;
-  pointer-events: none;
+    height: 40vmin;
+    pointer-events: none;
 }
 
 .header {
-  display: flex;
-  height: 40px;
-  padding: 15px 0;
-  text-align: center;
-  background: #0773D7;
+    display: flex;
+    height: 40px;
+    padding: 15px 0;
+    text-align: center;
+    background: #0773D7;
 }
+
 .SignButton {
-  color: #FFFFFF;
-  background: #002664;
-  height: 40px;
-  width: 150px;
-  font-weight: bold;
-  font-size: 18px;
-  border-radius: 12px;
+    color: #FFFFFF;
+    background: #002664;
+    height: 40px;
+    width: 150px;
+    font-weight: bold;
+    font-size: 18px;
+    border-radius: 12px;
 }
+
 .IconLayout {
-  height: 40px;
-  background: #002664;
-  width: 40px;
+    height: 40px;
+    background: #002664;
+    width: 40px;
 }
+
 .LanguageChange {
-  color: #FFFFFF;
- margin: 0 20px;
+    color: #FFFFFF;
+    margin: 0 20px;
 }
 
 .CartIcon {
-  width: 32px;
-  height: 32px;
-  padding-top: 4px;
+    width: 32px;
+    height: 32px;
+    padding-top: 4px;
+}
+
+.TrainConnectionsContainer {
+    width: 900px;
+    margin: auto;
+    padding-top: 30px;
+}
+
+.TrainConnectionsContainer button:first-child {
+    min-width: fit-content;
+}
+
+.BuyButton button {
+    gap: 50%;
+}
+
+.TrainCard {
+    border: 1px solid #002664;
+    padding-top: 0px;
+}
+
+.DayStyle {
+    padding-bottom: 20px;
+    padding-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #002664;
+}
+
+.TrainName {
+    text-align: center;
+    color: #002664;
+}
+
+.Align {
+    padding-top: 15px;
+    padding-left: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.AlignTime {
+    border-top: 1px dashed #002664;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 0px 5px 15px;
+}
+.AlignClocks {
+    display: flex;
+    align-items: center;
+    gap: 5px;
 }
