@@ -1,4 +1,4 @@
-{
+[{
   "departureTime": "14:13",
   "arrivalTime": "20:03",
   "fromDestination": "Bratislava",
@@ -53,6 +53,11 @@
       "city": "Košice"
     }
   ],
+  "capacity": {
+    "freePlaces1": 9,
+    "freePlaces2": 6,
+    "byciclePlace": 5,
+  },
   "schedule": [
     {
       "days": [],
@@ -61,3 +66,4 @@
     }
   ]
 }
+]
