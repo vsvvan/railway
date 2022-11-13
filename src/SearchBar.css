@@ -1,0 +1,64 @@
+.SearchBar{
+    background-color: #0773D7;
+    border-radius: 1em;
+    padding: 3vw;
+    max-width: 60%;
+    justify-self: center;
+    margin: auto;
+    margin-top: 1vh;
+}
+
+.searchForm{
+    display: grid;
+    grid-template-areas:    'from from swap to to'
+                            'fromerror fromerror . toerror toerror'
+                            'day month hours minutes submit'
+                            'timeerror timeerror timeerror timeerror .';
+    grid-template-columns: auto auto auto auto auto;
+    grid-template-rows: auto auto auto auto;
+}
+
+.SearchBar h3{
+    margin:0;
+}
+
+.searchTitle{
+    grid-area: title;
+}
+.from{
+    grid-area: from;
+}
+.swapbtn{
+    grid-area: swap;
+}
+.to{
+    grid-area: to;
+}
+.fromError{
+    grid-area: fromerror;
+}
+.toError{
+    grid-area: toerror;
+}
+.day{
+    grid-area: day;
+}
+.month{
+    grid-area: month;
+}
+.hours{
+    grid-area: hours;
+}
+.minutes{
+    grid-area: minutes;
+}
+.timeError{
+    grid-area: timeerror;
+}
+.submitbtn{
+    grid-area: submit;
+}
+
+span{
+    color: red;
+}
