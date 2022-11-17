@@ -1,5 +1,4 @@
-.App {
-}
+
 
 .App-logo {
     height: 40vmin;
@@ -146,6 +145,9 @@ background-color: rgba(7, 115, 215, 0.7);
     display: flex;
 flex-direction: column;
 align-items: flex-start;
+}
+footer .icons{
+    color: #FFFFFF;
 }
 /*Line*/
 .Line{width: 86%;

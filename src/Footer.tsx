@@ -1,5 +1,9 @@
 import shoppingCart from "./images/shopping_cart_black_24dp 1.png";
 import React from "react";
+import RssFeedIcon from '@mui/icons-material/RssFeed';
+import EmailIcon from '@mui/icons-material/Email';
+import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
+import PhoneCallbackIcon from '@mui/icons-material/PhoneCallback';
 
 export const Footer = () => {
     return (
@@ -26,14 +30,13 @@ export const Footer = () => {
        </div>
        <div className="footer-col">
            <div>
-               <script src="https://code.iconify.design/iconify-icon/1.0.1/iconify-icon.min.js"></script>
-               <iconify-icon class= icons icon="cib:rss" style= "color: white"></iconify-icon>
+               <RssFeedIcon className="icons"/>
                <a href="#">RSS</a>
            </div>  
            
        </div>
    </div>
-   <hr className="Line">
+   <hr className="Line"></hr>
    <div className="lower_container">
            <div className="footer-col">
                <div className="Socialmedia">
@@ -51,8 +54,7 @@ export const Footer = () => {
                <ul>
                    <h4>Email:</h4>
                    <div className="phone">
-                   <script src="https://code.iconify.design/iconify-icon/1.0.1/iconify-icon.min.js"></script>
-                   <iconify-icon icon="ic:outline-email" style="color: white;"width="19" height="19"></iconify-icon>
+                    <EmailIcon className="icons" width="19" height="19"/>
                    <a href="#">info@slovakrail.sk</a>
                    </div>
                </ul>
@@ -62,14 +64,12 @@ export const Footer = () => {
                    <h4>Contact center</h4>
                    <li><a href="#">Slovakia</a></li>
                        <div className="phone">
-                       <script src="https://code.iconify.design/iconify-icon/1.0.1/iconify-icon.min.js"></script>
-                       <iconify-icon icon="bxs:phone-call" style="color: white;" width="20" height="20"></iconify-icon>
+                       <LocalPhoneIcon className="icons" width="20" height="20"/>
                        <a href="#" margin-right="20px;">18 1888</a>
                        </div>
                    <li><a href="#" >From abroad</a></li>
                        <div className="phone">
-                       <script src="https://code.iconify.design/iconify-icon/1.0.1/iconify-icon.min.js"></script>
-                       <iconify-icon icon="bxs:phone-call" style="color: white;" width="20" height="20"></iconify-icon>
+                       <PhoneCallbackIcon className="icons" width="20" height="20"/>
                        <a href="#" >+421 24 48 58 188</a>
                        </div>
            </div>
