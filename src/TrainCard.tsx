@@ -1,4 +1,4 @@
-import {Button, Grid} from "@mui/material";
+import { Button, Grid } from "@mui/material";
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import TrainIcon from '@mui/icons-material/Train';

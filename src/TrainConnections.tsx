@@ -1,6 +1,6 @@
-import {Button} from "@mui/material";
+import { Button } from "@mui/material";
 import ExpandLessIcon from '@mui/icons-material/ExpandLess';
-import {TrainCard} from './TrainCard';
+import { TrainCard } from './TrainCard';
 
 export const TrainConnections = () => {
     return (

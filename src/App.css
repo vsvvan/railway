@@ -1,7 +1,7 @@
 
-
 .App-logo {
-    height: 40vmin;
+    width: 40px;
+    height: 40px;
     pointer-events: none;
 }
 
@@ -86,86 +86,111 @@
     justify-content: space-between;
     padding: 5px 0px 5px 15px;
 }
+
 .AlignClocks {
     display: flex;
     align-items: center;
     gap: 5px;
 }
 
-footer h4{color: #FFFFFF;
+footer h4 {
+    color: #FFFFFF;
     display: flex;
-    }
-    a{text-decoration: none;
-    color: #FFFFFF;}
-footer li{list-style: none;
-font-family: 'Inter';
-font-style: normal;
-font-weight: 500;
-font-size: 20px;
-line-height: 29px;
-display: flex;
-align-items: center;
-color: #FFFFFF;}
-footer li::before  {content: "\1F892";
-width: 20px;
-height: 20px;
-align-self:flex-start}
-.footer-col {
-float: left;
-margin-left:5%;
-margin-right:2%;
 }
-.upper_container{
-height: 25%;
-margin: 5%;
-margin-top: 2%;
-margin-bottom: 3%;  
-display: flex;
-align-items: center;
-}
-.lower_container{
-height: 25%;
-margin: 5%;
-margin-top: auto;
-margin-left: 7%;
-display: flex;
-    }
-footer {
-position: fixed;
-width: 100%;
-height: 500px;
-left: 0px;
-bottom:0;
-background-color: rgba(7, 115, 215, 0.7);
-}
-/*mobile app QR code*/
-.App-mobile{width: 125px;}
-.QR-CODES{
-    float: right;
-    display: flex;
-flex-direction: column;
-align-items: flex-start;
-}
-footer .icons{
+
+a {
+    text-decoration: none;
     color: #FFFFFF;
 }
+
+footer li {
+    list-style: none;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 29px;
+    display: flex;
+    align-items: center;
+    color: #FFFFFF;
+}
+
+footer li::before {
+    content: "\1F892";
+    width: 20px;
+    height: 20px;
+    align-self: flex-start
+}
+
+.footer-col {
+    float: left;
+    margin-left: 5%;
+    margin-right: 2%;
+}
+
+.upper_container {
+    height: 25%;
+    margin: 5%;
+    margin-top: 2%;
+    margin-bottom: 3%;
+    display: flex;
+    align-items: center;
+}
+
+.lower_container {
+    height: 25%;
+    margin: 5%;
+    margin-top: auto;
+    margin-left: 7%;
+    display: flex;
+}
+
+footer {
+    position: fixed;
+    width: 100%;
+    height: 500px;
+    left: 0px;
+    bottom: 0;
+    background-color: rgba(7, 115, 215, 0.7);
+}
+
+/*mobile app QR code*/
+.App-mobile {
+    width: 125px;
+}
+
+.QR-CODES {
+    float: right;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+footer .icons {
+    color: #FFFFFF;
+}
+
 /*Line*/
-.Line{width: 86%;
-height: 4px;
-border: 0 none;
-margin-right:auto;
-margin-left: auto;
-background-color: white;
+.Line {
+    width: 86%;
+    height: 4px;
+    border: 0 none;
+    margin-right: auto;
+    margin-left: auto;
+    background-color: white;
 }
 
 /*Logos and icons*/
-.Socialmedia{list-style: none;
-color: #FFFFFF;}
-.img-logo{
+.Socialmedia {
+    list-style: none;
+    color: #FFFFFF;
+}
+
+.img-logo {
     width: 267px;
 }
-.phone{
-display: flex;
-align-items: center;
-margin-right:20px;
+
+.phone {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
 }
