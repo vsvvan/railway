@@ -4,6 +4,10 @@ import EmailIcon from "@mui/icons-material/Email";
 import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
 import PhoneCallbackIcon from "@mui/icons-material/PhoneCallback";
 import Logo from "./images/logo.svg";
+import AppStore from "./images/app-store.svg";
+import AppGallery from "./images/appgallery-logo-sk.svg";
+import GooglePlay from "./images/google-play.svg";
+import QrCode from "./images/qr-code.svg";
 
 export const Footer = () => {
     return (
@@ -66,11 +70,11 @@ export const Footer = () => {
                     <div className="footer-col">
                         <ul>
                             <h4>Mobile app</h4>
-                            <img className="App-mobile" src="qr-code.svg" alt=""/>
+                            <img className="App-mobile" src={QrCode} alt=""/>
                             <div className="QR-CODES">
-                                <img src="google-play.svg" alt=""/>
-                                <img src="app-store.svg" alt=""/>
-                                <img src="appgallery-logo-sk.svg" alt=""/>
+                                <img src={GooglePlay} alt=""/>
+                                <img src={AppStore} alt=""/>
+                                <img src={AppGallery} alt=""/>
                             </div>
                         </ul>
                     </div>
