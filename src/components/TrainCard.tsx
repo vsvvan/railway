@@ -104,7 +104,7 @@ export const TrainCard = ({ train }: Props) => {
               <div className="AlignTime">
                 <div className="AlignClocks">
                   <ScheduleIcon />
-                  <span>5 hrs. 50 min.</span>
+                  <span>{train.travelDuration.split(":")[0]} hrs. {train.travelDuration.split(":")[1]} min.</span>
                 </div>
                 <div>{train.distance} km</div>
               </div>

@@ -2,6 +2,7 @@
   {
     "departureTime": "14:13",
     "arrivalTime": "20:03",
+    "travelDuration": "5:50",
     "fromDestination": "Bratislava",
     "toDestination": "Košice",
     "trainType": "R",
@@ -70,6 +71,7 @@
   {
     "departureTime": "14:13",
     "arrivalTime": "20:03",
+    "travelDuration": "5:50",
     "fromDestination": "Bratislava",
     "toDestination": "Košice",
     "trainType": "R",
@@ -138,6 +140,7 @@
   {
     "departureTime": "14:13",
     "arrivalTime": "20:03",
+    "travelDuration": "5:50",
     "fromDestination": "Bratislava",
     "toDestination": "Košice",
     "trainType": "R",

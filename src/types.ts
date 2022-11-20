@@ -3,6 +3,7 @@ import { ThunkDispatch } from '@reduxjs/toolkit';
 export type TrainInfo = {
   departureTime: string;
   arrivalTime: string;
+  travelDuration: string;
   fromDestination: string;
   toDestination: string;
   trainType: string;
