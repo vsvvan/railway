@@ -1,0 +1,203 @@
+.App-logo {
+  width: 40px;
+  height: 40px;
+  pointer-events: none;
+}
+
+.header {
+  display: flex;
+  height: 40px;
+  padding: 15px 5% 15px 45%;
+  justify-content: space-between;
+  text-align: center;
+  background: #0773d7;
+}
+
+.SignButton {
+  color: #ffffff;
+  background: #002664;
+  height: 40px;
+  width: 150px;
+  font-weight: bold;
+  font-size: 18px;
+  border-radius: 12px;
+}
+
+.IconLayout {
+  height: 40px;
+  width: 40px;
+}
+
+.HeaderContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 300px;
+}
+
+.LanguageChange {
+  color: #ffffff;
+  margin: 0 20px;
+}
+
+.CartIcon {
+  width: 32px;
+  height: 32px;
+  padding-top: 4px;
+}
+
+.TrainConnectionsContainer {
+  width: 900px;
+  margin: auto;
+  padding-top: 30px;
+}
+
+.TrainConnectionsContainer button:first-child {
+  min-width: fit-content;
+}
+
+.BuyButton button {
+  gap: 50%;
+}
+
+.TrainCard {
+  border: 1px solid #002664;
+  padding-top: 0px;
+  margin-bottom: 30px;
+}
+
+.DayStyle {
+  padding-bottom: 20px;
+  padding-top: 20px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #002664;
+}
+
+.TrainName {
+  text-align: center;
+  color: #002664;
+}
+
+.Align {
+  padding-top: 15px;
+  padding-left: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.AlignTime {
+  border-top: 1px dashed #002664;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 0px 5px 15px;
+}
+
+.AlignClocks {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+footer h4 {
+  color: #ffffff;
+  display: flex;
+}
+
+a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+footer li {
+  list-style: none;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 29px;
+  display: flex;
+  align-items: center;
+  color: #ffffff;
+}
+
+footer li::before {
+  content: '\1F892';
+  width: 20px;
+  height: 20px;
+  align-self: flex-start;
+}
+
+.footer-col {
+  float: left;
+  margin-left: 5%;
+  margin-right: 2%;
+}
+
+.upper_container {
+  height: 25%;
+  margin: 5%;
+  margin-top: 2%;
+  margin-bottom: 3%;
+  display: flex;
+  align-items: center;
+}
+
+.lower_container {
+  height: 25%;
+  margin: 5%;
+  margin-top: auto;
+  margin-left: 7%;
+  display: flex;
+}
+
+footer {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  left: 0px;
+  bottom: 0;
+  background-color: rgba(7, 115, 215, 0.7);
+}
+
+/*mobile app QR code*/
+.App-mobile {
+  width: 125px;
+}
+
+.QR-CODES {
+  float: right;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+footer .icons {
+  color: #ffffff;
+}
+
+/*Line*/
+.Line {
+  width: 86%;
+  height: 4px;
+  border: 0 none;
+  margin-right: auto;
+  margin-left: auto;
+  background-color: white;
+}
+
+/*Logos and icons*/
+.Socialmedia {
+  list-style: none;
+  color: #ffffff;
+}
+
+.img-logo {
+  width: 267px;
+}
+
+.phone {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+}

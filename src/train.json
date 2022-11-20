@@ -66,5 +66,141 @@
         "arrival": ""
       }
     ]
+  },
+  {
+    "departureTime": "14:13",
+    "arrivalTime": "20:03",
+    "fromDestination": "Bratislava",
+    "toDestination": "Košice",
+    "trainType": "R",
+    "trainNumber": 609,
+    "distance": 443,
+    "price": 18.68,
+    "stops": [
+      {
+        "time": "14:13",
+        "city": "Bratislava hl.st"
+      },
+      {
+        "time": "14:20",
+        "city": "Bratislava-Vinohrady"
+      },
+      {
+        "time": "14:44",
+        "city": "Trnava"
+      },
+      {
+        "time": "14:56",
+        "city": "Leopoldov"
+      },
+      {
+        "time": "15:07",
+        "city": "Piešťany"
+      },
+      {
+        "time": "15:19",
+        "city": "Nové Mesto nad Váhom"
+      },
+      {
+        "time": "15:35",
+        "city": "Trenčin"
+      },
+      {
+        "time": "15:43",
+        "city": "Trenčianska Teplá"
+      },
+      {
+        "time": "16:00",
+        "city": "Púchov"
+      },
+      {
+        "time": "16:12",
+        "city": "Považská Bystrica"
+      },
+      {
+        "time": "20:03",
+        "city": "Košice"
+      }
+    ],
+    "capacity": {
+      "freePlaces1": 9,
+      "freePlaces2": 6,
+      "byciclePlace": 5
+    },
+    "schedule": [
+      {
+        "days": [],
+        "departure": "",
+        "arrival": ""
+      }
+    ]
+  },
+  {
+    "departureTime": "14:13",
+    "arrivalTime": "20:03",
+    "fromDestination": "Bratislava",
+    "toDestination": "Košice",
+    "trainType": "R",
+    "trainNumber": 609,
+    "distance": 443,
+    "price": 18.68,
+    "stops": [
+      {
+        "time": "14:13",
+        "city": "Bratislava hl.st"
+      },
+      {
+        "time": "14:20",
+        "city": "Bratislava-Vinohrady"
+      },
+      {
+        "time": "14:44",
+        "city": "Trnava"
+      },
+      {
+        "time": "14:56",
+        "city": "Leopoldov"
+      },
+      {
+        "time": "15:07",
+        "city": "Piešťany"
+      },
+      {
+        "time": "15:19",
+        "city": "Nové Mesto nad Váhom"
+      },
+      {
+        "time": "15:35",
+        "city": "Trenčin"
+      },
+      {
+        "time": "15:43",
+        "city": "Trenčianska Teplá"
+      },
+      {
+        "time": "16:00",
+        "city": "Púchov"
+      },
+      {
+        "time": "16:12",
+        "city": "Považská Bystrica"
+      },
+      {
+        "time": "20:03",
+        "city": "Košice"
+      }
+    ],
+    "capacity": {
+      "freePlaces1": 9,
+      "freePlaces2": 6,
+      "byciclePlace": 5
+    },
+    "schedule": [
+      {
+        "days": [],
+        "departure": "",
+        "arrival": ""
+      }
+    ]
   }
 ]
