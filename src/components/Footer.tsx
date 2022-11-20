@@ -19,29 +19,27 @@ export const Footer = () => {
           </div>
           <div className="footer-col">
             <li>
-              <a href="src/components/Footer#">About us</a>
+              <a href="#">About us</a>
             </li>
             <li>
-              <a href="src/components/Footer#">International tickets</a>
+              <a href="#">International tickets</a>
             </li>
             <li>
-              <a href="src/components/Footer#">Terms and Conditions</a>
+              <a href="#">Terms and Conditions</a>
             </li>
           </div>
           <div className="footer-col">
             <li>
-              <a href="src/components/Footer#">Strategy and vision</a>
+              <a href="#">Strategy and vision</a>
             </li>
             <li>
-              <a href="src/components/Footer#">
-                Integrated Transportation Systems
-              </a>
+              <a href="#">Integrated Transportation Systems</a>
             </li>
           </div>
           <div className="footer-col">
             <div>
               <RssFeedIcon className="icons" />
-              <a href="src/components/Footer#">RSS</a>
+              <a href="#">RSS</a>
             </div>
           </div>
         </div>
@@ -56,22 +54,22 @@ export const Footer = () => {
               </ul>
               <ul>
                 <i className="fa-brands fa-facebook"></i>
-                <a href="src/components/Footer#"> Facebook</a>
+                <a href="#"> Facebook</a>
               </ul>
               <ul>
                 <i className="fa-brands fa-linkedin"></i>
-                <a href="src/components/Footer#"> Linkedin</a>
+                <a href="#"> Linkedin</a>
               </ul>
               <ul>
                 <i className="fa-brands fa-twitter"></i>
-                <a href="src/components/Footer#"> Twitter</a>
+                <a href="#"> Twitter</a>
               </ul>
               <ul>
                 <i className="fa-brands fa-instagram"></i>
-                <a href="src/components/Footer#"> Instagram</a>
+                <a href="#"> Instagram</a>
               </ul>
               <ul>
-                <i className="fa-brands fa-youtube"></i>
+                <i className=""></i>
                 <a href="src/components/Footer#"> Youtube</a>
               </ul>
             </div>
@@ -81,25 +79,25 @@ export const Footer = () => {
               <h4>Email:</h4>
               <div className="phone">
                 <EmailIcon className="icons" width="19" height="19" />
-                <a href="src/components/Footer#">info@slovakrail.sk</a>
+                <a href="#">info@slovakrail.sk</a>
               </div>
             </ul>
           </div>
           <div className="footer-col">
             <h4>Contact center</h4>
             <li>
-              <a href="src/components/Footer#">Slovakia</a>
+              <a href="#">Slovakia</a>
             </li>
             <div className="phone">
               <LocalPhoneIcon className="icons" width="20" height="20" />
-              <a href="src/components/Footer#">18 1888</a>
+              <a href="#">18 1888</a>
             </div>
             <li>
-              <a href="src/components/Footer#">From abroad</a>
+              <a href="#">From abroad</a>
             </li>
             <div className="phone">
               <PhoneCallbackIcon className="icons" width="20" height="20" />
-              <a href="src/components/Footer#">+421 24 48 58 188</a>
+              <a href="#">+421 24 48 58 188</a>
             </div>
           </div>
           <div className="footer-col">

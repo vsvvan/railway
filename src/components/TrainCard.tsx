@@ -54,9 +54,10 @@ function a11yProps(index: number) {
 
 type Props = {
   train: TrainInfo;
+  navigateToCheckout: () => void;
 };
 
-export const TrainCard = ({ train }: Props) => {
+export const TrainCard = ({ train, navigateToCheckout }: Props) => {
   const [expand, setExpand] = useState(false);
   const [value, setValue] = useState(0);
 
@@ -93,6 +94,7 @@ export const TrainCard = ({ train }: Props) => {
                   variant="contained"
                   fullWidth
                   endIcon={<ShoppingCartIcon />}
+                  onClick={navigateToCheckout}
                 >
                   <span>
                     {train.price} €<br /> Buy
@@ -104,7 +106,10 @@ export const TrainCard = ({ train }: Props) => {
               <div className="AlignTime">
                 <div className="AlignClocks">
                   <ScheduleIcon />
-                  <span>{train.travelDuration.split(":")[0]} hrs. {train.travelDuration.split(":")[1]} min.</span>
+                  <span>
+                    {train.travelDuration.split(':')[0]} hrs.{' '}
+                    {train.travelDuration.split(':')[1]} min.
+                  </span>
                 </div>
                 <div>{train.distance} km</div>
               </div>

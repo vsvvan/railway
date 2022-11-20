@@ -3,12 +3,17 @@ import ExpandLessIcon from '@mui/icons-material/ExpandLess';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { TrainCard } from './TrainCard';
 import { TrainInfo } from '../types';
+import { useNavigate } from 'react-router-dom';
 
 type Props = {
   trains: TrainInfo[];
 };
 
 export const TrainConnections = ({ trains }: Props) => {
+  const navigate = useNavigate();
+  const navigateToCheckout = () => {
+    navigate('/checkout');
+  };
   return (
     <>
       <div className="TrainConnectionsContainer">
@@ -28,7 +33,10 @@ export const TrainConnections = ({ trains }: Props) => {
           return (
             <div className="TrainCard">
               {' '}
-              <TrainCard train={train} />{' '}
+              <TrainCard
+                train={train}
+                navigateToCheckout={navigateToCheckout}
+              />{' '}
             </div>
           );
         })}

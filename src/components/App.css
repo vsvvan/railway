@@ -201,3 +201,24 @@ footer .icons {
   align-items: center;
   margin-right: 20px;
 }
+
+.AlignButton {
+  display: flex;
+}
+
+.AlignSecondButton button:nth-child(2) {
+  margin-left: auto;
+}
+.AlignSecondButton {
+  display: flex;
+  margin-top: 30px;
+  margin-bottom: 50px;
+}
+
+.AlignButton button {
+  margin-left: auto;
+}
+
+.OrderContainer {
+  border: 1px solid #002664;
+}
