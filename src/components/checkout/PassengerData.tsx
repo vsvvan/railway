@@ -9,15 +9,22 @@ import {
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import AddIcon from '@mui/icons-material/Add';
 import { SyntheticEvent, useState } from 'react';
-import { UserInfo } from './UserInfo';
+import UserInfo from '../../containers/UserInfo';
+import { UserData } from '../../types';
 
-export const PassengerData = () => {
-  const [expanded, setExpanded] = useState<string | false>(false);
+type Props = {
+  userData: UserData;
+  setEmail: (email: string) => void;
+};
+
+export const PassengerData = ({ setEmail }: Props) => {
+  const [expanded, setExpanded] = useState<string | false>('personal-data');
 
   const handleChange =
     (panel: string) => (event: SyntheticEvent, isExpanded: boolean) => {
       setExpanded(isExpanded ? panel : false);
     };
+  const isDataMissed = false;
 
   return (
     <>
@@ -53,19 +60,22 @@ export const PassengerData = () => {
             Add next passenger
           </Button>
           <br />
-          <Typography>
+          <Typography style={{ padding: '15px 0 0 15px' }}>
             The purchased tickets will be sent to the entered e-mail address.
           </Typography>
-          <TextField
-            style={{ padding: '7px 0 0 7px' }}
-            id="email-field"
-            label="e-mail"
-            variant="outlined"
-            size="small"
-          />
+          <div style={{ padding: '7px 0 0 30px' }}>
+            <TextField
+              style={{ width: '270px' }}
+              id="email-field"
+              label="e-mail"
+              variant="outlined"
+              size="small"
+              onBlur={(event) => setEmail(event.target.value)}
+            />
+          </div>
           <br />
           <div className="AlignButton">
-            <Button variant="contained" size="large">
+            <Button variant="contained" size="large" disabled={isDataMissed}>
               Continue
             </Button>
           </div>

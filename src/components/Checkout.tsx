@@ -5,8 +5,14 @@ import { PassengerData } from './checkout/PassengerData';
 import { TrainTicketSelection } from './checkout/TrainTicketSelection';
 import { Payment } from './checkout/Payment';
 import { useNavigate } from 'react-router-dom';
+import { UserData } from '../types';
 
-export const Checkout = () => {
+type Props = {
+  userData: UserData;
+  setEmail: (email: string) => void;
+};
+
+export const Checkout = ({ userData, setEmail }: Props) => {
   const navigate = useNavigate();
   const navigateToOrder = () => {
     navigate('/checkout-order');
@@ -24,7 +30,7 @@ export const Checkout = () => {
         columns={20}
       >
         <Grid item xs={10}>
-          <PassengerData />
+          <PassengerData userData={userData} setEmail={setEmail} />
           <TrainTicketSelection />
           <Payment />
           <div className="AlignSecondButton">

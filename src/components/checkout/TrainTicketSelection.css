@@ -1,0 +1,26 @@
+.PaymentTitle {
+  width: 33%;
+  flex-shrink: 0;
+  font-size: 18px;
+  font-weight: 400;
+  white-space: nowrap;
+}
+
+.PaymentInfoBox:first-child {
+  border-bottom-color: white;
+}
+
+.TrainSeatBox {
+  border: 1px solid #002664;
+  display: flex;
+  width: 300px;
+  padding-left: 15px;
+  align-items: center;
+}
+
+.TrainClassBox {
+  border: 1px solid #002664;
+  display: flex;
+  padding-left: 15px;
+  align-items: center;
+}

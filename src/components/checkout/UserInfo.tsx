@@ -1,12 +1,38 @@
 import {
   FormControl,
   Grid,
+  MenuItem,
   Select,
+  SelectChangeEvent,
   TextField,
   Typography,
 } from '@mui/material';
+import { useState } from 'react';
 
-export const UserInfo = () => {
+type Props = {
+  setName: (name: string) => void;
+  setSurname: (name: string) => void;
+  setGroupAge: (groupAge: number) => void;
+  setDiscount: (discount: string) => void;
+  setRegistrationNumber: (number: string) => void;
+};
+
+export const UserInfo = ({
+  setName,
+  setSurname,
+  setGroupAge,
+  setDiscount,
+  setRegistrationNumber,
+}: Props) => {
+  const [age, setAge] = useState('3');
+  const [discount, setDiscountValue] = useState('0');
+
+  const handleChangeAge = (event: SelectChangeEvent) => {
+    setAge(event.target.value as string);
+  };
+  const handleChangeDiscount = (event: SelectChangeEvent) => {
+    setDiscountValue(event.target.value as string);
+  };
   return (
     <Grid
       style={{ margin: '20px 0 0 0' }}
@@ -14,44 +40,59 @@ export const UserInfo = () => {
       rowSpacing={1}
       columnSpacing={{ xs: 1, sm: 2, md: 3 }}
     >
-      <Grid item xs={6}>
+      <Grid item xs={4}>
         <FormControl sx={{ minWidth: 210 }}>
           <Select
-            defaultValue={4}
+            defaultValue={age}
             variant="outlined"
             inputProps={{
               name: 'age',
               id: 'uncontrolled-native',
             }}
+            onChange={handleChangeAge}
+            onBlur={(event) => setGroupAge(+event.target.value)}
           >
-            <option value={1}>Child (0-5 yrs)</option>
-            <option value={2}>Child (6-15 yrs)</option>
-            <option value={3}>Youth (16-25 yrs)</option>
-            <option value={4}>Adult (26-61 yrs)</option>
-            <option value={5}>Adult (62+ yrs)</option>
+            <MenuItem value={0}>Child (0-5 yrs)</MenuItem>
+            <MenuItem value={1}>Child (6-15 yrs)</MenuItem>
+            <MenuItem value={2}>Youth (16-25 yrs)</MenuItem>
+            <MenuItem value={3}>Adult (26-61 yrs)</MenuItem>
+            <MenuItem value={4}>Adult (62+ yrs)</MenuItem>
           </Select>
         </FormControl>
       </Grid>
       <Grid item xs={6}>
-        <FormControl variant="standard" sx={{ minWidth: 210 }}>
+        <FormControl sx={{ minWidth: 210 }}>
           <Select
-            defaultValue={1}
+            defaultValue={discount}
             variant="outlined"
             inputProps={{
               name: 'discount',
               id: 'uncontrolled-native',
             }}
+            onChange={handleChangeDiscount}
+            onBlur={(event) => setDiscount(event.target.value)}
           >
-            <option value={1}>NO DISCOUNT</option>
-            <option value={2}>ISIC card</option>
+            <MenuItem value={0}>NO DISCOUNT</MenuItem>
+            <MenuItem value={1}>ISIC card</MenuItem>
           </Select>
         </FormControl>
       </Grid>
-      <Grid item xs={6}>
-        <TextField id="name-field" label="Name" variant="outlined" />
+      <Grid item xs={4}>
+        <TextField
+          id="name-field"
+          label="Name"
+          variant="outlined"
+          type="text"
+          onBlur={(event) => setName(event.target.value)}
+        />
       </Grid>
       <Grid item xs={6}>
-        <TextField id="surname-field" label="Surname" variant="outlined" />
+        <TextField
+          id="surname-field"
+          label="Surname"
+          variant="outlined"
+          onBlur={(event) => setSurname(event.target.value)}
+        />
       </Grid>
       <Grid item xs={12} style={{ padding: '15px 0 0 20px' }}>
         <Typography
@@ -63,6 +104,7 @@ export const UserInfo = () => {
           id="registration-number"
           size="small"
           label="Registration number"
+          onBlur={(event) => setRegistrationNumber(event.target.value)}
         />
       </Grid>
     </Grid>

@@ -6,12 +6,12 @@ import {
   FormControlLabel,
   Radio,
   RadioGroup,
-  Typography,
 } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import CreditCardIcon from '@mui/icons-material/CreditCard';
 import { ChangeEvent, SyntheticEvent, useState } from 'react';
 import Logo from '../../images/logo.svg';
+import './Payment.css';
 
 export const Payment = () => {
   const [expanded, setExpanded] = useState<string | false>(false);
@@ -34,17 +34,7 @@ export const Payment = () => {
         aria-controls="payment-databh-content"
         id="payment-databh-header"
       >
-        <Typography
-          sx={{
-            width: '33%',
-            flexShrink: 0,
-            fontSize: '18px',
-            fontWeight: '400',
-            whiteSpace: 'nowrap',
-          }}
-        >
-          Payment
-        </Typography>
+        <span className="PaymentTitle">Payment</span>
       </AccordionSummary>
       <AccordionDetails>
         <RadioGroup
@@ -53,7 +43,7 @@ export const Payment = () => {
           value={value}
           onChange={handleChangePayment}
         >
-          <div style={{ width: '400px', display: 'flex' }}>
+          <div className="PaymentInfoBox">
             <FormControlLabel
               value="credit-card"
               control={<Radio />}
@@ -69,9 +59,7 @@ export const Payment = () => {
               alt=""
             />
           </div>
-          <div
-            style={{ width: '400px', display: 'flex', alignItems: 'center' }}
-          >
+          <div className="PaymentInfoBox">
             <FormControlLabel
               value="cards"
               control={<Radio />}

@@ -55,9 +55,14 @@ function a11yProps(index: number) {
 type Props = {
   train: TrainInfo;
   navigateToCheckout: () => void;
+  setChosenTrain: (train: TrainInfo) => void;
 };
 
-export const TrainCard = ({ train, navigateToCheckout }: Props) => {
+export const TrainCard = ({
+  train,
+  navigateToCheckout,
+  setChosenTrain,
+}: Props) => {
   const [expand, setExpand] = useState(false);
   const [value, setValue] = useState(0);
 
@@ -94,7 +99,10 @@ export const TrainCard = ({ train, navigateToCheckout }: Props) => {
                   variant="contained"
                   fullWidth
                   endIcon={<ShoppingCartIcon />}
-                  onClick={navigateToCheckout}
+                  onClick={() => {
+                    setChosenTrain(train);
+                    navigateToCheckout();
+                  }}
                 >
                   <span>
                     {train.price} €<br /> Buy
