@@ -1,4 +1,4 @@
-import data from '../train.json';
+import data from '../mock-data/train.json';
 import { createSlice } from '@reduxjs/toolkit';
 import { State } from '../types';
 

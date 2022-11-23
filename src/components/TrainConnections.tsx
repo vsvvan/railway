@@ -7,9 +7,10 @@ import { useNavigate } from 'react-router-dom';
 
 type Props = {
   trains: TrainInfo[];
+  setChosenTrain: (train: TrainInfo) => void;
 };
 
-export const TrainConnections = ({ trains }: Props) => {
+export const TrainConnections = ({ trains, setChosenTrain }: Props) => {
   const navigate = useNavigate();
   const navigateToCheckout = () => {
     navigate('/checkout');
@@ -36,6 +37,7 @@ export const TrainConnections = ({ trains }: Props) => {
               <TrainCard
                 train={train}
                 navigateToCheckout={navigateToCheckout}
+                setChosenTrain={setChosenTrain}
               />{' '}
             </div>
           );
