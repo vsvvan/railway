@@ -5,20 +5,29 @@ import { Footer } from './Footer';
 import { Header } from './Header';
 import { TrainConnections } from './TrainConnections';
 import { TrainInfo } from '../types';
-import { Checkout } from './Checkout';
+import Checkout from '../containers/Checkout';
 import { Order } from './Order';
 
 type Props = {
   trains: TrainInfo[];
+  setChosenTrain: (train: TrainInfo) => void;
 };
 
-export const App = ({ trains }: Props) => {
+export const App = ({ trains, setChosenTrain }: Props) => {
   return (
     <div className="App">
       <Header />
       <Router>
         <Routes>
-          <Route path="/" element={<TrainConnections trains={trains} />} />
+          <Route
+            path="/"
+            element={
+              <TrainConnections
+                trains={trains}
+                setChosenTrain={setChosenTrain}
+              />
+            }
+          />
           <Route path="/checkout" element={<Checkout />} />
           <Route
             path="/checkout-order"
