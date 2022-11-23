@@ -1,0 +1,85 @@
+.SearchBar{
+    background-color: #0773D7;
+    border-radius: 1em;
+    padding: 3vw;
+    max-width: 50%;
+    justify-self: center;
+    margin: auto;
+    margin-top: 1vh;
+}
+
+.searchForm{
+    display: grid;
+    grid-template-areas:    'from from swap to to'
+                            'fromerror fromerror . toerror toerror'
+                            'day month hours minutes submit'
+                            'timeerror timeerror timeerror timeerror .';
+    grid-template-columns: 10vw 10vw 8vw 8vw auto;
+    grid-template-rows: 4vh auto 4vh auto;
+    row-gap: 1vh;
+}
+
+.SearchBar h3{
+    margin:0;
+    color: white;
+}
+
+.searchTitle{
+    grid-area: title;
+}
+.from{
+    grid-area: from;
+    font-size: larger;
+    color: #0773D7;
+    font-weight: bold
+}
+.swapbtn{
+    grid-area: swap;
+    margin-left: 2vw;
+    margin-right: 2vw;
+}
+.to{
+    grid-area: to;
+    font-size: larger;
+    color: #0773D7;
+    font-weight: bold
+}
+.fromError{
+    grid-area: fromerror;
+}
+.toError{
+    grid-area: toerror;
+}
+.day{
+    grid-area: day;
+    color: #0773D7;
+    font-weight: bold
+}
+.month{
+    grid-area: month;
+    color: #0773D7;
+    font-weight: bold
+}
+.hour{
+    grid-area: hours;
+    color: #0773D7;
+    font-weight: bold
+}
+.minute{
+    grid-area: minutes;
+    color: #0773D7;
+    font-weight: bold
+}
+.timeError{
+    grid-area: timeerror;
+}
+.submitbtn{
+    grid-area: submit;
+    margin-left: 1vw;
+    border-radius: 0.8em;
+    font-size: medium; 
+}
+
+span{
+    color: red;
+}
