@@ -12,7 +12,7 @@ type FormValues = {
     minute: number
 };
 
-interface SearchBarProps{
+type SearchBarProps = {
     dispatch: React.Dispatch<React.SetStateAction<ConInfo>>
 }
 
@@ -53,18 +53,18 @@ export function SearchBar(props: SearchBarProps) {
 
             <form onSubmit={handleSubmit(onSubmit)} className="searchForm">
                 <input className='from' placeholder="From" {...register("from", { required: true })} />
-                {errors.from && <span className="fromError">Enter name of the starting station</span>}
+                {errors.from && <span className="fromError error">Enter name of the starting station</span>}
 
                 <button className='swapbtn' onClick={SwapDestinations}>swap</button>
 
                 <input className='to' placeholder="To" {...register("to", { required: true })} />
-                {errors.to && <span className="toError">Enter name of the destination station</span>}
+                {errors.to && <span className="toError error">Enter name of the destination station</span>}
 
                 <input className="day" type="number" {...register("day", { min:1, max: 31, required: true })}/>
                 <input className='month' type="number" {...register("month", { min:1, max: 12, required: true })}/>
                 <input className='hour' type="number" {...register("hour", { min:0, max: 23, required: true })}/>
                 <input className='minute' type="number" {...register("minute", { min:0, max: 59, required: true })}/>
-                {(errors.day || errors.month || errors.hour || errors.minute) && <span className="timeError">Enter a correct date and time of desired departure</span>}
+                {(errors.day || errors.month || errors.hour || errors.minute) && <span className="timeError error">Enter a correct date and time of desired departure</span>}
 
                 <input className='submitbtn' value="Search Connections" type="submit" />
             </form>

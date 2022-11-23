@@ -77,9 +77,10 @@
     grid-area: submit;
     margin-left: 1vw;
     border-radius: 0.8em;
-    font-size: medium; 
+    font-size: medium;
+    border: 0px;
 }
 
-span{
+.error{
     color: red;
 }
