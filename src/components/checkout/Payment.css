@@ -1,0 +1,19 @@
+.PaymentTitle {
+  width: 33%;
+  flex-shrink: 0;
+  font-size: 18px;
+  font-weight: 400;
+  white-space: nowrap;
+}
+
+.PaymentInfoBox:first-child {
+  border-bottom-color: white;
+}
+
+.PaymentInfoBox {
+  border: 1px solid #002664;
+  width: 300px;
+  display: flex;
+  padding-left: 15px;
+  align-items: center;
+}

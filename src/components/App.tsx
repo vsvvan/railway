@@ -5,17 +5,18 @@ import { Footer } from './Footer';
 import { Header } from './Header';
 import { TrainConnections } from './TrainConnections';
 import { TrainInfo } from '../types';
-import { Checkout } from './Checkout';
+import Checkout from '../containers/Checkout';
 import { Order } from './Order';
 import { SearchBar } from "./SearchBar";
 import ConInfo from "../interfaces";
 
 type Props = {
   trains: TrainInfo[];
+  setChosenTrain: (train: TrainInfo) => void;
 };
 
-export const App = ({ trains }: Props) => {
-  const [Connections, setConnections] = useState<ConInfo>({
+export const App = ({ trains, setChosenTrain }: Props) => {
+   const [Connections, setConnections] = useState<ConInfo>({
 		from: '',
 		to: '',
 		month: 0,
@@ -23,14 +24,21 @@ export const App = ({ trains }: Props) => {
 		hour: 0,
 		minute: 0
 	})
-  
+        
   return (
     <div className="App">
       <Header />
         <Router>
           <Routes>
-            <Route path="/" element={ SearchBar({dispatch: setConnections}) } />
-            <Route path="/" element={<TrainConnections trains={trains} />} />
+            <Route
+              path="/"
+              element={
+                <TrainConnections
+                  trains={trains}
+                  setChosenTrain={setChosenTrain}
+                />
+              }
+            />
             <Route path="/checkout" element={<Checkout />} />
             <Route
               path="/checkout-order"
