@@ -1,7 +1,9 @@
 import React from 'react';
 import './SearchBar.css';
 import { useForm, SubmitHandler } from "react-hook-form";
-import ConInfo from "../ConInfo";
+import ConInfo from "../interfaces";
+import TextField from '@mui/material/TextField';
+import SwapImg from "../images/Swap.png";
 
 type FormValues = {
     from: string,
@@ -49,16 +51,40 @@ export function SearchBar(props: SearchBarProps) {
 
     return (
         <div className='SearchBar'>
-            <h3 className='searchTitle'>Connection search</h3>
+            <h1 className='searchTitle'>Connections and tickets:</h1>
 
             <form onSubmit={handleSubmit(onSubmit)} className="searchForm">
-                <input className='from' placeholder="From" {...register("from", { required: true })} />
-                {errors.from && <span className="fromError error">Enter name of the starting station</span>}
+                <TextField
+                    variant="outlined"
+                    required
+                    /*sx={{
+                        margin: 1
+                    }}*/
+                    className={"from"}
+                    id="from"
+                    label="From"
+                    inputProps={{
+                        className: 'textField',
+                    }}
+                    //inputRef={register} //this throws an error
+                />
+                {/*<input className='from' placeholder="From" {...register("from", { required: true })} />
+                {errors.from && <span className="fromError error">Enter name of the starting station</span>}*/}
 
-                <button className='swapbtn' onClick={SwapDestinations}>swap</button>
+                <img className='swapbtn' src={SwapImg} alt="swap" onClick={SwapDestinations} />
 
-                <input className='to' placeholder="To" {...register("to", { required: true })} />
-                {errors.to && <span className="toError error">Enter name of the destination station</span>}
+                <TextField
+                    variant="outlined"
+                    required
+                    className={"to"}
+                    id="to"
+                    label="To"
+                    inputProps={{
+                        className: 'textField',
+                    }}
+                />
+                {/*<input className='to' placeholder="To" {...register("to", { required: true })} />
+                {errors.to && <span className="toError error">Enter name of the destination station</span>}*/}
 
                 <input className="day" type="number" {...register("day", { min:1, max: 31, required: true })}/>
                 <input className='month' type="number" {...register("month", { min:1, max: 12, required: true })}/>

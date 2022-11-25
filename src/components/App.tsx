@@ -8,7 +8,7 @@ import { TrainInfo } from '../types';
 import { Checkout } from './Checkout';
 import { Order } from './Order';
 import { SearchBar } from "./SearchBar";
-import ConInfo from "../ConInfo";
+import ConInfo from "../interfaces";
 
 type Props = {
   trains: TrainInfo[];
@@ -27,10 +27,9 @@ export const App = ({ trains }: Props) => {
   return (
     <div className="App">
       <Header />
-      {SearchBar({dispatch: setConnections})}
-			{(Connections.from.length > 0 && Connections.to.length > 0) &&
         <Router>
           <Routes>
+            <Route path="/" element={ SearchBar({dispatch: setConnections}) } />
             <Route path="/" element={<TrainConnections trains={trains} />} />
             <Route path="/checkout" element={<Checkout />} />
             <Route
@@ -39,7 +38,6 @@ export const App = ({ trains }: Props) => {
             />
           </Routes>
         </Router>
-      }
       <Footer />
     </div>
   );
