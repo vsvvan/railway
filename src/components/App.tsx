@@ -8,7 +8,7 @@ import { TrainInfo } from '../types';
 import Checkout from '../containers/Checkout';
 import { Order } from './Order';
 import { SearchBar } from "./SearchBar";
-import ConInfo from "../interfaces";
+import { ConInfo } from "../interfaces";
 
 type Props = {
   trains: TrainInfo[];
@@ -30,6 +30,7 @@ export const App = ({ trains, setChosenTrain }: Props) => {
       <Header />
         <Router>
           <Routes>
+            {/* <Route path="/" element={ SearchBar({dispatch: setConnections}) } /> */}
             <Route
               path="/"
               element={

@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-export default interface ConInfor {
+export interface ConInfo {
     from: string,
     to: string,
     month: number,

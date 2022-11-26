@@ -1,7 +1,7 @@
 import React from 'react';
 import './SearchBar.css';
 import { useForm, SubmitHandler } from "react-hook-form";
-import ConInfo from "../interfaces";
+import { ConInfo } from "../interfaces";
 import TextField from '@mui/material/TextField';
 import SwapImg from "../images/Swap.png";
 
@@ -65,6 +65,7 @@ export function SearchBar(props: SearchBarProps) {
                     label="From"
                     inputProps={{
                         className: 'textField',
+                        ...register("from")
                     }}
                     //inputRef={register} //this throws an error
                 />
@@ -81,6 +82,7 @@ export function SearchBar(props: SearchBarProps) {
                     label="To"
                     inputProps={{
                         className: 'textField',
+                        ...register("to")
                     }}
                 />
                 {/*<input className='to' placeholder="To" {...register("to", { required: true })} />
