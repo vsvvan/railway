@@ -153,10 +153,10 @@ footer li::before {
 footer {
   position: relative;
   width: 100%;
-  padding-bottom: 20px;
+  padding-bottom: 30px;
   height: 500px;
 padding-top:20px;
-margin-top: 180px;
+margin-top: 200px;
   background-color: rgba(7, 115, 215, 0.7);
 }
 
