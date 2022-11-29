@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css';
 import { Footer } from './Footer';
@@ -7,6 +7,8 @@ import { TrainConnections } from './TrainConnections';
 import { TrainInfo } from '../types';
 import Checkout from '../containers/Checkout';
 import { Order } from './Order';
+import { SearchBar } from "./SearchBar";
+import { ConInfo } from "../interfaces";
 
 type Props = {
   trains: TrainInfo[];
@@ -14,6 +16,15 @@ type Props = {
 };
 
 export const App = ({ trains, setChosenTrain }: Props) => {
+   const [Connections, setConnections] = useState<ConInfo>({
+		from: '',
+		to: '',
+		month: 0,
+		day: 0,
+		hour: 0,
+		minute: 0
+	})
+
   return (
     <div className="App">
       <Header />
@@ -21,22 +32,17 @@ export const App = ({ trains, setChosenTrain }: Props) => {
         <Routes>
           <Route
             path="/"
-            element={
-              <TrainConnections
-                trains={trains}
-                setChosenTrain={setChosenTrain}
-              />
-            }
+            element={ SearchBar({dispatch: setConnections}) }
           />
             <Route
-            path="/connections"
-            element={
-              <TrainConnections
-                trains={trains}
-                setChosenTrain={setChosenTrain}
-              />
-            }
-          />
+                path="/connections"
+                element={
+                    <TrainConnections
+                        trains={trains}
+                        setChosenTrain={setChosenTrain}
+                    />
+                }
+            />
           <Route path="/checkout" element={<Checkout />} />
           <Route
             path="/checkout-order"

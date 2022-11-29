@@ -1,6 +1,7 @@
 import trainReducer from './trainReducer';
 import chooseTrainReducer from './chooseTrainReducer';
 import userReducer from './userReducer';
+import searchInfoReducer from './searchInfoReducer';
 import { configureStore } from '@reduxjs/toolkit';
 
 export const store = configureStore({
@@ -8,5 +9,6 @@ export const store = configureStore({
     trains: trainReducer,
     chosenTrain: chooseTrainReducer,
     userData: userReducer,
+    searchInfor: searchInfoReducer,
   },
 });
