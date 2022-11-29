@@ -153,10 +153,9 @@ footer li::before {
 footer {
   position: relative;
   width: 100%;
-  padding-bottom: 30px;
-  height: 500px;
-padding-top:20px;
-margin-top: 200px;
+  padding-top:20px;
+  padding-bottom:20px;
+  margin-top: 170px;
   background-color: rgba(7, 115, 215, 0.7);
 }
 
@@ -204,6 +203,7 @@ footer .icons {
 
 .AlignButton {
   display: flex;
+
 }
 
 .AlignSecondButton button:nth-child(2) {
@@ -217,8 +217,48 @@ footer .icons {
 
 .AlignButton button {
   margin-left: auto;
+  margin-right: 2%;
 }
 
 .OrderContainer {
   border: 1px solid #002664;
 }
+
+.ContentConainer {
+  border: 1px solid #002664;
+  margin-left:5%;
+  margin-right: 5%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  padding-left: 2%;
+}
+.ContentConainer:last-child{
+  background-color: rgb(232, 232, 232);
+}
+.AdjustData
+{
+  border: 1px solid #002664;
+
+}
+
+.ButtonToEdit{
+  float: right;
+}
+.ContentOfSummary{
+  color: #002664;
+  padding-right:2%
+}
+.ContentOfSummary:first-child{
+  margin-bottom: 2%;
+}
+.BackButton{
+  margin-top: 5%;
+  
+}
+
+
+
+
+

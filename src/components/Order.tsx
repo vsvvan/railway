@@ -18,13 +18,12 @@ export const Order = ({ trainInfo }: Props) => {
           <span>Today 07.11.2022</span>
         </div>
         <div className="OrderContainer">
-          <div>
-            <Grid container spacing={2}>
-              <Grid item xs={9}>
+          <div className="ContentConainer">
+              <div className='ContentOfSummary'>
                 <div className="Align">
                   <span>
-                    {trainInfo.departureTime} {trainInfo.fromDestination}
-                    <br /> {trainInfo.arrivalTime} {trainInfo.toDestination}
+                  <Typography>{trainInfo.departureTime} {trainInfo.fromDestination}</Typography>
+                    <Typography>{trainInfo.arrivalTime} {trainInfo.toDestination}</Typography>
                   </span>
                   <div className="TrainName">
                     <TrainIcon />
@@ -33,9 +32,7 @@ export const Order = ({ trainInfo }: Props) => {
                       {trainInfo.trainType} {trainInfo.trainNumber}
                     </span>
                   </div>
-                </div>
-              </Grid>
-              <Grid item xs={9}>
+                </div>             
                 <div className="AlignTime">
                   <div className="AlignClocks">
                     <ScheduleIcon />
@@ -45,21 +42,69 @@ export const Order = ({ trainInfo }: Props) => {
                     </span>
                   </div>
                   <div>{trainInfo.distance} km</div>
-                </div>
-              </Grid>
-            </Grid>
-          </div>
-          <div>
-            <Typography>Name Surname</Typography>
+            </div>
+            </div>
+            
+            <div className='AlignButton'>
+
+              <Button
+              variant="contained"
+              size="large"
+              onClick={() => navigate('/summary')}
+              >
+              Edit
+              </Button>
+              </div>             
+        </div>
+
+          <div className="ContentConainer">
+          <div className='ContentOfSummary'>
+          <Typography><strong>Personal Information</strong> </Typography>
+          <Typography>Name Surname</Typography>
             <Typography>1*Youth(16-26 yrs) (ISIC card)</Typography>
+            <Typography>Name.Surname@gmail.com</Typography>
             <Typography>
               {trainInfo.trainType} {'  '}
               {trainInfo.trainNumber} 1*2ndClass
             </Typography>
           </div>
-          <div className="AlignButton">
-            <Typography>Summary</Typography>
+            <div className='AlignButton'>
+
+              <Button
+                variant="contained"
+                size="large"
+                onClick={() => navigate('/summary')}
+                >
+                Edit
+                </Button>
+            </div>
+
+          </div>
+          <div className="ContentConainer">
+                  <div className='ContentOfSummary'>
+                  <Typography><strong>Method of payment:</strong> </Typography>
+                  <Typography>Credit card</Typography>
+                  <Typography>Card number: SK44 **** 0044</Typography>
+
+                  </div>
+            <div className='AlignButton'>
+
+              <Button
+              variant="contained"
+              size="large"
+              onClick={() => navigate('/summary')}
+            >
+              Edit
+            </Button>
+            </div>
+          </div>
+          <div className="ContentConainer">
+          <div className='ContentOfSummary'>
+            <Typography><strong>Summary</strong></Typography>
             <Typography>Total sum: 9.34</Typography>
+          </div>
+          <strong></strong>
+          <div className="AlignButton">
             <Button
               variant="contained"
               size="large"
@@ -69,7 +114,8 @@ export const Order = ({ trainInfo }: Props) => {
             </Button>
           </div>
         </div>
-        <div>
+        </div>
+        <div className='BackButton'>
           <Button
             variant="outlined"
             size="large"
