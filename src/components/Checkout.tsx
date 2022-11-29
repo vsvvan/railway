@@ -18,7 +18,7 @@ export const Checkout = ({ userData, setEmail }: Props) => {
     navigate('/checkout-order');
   };
   const navigateToInfo = () => {
-    navigate('/');
+    navigate('/connections');
   };
   return (
     <div style={{ padding: '40px 0 0 0' }}>

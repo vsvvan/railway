@@ -28,6 +28,15 @@ export const App = ({ trains, setChosenTrain }: Props) => {
               />
             }
           />
+            <Route
+            path="/connections"
+            element={
+              <TrainConnections
+                trains={trains}
+                setChosenTrain={setChosenTrain}
+              />
+            }
+          />
           <Route path="/checkout" element={<Checkout />} />
           <Route
             path="/checkout-order"
