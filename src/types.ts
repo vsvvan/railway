@@ -39,4 +39,13 @@ export type State = {
   userData: UserData;
 };
 
+export type ConInfo = {
+  from: string;
+  to: string;
+  month: number;
+  day: number;
+  hour: number;
+  minute: number;
+}
+
 export type Dispatch = ThunkDispatch<any, unknown, any>;

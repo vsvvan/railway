@@ -1,0 +1,422 @@
+[
+  {
+    "city": "Bratislava"
+  },
+  {
+    "city": "Košice"
+  },
+  {
+    "city": "Prešov"
+  },
+  {
+    "city": "Žilina"
+  },
+  {
+    "city": "Banská Bystrica"
+  },
+  {
+    "city": "Nitra"
+  },
+  {
+    "city": "Trnava"
+  },
+  {
+    "city": "Trenčín"
+  },
+  {
+    "city": "Martin"
+  },
+  {
+    "city": "Poprad"
+  },
+  {
+    "city": "Prievidza"
+  },
+  {
+    "city": "Zvolen"
+  },
+  {
+    "city": "Považská Bystrica"
+  },
+  {
+    "city": "Michalovce"
+  },
+  {
+    "city": "Nové Zámky"
+  },
+  {
+    "city": "Spišská Nová Ves"
+  },
+  {
+    "city": "Komárno"
+  },
+  {
+    "city": "Humenné"
+  },
+  {
+    "city": "Levice"
+  },
+  {
+    "city": "Bardejov"
+  },
+  {
+    "city": "Liptovský Mikuláš"
+  },
+  {
+    "city": "Lučenec"
+  },
+  {
+    "city": "Piešťany"
+  },
+  {
+    "city": "Ružomberok"
+  },
+  {
+    "city": "Topoľčany"
+  },
+  {
+    "city": "Trebišov"
+  },
+  {
+    "city": "Čadca"
+  },
+  {
+    "city": "Rimavská Sobota"
+  },
+  {
+    "city": "Dubnica nad Váhom"
+  },
+  {
+    "city": "Pezinok"
+  },
+  {
+    "city": "Dunajská Streda"
+  },
+  {
+    "city": "Vranov nad Topľou"
+  },
+  {
+    "city": "Partizánske"
+  },
+  {
+    "city": "Šaľa"
+  },
+  {
+    "city": "Hlohovec"
+  },
+  {
+    "city": "Brezno"
+  },
+  {
+    "city": "Senica"
+  },
+  {
+    "city": "Nové Mesto nad Váhom"
+  },
+  {
+    "city": "Senec"
+  },
+  {
+    "city": "Snina"
+  },
+  {
+    "city": "Rožňava"
+  },
+  {
+    "city": "Žiar nad Hronom"
+  },
+  {
+    "city": "Dolný Kubín"
+  },
+  {
+    "city": "Bánovce nad Bebravou"
+  },
+  {
+    "city": "Púchov"
+  },
+  {
+    "city": "Malacky"
+  },
+  {
+    "city": "Handlová"
+  },
+  {
+    "city": "Kežmarok"
+  },
+  {
+    "city": "Stará Ľubovňa"
+  },
+  {
+    "city": "Sereď"
+  },
+  {
+    "city": "Kysucké Nové Mesto"
+  },
+  {
+    "city": "Skalica"
+  },
+  {
+    "city": "Galanta"
+  },
+  {
+    "city": "Levoča"
+  },
+  {
+    "city": "Detva"
+  },
+  {
+    "city": "Šamorín"
+  },
+  {
+    "city": "Sabinov"
+  },
+  {
+    "city": "Revúca"
+  },
+  {
+    "city": "Veľký Krtíš"
+  },
+  {
+    "city": "Stupava"
+  },
+  {
+    "city": "Myjava"
+  },
+  {
+    "city": "Zlaté Moravce"
+  },
+  {
+    "city": "Bytča"
+  },
+  {
+    "city": "Moldava nad Bodvou"
+  },
+  {
+    "city": "Holíč"
+  },
+  {
+    "city": "Nová Dubnica"
+  },
+  {
+    "city": "Svidník"
+  },
+  {
+    "city": "Fiľakovo"
+  },
+  {
+    "city": "Stropkov"
+  },
+  {
+    "city": "Kolárovo"
+  },
+  {
+    "city": "Štúrovo"
+  },
+  {
+    "city": "Banská Štiavnica"
+  },
+  {
+    "city": "Šurany"
+  },
+  {
+    "city": "Tvrdošín"
+  },
+  {
+    "city": "Modra"
+  },
+  {
+    "city": "Veľké Kapušany"
+  },
+  {
+    "city": "Stará Turá"
+  },
+  {
+    "city": "Krompachy"
+  },
+  {
+    "city": "Veľký Meder"
+  },
+  {
+    "city": "Vráble"
+  },
+  {
+    "city": "Sečovce"
+  },
+  {
+    "city": "Krupina"
+  },
+  {
+    "city": "Námestovo"
+  },
+  {
+    "city": "Svit"
+  },
+  {
+    "city": "Vrútky"
+  },
+  {
+    "city": "Turzovka"
+  },
+  {
+    "city": "Hriňová"
+  },
+  {
+    "city": "Hurbanovo"
+  },
+  {
+    "city": "Hnúšťa"
+  },
+  {
+    "city": "Liptovský Hrádok"
+  },
+  {
+    "city": "Kráľovský Chlmec"
+  },
+  {
+    "city": "Trstená"
+  },
+  {
+    "city": "Nová Baňa"
+  },
+  {
+    "city": "Šahy"
+  },
+  {
+    "city": "Tornaľa"
+  },
+  {
+    "city": "Krásno nad Kysucou"
+  },
+  {
+    "city": "Želiezovce"
+  },
+  {
+    "city": "Spišská Belá"
+  },
+  {
+    "city": "Medzilaborce"
+  },
+  {
+    "city": "Lipany"
+  },
+  {
+    "city": "Nemšová"
+  },
+  {
+    "city": "Turčianske Teplice"
+  },
+  {
+    "city": "Sobrance"
+  },
+  {
+    "city": "Veľký Šariš"
+  },
+  {
+    "city": "Žarnovica"
+  },
+  {
+    "city": "Gelnica"
+  },
+  {
+    "city": "Vrbové"
+  },
+  {
+    "city": "Rajec"
+  },
+  {
+    "city": "Svätý Jur"
+  },
+  {
+    "city": "Dobšiná"
+  },
+  {
+    "city": "Poltár"
+  },
+  {
+    "city": "Ilava"
+  },
+  {
+    "city": "Gabčíkovo"
+  },
+  {
+    "city": "Kremnica"
+  },
+  {
+    "city": "Sládkovičovo"
+  },
+  {
+    "city": "Gbely"
+  },
+  {
+    "city": "Sliač"
+  },
+  {
+    "city": "Šaštín-Stráže"
+  },
+  {
+    "city": "Bojnice"
+  },
+  {
+    "city": "Brezová pod Bradlom"
+  },
+  {
+    "city": "Medzev"
+  },
+  {
+    "city": "Strážske"
+  },
+  {
+    "city": "Turany"
+  },
+  {
+    "city": "Nováky"
+  },
+  {
+    "city": "Trenčianske Teplice"
+  },
+  {
+    "city": "Leopoldov"
+  },
+  {
+    "city": "Tisovec"
+  },
+  {
+    "city": "Giraltovce"
+  },
+  {
+    "city": "Vysoké Tatry"
+  },
+  {
+    "city": "Spišské Podhradie"
+  },
+  {
+    "city": "Hanušovce nad Topľou"
+  },
+  {
+    "city": "Čierna nad Tisou"
+  },
+  {
+    "city": "Tlmače"
+  },
+  {
+    "city": "Spišské Vlachy"
+  },
+  {
+    "city": "Jelšava"
+  },
+  {
+    "city": "Podolínec"
+  },
+  {
+    "city": "Rajecké Teplice"
+  },
+  {
+    "city": "Spišská Stará Ves"
+  },
+  {
+    "city": "Modrý Kameň"
+  },
+  {
+    "city": "Dudince"
+  }
+]

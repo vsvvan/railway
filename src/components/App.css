@@ -48,8 +48,7 @@
 
 .TrainConnectionsContainer {
   width: 900px;
-  margin: auto;
-  padding-top: 30px;
+  margin: 30px auto auto;
 }
 
 .TrainConnectionsContainer button:first-child {
@@ -153,13 +152,12 @@ footer li::before {
 footer {
   position: relative;
   width: 100%;
-  padding-top:20px;
-  padding-bottom:20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
   margin-top: 30px;
   background-color: rgba(7, 115, 215, 0.7);
 }
 
-/*mobile app QR code*/
 .App-mobile {
   width: 125px;
 }
@@ -175,7 +173,6 @@ footer .icons {
   color: #ffffff;
 }
 
-/*Line*/
 .Line {
   width: 86%;
   height: 4px;
@@ -185,7 +182,6 @@ footer .icons {
   background-color: white;
 }
 
-/*Logos and icons*/
 .Socialmedia {
   list-style: none;
   color: #ffffff;
@@ -203,7 +199,6 @@ footer .icons {
 
 .AlignButton {
   display: flex;
-
 }
 
 .AlignSecondButton button:nth-child(2) {
@@ -226,7 +221,7 @@ footer .icons {
 
 .ContentConainer {
   border: 1px solid #002664;
-  margin-left:5%;
+  margin-left: 5%;
   margin-right: 5%;
   margin-top: 5%;
   margin-bottom: 5%;
@@ -234,30 +229,23 @@ footer .icons {
   padding-bottom: 2%;
   padding-left: 2%;
 }
-.ContentConainer:last-child{
+.ContentConainer:last-child {
   background-color: rgb(232, 232, 232);
 }
-.AdjustData
-{
+.AdjustData {
   border: 1px solid #002664;
-
 }
 
-.ButtonToEdit{
+.ButtonToEdit {
   float: right;
 }
-.ContentOfSummary{
+.ContentOfSummary {
   color: #002664;
-  padding-right:2%
+  padding-right: 2%;
 }
-.ContentOfSummary:first-child{
+.ContentOfSummary:first-child {
   margin-bottom: 2%;
 }
-.BackButton{
+.BackButton {
   margin-top: 5%;
 }
-
-
-
-
-

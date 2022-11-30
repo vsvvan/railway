@@ -1,101 +1,203 @@
 import React from 'react';
+import dayjs, { Dayjs } from 'dayjs';
+import { SubmitHandler, useForm } from 'react-hook-form';
+import RouteOutlinedIcon from '@mui/icons-material/RouteOutlined';
+import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
+import { useNavigate } from 'react-router-dom';
+import { Autocomplete, Button, Grid, Stack, TextField } from '@mui/material';
+import { DateTimePicker } from '@mui/x-date-pickers';
 import './SearchBar.css';
-import { useForm, SubmitHandler } from "react-hook-form";
-import { ConInfo } from "../interfaces";
-import TextField from '@mui/material/TextField';
-import SwapImg from "../images/Swap.png";
+import { ConInfo } from '../types';
+import cities from '../mock-data/cities.json';
 
 type FormValues = {
-    from: string,
-    to: string,
-    day: number,
-    month: number,
-    hour: number,
-    minute: number
+  from: string;
+  to: string;
+  day: number;
+  month: number;
+  hour: number;
+  minute: number;
+};
+
+const favouriteRoute1 = {
+  departureTime: '14:13',
+  arrivalTime: '20:03',
+  fromDestination: 'Bratislava',
+  toDestination: 'Košice',
+};
+
+const favouriteRoute2 = {
+  departureTime: '14:13',
+  arrivalTime: '20:03',
+  fromDestination: 'Košice',
+  toDestination: 'Bratislava',
 };
 
 type SearchBarProps = {
-    dispatch: React.Dispatch<React.SetStateAction<ConInfo>>
-}
+  dispatch: React.Dispatch<React.SetStateAction<ConInfo>>;
+};
 
-export function SearchBar(props: SearchBarProps) {
-    const DefVals = () => {
-        const curD = new Date();
-        const defVal: FormValues = {
-            from: '',
-            to: '',
-            day: curD.getDate(),
-            month: curD.getMonth()+1,
-            hour: curD.getHours(),
-            minute: curD.getMinutes()
-        };
-        return defVal;
-    }
-    const { register, handleSubmit, getValues, setValue, formState: { errors } } = useForm<FormValues>({ defaultValues: DefVals() });
-    const onSubmit: SubmitHandler<FormValues> = data => {
-        props.dispatch({
-            from: data.from,
-            to: data.to,
-            month: data.month,
-            day: data.day,
-            hour: data.hour,
-            minute: data.minute
-        })
-        console.log(data);
-    }
-    const SwapDestinations = () => {
-        const tmp = getValues("to");
-        setValue("to", getValues("from"));
-        setValue("from", tmp);
-    }
+export const SearchBar = (props: SearchBarProps) => {
+  const [date, setDate] = React.useState<Dayjs | null>(dayjs(new Date()));
 
-    return (
-        <div className='SearchBar'>
-            <h1 className='searchTitle'>Connections and tickets:</h1>
+  const handleChange = (newDate: Dayjs | null) => {
+    setDate(newDate);
+  };
 
-            <form onSubmit={handleSubmit(onSubmit)} className="searchForm">
-                <TextField
-                    variant="outlined"
-                    required
-                    /*sx={{
-                        margin: 1
-                    }}*/
-                    className={"from"}
-                    id="from"
+  const navigate = useNavigate();
+  const navigateToInfo = () => {
+    navigate('/connections');
+  };
+  const DefVals = () => {
+    const curD = new Date();
+    const defVal: FormValues = {
+      from: '',
+      to: '',
+      day: curD.getDate(),
+      month: curD.getMonth() + 1,
+      hour: curD.getHours(),
+      minute: curD.getMinutes(),
+    };
+    return defVal;
+  };
+  const {
+    register,
+    handleSubmit,
+    getValues,
+    setValue,
+    formState: { errors },
+  } = useForm<FormValues>({ defaultValues: DefVals() });
+  const onSubmit: SubmitHandler<FormValues> = (data) => {
+    props.dispatch({
+      from: data.from,
+      to: data.to,
+      month: data.month,
+      day: data.day,
+      hour: data.hour,
+      minute: data.minute,
+    });
+  };
+  const SwapDestinations = () => {
+    const tmp = getValues('to');
+    setValue('to', getValues('from'));
+    setValue('from', tmp);
+  };
+
+  return (
+    <div className="SearchContainer">
+      <div className="SearchBar">
+        <form onSubmit={handleSubmit(onSubmit)} className="searchForm">
+          <Grid container spacing={2}>
+            <Grid item xs={12}>
+              <h1>Choose your favorite route:</h1>
+            </Grid>
+            <Grid item xs={4}>
+              <h2 onClick={() => navigate('/checkout-order')}>
+                <span>
+                  {favouriteRoute1.toDestination}
+                  {' - '}
+                  {favouriteRoute1.fromDestination}
+                  <br /> {favouriteRoute1.departureTime}
+                  {' - '}
+                  {favouriteRoute1.arrivalTime}
+                </span>
+              </h2>
+            </Grid>
+            <Grid item xs={4}>
+              <h2>
+                <span>
+                  {favouriteRoute2.toDestination}
+                  {' - '}
+                  {favouriteRoute2.fromDestination}
+                  <br /> {favouriteRoute2.departureTime}
+                  {' - '}
+                  {favouriteRoute2.arrivalTime}
+                </span>
+              </h2>
+            </Grid>
+            <Grid item xs={4}></Grid>
+            <hr className="line" />
+            <Grid item xs={12}>
+              <h1 className="searchTitle">Connections and tickets:</h1>
+            </Grid>
+            <Grid item xs={5}>
+              <Autocomplete
+                freeSolo
+                id="free-solo-2-demo"
+                disableClearable
+                options={cities.map((option) => option.city)}
+                renderInput={(params) => (
+                  <TextField
+                    {...params}
                     label="From"
-                    inputProps={{
-                        className: 'textField',
-                        ...register("from")
+                    className="textField"
+                    InputProps={{
+                      ...params.InputProps,
+                      type: 'search',
+                      ...register('from'),
                     }}
-                    //inputRef={register} //this throws an error
-                />
-                {/*<input className='from' placeholder="From" {...register("from", { required: true })} />
-                {errors.from && <span className="fromError error">Enter name of the starting station</span>}*/}
-
-                <img className='swapbtn' src={SwapImg} alt="swap" onClick={SwapDestinations} />
-
-                <TextField
-                    variant="outlined"
-                    required
-                    className={"to"}
-                    id="to"
+                  />
+                )}
+              />
+            </Grid>
+            <Grid item xs={1}>
+              <Button
+                size="large"
+                className="swapIcon"
+                onClick={SwapDestinations}
+              >
+                <RouteOutlinedIcon fontSize="large" />
+              </Button>
+            </Grid>
+            <Grid item xs={5}>
+              <Autocomplete
+                freeSolo
+                id="free-solo-2-demo"
+                disableClearable
+                options={cities.map((option) => option.city)}
+                renderInput={(params) => (
+                  <TextField
+                    {...params}
                     label="To"
-                    inputProps={{
-                        className: 'textField',
-                        ...register("to")
+                    className="textField"
+                    InputProps={{
+                      ...params.InputProps,
+                      type: 'search',
+                      ...register('to'),
                     }}
-                />
-                {/*<input className='to' placeholder="To" {...register("to", { required: true })} />
-                {errors.to && <span className="toError error">Enter name of the destination station</span>}*/}
-
-                <input className="day" type="number" {...register("day", { min:1, max: 31, required: true })}/>
-                <input className='month' type="number" {...register("month", { min:1, max: 12, required: true })}/>
-                <input className='hour' type="number" {...register("hour", { min:0, max: 23, required: true })}/>
-                <input className='minute' type="number" {...register("minute", { min:0, max: 59, required: true })}/>
-                {(errors.day || errors.month || errors.hour || errors.minute) && <span className="timeError error">Enter a correct date and time of desired departure</span>}
-
-                <input className='submitbtn' value="Search Connections" type="submit" />
-            </form>
-        </div>
-    );
-}
+                  />
+                )}
+              />
+            </Grid>
+            <Grid item xs={5}>
+              <LocalizationProvider dateAdapter={AdapterDayjs}>
+                <Stack spacing={3}>
+                  <DateTimePicker
+                    label="Date&Time picker"
+                    value={date}
+                    onChange={handleChange}
+                    renderInput={(params) => (
+                      <TextField {...params} className="textField" />
+                    )}
+                  />
+                </Stack>
+              </LocalizationProvider>
+            </Grid>
+            <Grid item xs={2.5}></Grid>
+            <Grid item xs={4}>
+              <Button
+                variant="outlined"
+                className="submitbtn"
+                size="large"
+                onClick={navigateToInfo}
+              >
+                Search Connections
+              </Button>
+            </Grid>
+          </Grid>
+        </form>
+      </div>
+    </div>
+  );
+};

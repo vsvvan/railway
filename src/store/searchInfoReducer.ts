@@ -1,5 +1,4 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { ConInfo } from '../interfaces';
 
 export const searchInfo = createSlice({
   name: 'searchInfo',

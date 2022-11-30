@@ -3,9 +3,9 @@ import { Dispatch } from '../types';
 import { UserInfo } from '../components/checkout/UserInfo';
 import {
   setDiscount,
-  setRegistrationNumber,
   setGroupAge,
   setName,
+  setRegistrationNumber,
   setSurname,
 } from '../store/userReducer';
 

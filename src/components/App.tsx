@@ -7,8 +7,9 @@ import { TrainConnections } from './TrainConnections';
 import { TrainInfo } from '../types';
 import Checkout from '../containers/Checkout';
 import { Order } from './Order';
-import { SearchBar } from "./SearchBar";
-import { ConInfo } from "../interfaces";
+import { SearchBar } from './SearchBar';
+import { ConInfo } from '../types';
+import { Summary } from './Summary';
 
 type Props = {
   trains: TrainInfo[];
@@ -16,38 +17,36 @@ type Props = {
 };
 
 export const App = ({ trains, setChosenTrain }: Props) => {
-   const [Connections, setConnections] = useState<ConInfo>({
-		from: '',
-		to: '',
-		month: 0,
-		day: 0,
-		hour: 0,
-		minute: 0
-	})
+  const [connections, setConnections] = useState<ConInfo>({
+    from: '',
+    to: '',
+    month: 0,
+    day: 0,
+    hour: 0,
+    minute: 0,
+  });
 
   return (
     <div className="App">
       <Header />
       <Router>
         <Routes>
+          <Route path="/" element={<SearchBar dispatch={setConnections} />} />
           <Route
-            path="/"
-            element={ SearchBar({dispatch: setConnections}) }
+            path="/connections"
+            element={
+              <TrainConnections
+                trains={trains}
+                setChosenTrain={setChosenTrain}
+              />
+            }
           />
-            <Route
-                path="/connections"
-                element={
-                    <TrainConnections
-                        trains={trains}
-                        setChosenTrain={setChosenTrain}
-                    />
-                }
-            />
           <Route path="/checkout" element={<Checkout />} />
           <Route
             path="/checkout-order"
             element={<Order trainInfo={trains[0]} />}
           />
+          <Route path="/summary" element={<Summary trainInfo={trains[0]} />} />
         </Routes>
       </Router>
       <Footer />

@@ -4,7 +4,7 @@ import { setEmail } from '../store/userReducer';
 import { Checkout } from '../components/Checkout';
 
 const mapStateToProps = (state: State) => ({
-   userData: state.userData
+  userData: state.userData,
 });
 
 const mapDispatchToProps = (dispatch: Dispatch) => ({

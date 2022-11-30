@@ -1,8 +1,4 @@
-import {
-  Button,
-  TextField,
-  Typography,
-} from '@mui/material';
+import { Button, TextField, Typography } from '@mui/material';
 import Sheet from '@mui/joy/Sheet';
 import AddIcon from '@mui/icons-material/Add';
 import UserInfo from '../../containers/UserInfo';
@@ -16,22 +12,25 @@ type Props = {
 export const PassengerData = ({ setEmail }: Props) => {
   return (
     <>
-      <Sheet variant="outlined" style={{padding: '30px 20px 20px 20px'}}>
+      <Sheet
+        variant="outlined"
+        style={{ padding: '30px 20px 20px 20px', margin: '0px 0px 30px 0px' }}
+      >
         <Typography
-            sx={{
-              width: '33%',
-              flexShrink: 0,
-              fontSize: '18px',
-              fontWeight: '400',
-              whiteSpace: 'nowrap',
-            }}
+          sx={{
+            width: '33%',
+            flexShrink: 0,
+            fontSize: '18px',
+            fontWeight: '400',
+            whiteSpace: 'nowrap',
+          }}
         >
           Passenger information
         </Typography>
         <span>
-            Please, fill in the passenger data to avoid abuse of your documents.
-            The name will be directly on your travel document.
-          </span>
+          Please, fill in the passenger data to avoid abuse of your documents.
+          The name will be directly on your travel document.
+        </span>
         <br />
         <UserInfo />
         <Button style={{ padding: '15px 0 0 25px' }} startIcon={<AddIcon />}>
@@ -43,12 +42,12 @@ export const PassengerData = ({ setEmail }: Props) => {
         </Typography>
         <div style={{ padding: '7px 0 0 30px' }}>
           <TextField
-              style={{ width: '270px' }}
-              id="email-field"
-              label="e-mail"
-              variant="outlined"
-              size="small"
-              onBlur={(event) => setEmail(event.target.value)}
+            style={{ width: '270px' }}
+            id="email-field"
+            label="e-mail"
+            variant="outlined"
+            size="small"
+            onBlur={(event) => setEmail(event.target.value)}
           />
         </div>
       </Sheet>
