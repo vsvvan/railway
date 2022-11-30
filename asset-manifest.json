@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/railway/static/css/main.2beabc6e.css",
+    "main.js": "/railway/static/js/main.b7c572a6.js",
+    "static/media/subway_07.jpg": "/railway/static/media/subway_07.f77a4e80d5318e67d85c.jpg",
+    "static/media/logo.svg": "/railway/static/media/logo.30ff0b91f1db7cf0d5032a58078b0ccf.svg",
+    "static/media/appgallery-logo-sk.svg": "/railway/static/media/appgallery-logo-sk.3a3abd20e15d9a2f5a1370ea3205452d.svg",
+    "static/media/app-store.svg": "/railway/static/media/app-store.1ae4c14307eeac2aee4c82df6661f00e.svg",
+    "static/media/qr-code.svg": "/railway/static/media/qr-code.6de3b4414abd0e7f39b31c9962a41871.svg",
+    "static/media/google-play.svg": "/railway/static/media/google-play.c1e5687e8fe51b5bf473b7e3cad046ce.svg",
+    "index.html": "/railway/index.html",
+    "main.2beabc6e.css.map": "/railway/static/css/main.2beabc6e.css.map",
+    "main.b7c572a6.js.map": "/railway/static/js/main.b7c572a6.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2beabc6e.css",
+    "static/js/main.b7c572a6.js"
+  ]
+}
