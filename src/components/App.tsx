@@ -31,7 +31,7 @@ export const App = ({ trains, setChosenTrain }: Props) => {
       <Header />
       <Router>
         <Routes>
-          <Route path="/" element={<SearchBar dispatch={setConnections} />} />
+          <Route path="/railway/" element={<SearchBar dispatch={setConnections} />} />
           <Route
             path="/connections"
             element={

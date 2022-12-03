@@ -16,7 +16,7 @@ export const Payment = () => {
       variant="outlined"
       style={{ padding: '30px 20px 20px 20px', margin: '0px 0px 30px 0px' }}
     >
-      <span className="PaymentTitle">Payment</span>
+      <span className="PaymentTitle">Pay</span>
       <RadioGroup
         aria-labelledby="demo-controlled-radio-buttons-group"
         name="controlled-radio-buttons-group"

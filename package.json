@@ -2,7 +2,10 @@
   "name": "railway",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://vsvvan.github.io/railway",
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build lint format",
     "test": "react-scripts test",
@@ -25,6 +28,7 @@
     "@types/node": "^16.18.0",
     "@types/react": "^18.0.22",
     "@types/react-dom": "^18.0.7",
+    "gh-pages": "^4.0.0",
     "prettier": "^2.7.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
