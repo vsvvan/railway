@@ -6,7 +6,7 @@ import { Button, Grid, IconButton, Typography } from '@mui/material';
 
 export const Header = () =>{
   const navigate = useNavigate();
- return(
+ return( 
   <header className="App-header">
     <div className="header">
               <Button
