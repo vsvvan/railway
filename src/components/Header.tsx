@@ -4,11 +4,13 @@ import Logo from '../images/Logo-header.svg';
 import { useNavigate } from 'react-router-dom';
 import { Button, Grid, IconButton, Typography } from '@mui/material';
 
-export const Header = () => (
+export const Header = () =>{
+  const navigate = useNavigate();
+ return(
   <header className="App-header">
     <div className="header">
               <Button
-              onClick={() => useNavigate()}
+              onClick={() => navigate('/')}
               >
               <img className="App-logo" src={Logo} alt="Logo" />
               </Button>
@@ -26,4 +28,5 @@ export const Header = () => (
     </div>
   </header>
 );
+}
 
