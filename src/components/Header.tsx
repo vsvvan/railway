@@ -1,11 +1,19 @@
 import shoppingCart from '../images/shopping_cart_black_24dp 1.png';
 import React from 'react';
-import Logo from '../images/logo.svg';
+import Logo from '../images/Logo-header.svg';
+import { useNavigate } from 'react-router-dom';
+import { Button, Grid, IconButton, Typography } from '@mui/material';
 
-export const Header = () => (
+export const Header = () =>{
+  const navigate = useNavigate();
+ return( 
   <header className="App-header">
     <div className="header">
-      <img className="App-logo" src={Logo} alt="Logo" />
+              <Button
+              onClick={() => navigate('/')}
+              >
+              <img className="App-logo" src={Logo} alt="Logo" />
+              </Button>
       <div className="HeaderContainer">
         <span className="LanguageChange"> SK/EN </span>
         <div className="IconLayout">
@@ -20,3 +28,5 @@ export const Header = () => (
     </div>
   </header>
 );
+}
+

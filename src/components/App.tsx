@@ -28,8 +28,8 @@ export const App = ({ trains, setChosenTrain }: Props) => {
 
   return (
     <div className="App">
-      <Header />
       <Router>
+      <Header />
         <Routes>
           <Route path="/railway/" element={<SearchBar dispatch={setConnections} />} />
           <Route
