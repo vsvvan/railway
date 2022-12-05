@@ -7,7 +7,7 @@ import ScheduleIcon from '@mui/icons-material/Schedule';
 import { TrainInfo } from '../types';
 
 type Props = {
-  trainInfo: TrainInfo;
+  trainInfo: TrainInfo;  
 };
 
 export const Order = ({ trainInfo }: Props) => {
@@ -34,7 +34,7 @@ export const Order = ({ trainInfo }: Props) => {
                     </span>
                     <div className="TrainName">
                       <TrainIcon />
-                      <br />
+                      <br/>
                       <span>
                         {trainInfo.trainType} {trainInfo.trainNumber}
                       </span>
@@ -73,9 +73,32 @@ export const Order = ({ trainInfo }: Props) => {
                   <Typography>Name Surname</Typography>
                   <Typography>1*Youth(16-26 yrs) (ISIC card)</Typography>
                   <Typography>Name.Surname@gmail.com</Typography>
+                </div>
+              </Grid>
+              <Grid item xs={1}>
+                <IconButton
+                  color="primary"
+                  size="large"
+                  onClick={() => navigate('/checkout')}
+                >
+                  <EditIcon />
+                </IconButton>
+              </Grid>
+            </Grid>
+          </div>
+          <div className="ContentConainer">
+            <Grid container spacing={2}>
+              <Grid item xs={11}>
+                <div className="ContentOfSummary">
+                  <Typography>
+                    <strong>Train ticket selection</strong>{' '}
+                  </Typography>
                   <Typography>
                     {trainInfo.trainType} {'  '}
                     {trainInfo.trainNumber} 1*2ndClass
+                  </Typography>
+                  <Typography>
+                  Seat selection: No preferences
                   </Typography>
                 </div>
               </Grid>

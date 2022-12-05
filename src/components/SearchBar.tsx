@@ -93,8 +93,13 @@ export const SearchBar = (props: SearchBarProps) => {
               <h1>Choose your favorite route:</h1>
             </Grid>
             <Grid item xs={4}>
-              <h2 onClick={() => navigate('/checkout-order')}>
-                <span>
+              
+              <Button
+              variant="contained"
+              onClick={() => navigate('/checkout-order')}
+            >
+              <h2>
+              <span>
                   {favouriteRoute1.toDestination}
                   {' - '}
                   {favouriteRoute1.fromDestination}
@@ -103,8 +108,14 @@ export const SearchBar = (props: SearchBarProps) => {
                   {favouriteRoute1.arrivalTime}
                 </span>
               </h2>
+            </Button>
+                
             </Grid>
             <Grid item xs={4}>
+            <Button
+              variant="contained"
+              onClick={() => navigate('/checkout-order')}
+            >
               <h2>
                 <span>
                   {favouriteRoute2.toDestination}
@@ -115,6 +126,7 @@ export const SearchBar = (props: SearchBarProps) => {
                   {favouriteRoute2.arrivalTime}
                 </span>
               </h2>
+            </Button>
             </Grid>
             <Grid item xs={4}></Grid>
             <hr className="line" />
