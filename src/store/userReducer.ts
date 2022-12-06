@@ -1,7 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { UserData } from '../types';
+import userData from '../mock-data/user.json';
 
-const initialState = null;
+const initialState = userData;
 
 export const userSlice = createSlice({
   name: 'userData',

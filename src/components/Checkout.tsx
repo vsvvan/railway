@@ -30,7 +30,10 @@ export const Checkout = ({ userData, setEmail }: Props) => {
         columns={20}
       >
         <Grid item xs={10}>
-          <PassengerData userData={userData} setEmail={setEmail} />
+          <PassengerData
+            userData={userData.passengerInformation}
+            setEmail={setEmail}
+          />
           <TrainTicketSelection />
           <Payment />
           <div className="AlignSecondButton">

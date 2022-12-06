@@ -59,7 +59,7 @@ export const Summary = ({ trainInfo }: Props) => {
       <Button
         size="large"
         style={{ color: '#002664', margin: '30px auto auto', width: '100%' }}
-        onClick={() => navigate('/')}
+        onClick={() => navigate('/railway/')}
       >
         {' '}
         Go to main page

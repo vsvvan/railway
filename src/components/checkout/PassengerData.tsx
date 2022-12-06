@@ -2,14 +2,14 @@ import { Button, TextField, Typography } from '@mui/material';
 import Sheet from '@mui/joy/Sheet';
 import AddIcon from '@mui/icons-material/Add';
 import UserInfo from '../../containers/UserInfo';
-import { UserData } from '../../types';
+import { PassengerInformation } from '../../types';
 
 type Props = {
-  userData: UserData;
+  userData: PassengerInformation;
   setEmail: (email: string) => void;
 };
 
-export const PassengerData = ({ setEmail }: Props) => {
+export const PassengerData = ({ userData, setEmail }: Props) => {
   return (
     <>
       <Sheet
@@ -32,7 +32,7 @@ export const PassengerData = ({ setEmail }: Props) => {
           The name will be directly on your travel document.
         </span>
         <br />
-        <UserInfo />
+        <UserInfo passengerInfo={userData} />
         <Button style={{ padding: '15px 0 0 25px' }} startIcon={<AddIcon />}>
           Add next passenger
         </Button>
@@ -47,6 +47,7 @@ export const PassengerData = ({ setEmail }: Props) => {
             label="e-mail"
             variant="outlined"
             size="small"
+            value={userData.email}
             onBlur={(event) => setEmail(event.target.value)}
           />
         </div>
