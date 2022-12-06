@@ -1,8 +1,6 @@
 .App-logo {
-
   height: 82px;
   pointer-events: none;
-  
 }
 
 .header {
@@ -14,6 +12,21 @@
   background: #0773d7;
 }
 
+.Margin-div {
+  width: 100%;
+  height: 45px;
+}
+
+.SummaryInChechkout {
+  border: 1px solid #002664;
+  padding: 10px;
+  line-height: 29px;
+  position: fixed;
+}
+.FavoriteRoadButton {
+  border: 1px solid #002664;
+  background-color: #ffffff;
+}
 .SignButton {
   color: #ffffff;
   background: #002664;

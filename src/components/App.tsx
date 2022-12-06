@@ -29,7 +29,7 @@ export const App = ({ trains, setChosenTrain }: Props) => {
   return (
     <div className="App">
       <Router>
-      <Header />
+        <Header />
         <Routes>
           <Route path="/railway/" element={<SearchBar dispatch={setConnections} />} />
           <Route
@@ -41,7 +41,10 @@ export const App = ({ trains, setChosenTrain }: Props) => {
               />
             }
           />
-          <Route path="/checkout" element={<Checkout />} />
+          <Route
+            path="/checkout"
+            element={<Checkout trainInfo={trains[0]} />}
+          />
           <Route
             path="/checkout-order"
             element={<Order trainInfo={trains[0]} />}
