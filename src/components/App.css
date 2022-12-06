@@ -2,7 +2,7 @@
 
   height: 82px;
   pointer-events: none;
-  
+
 }
 
 .header {
@@ -25,7 +25,7 @@ height: 45px;
   line-height: 29px;
   position: fixed;
 }
-.FavoriteRoadButton{ 
+.FavoriteRoadButton{
   border: 1px solid #002664;
   background-color: #ffffff;
 }
@@ -171,7 +171,7 @@ footer {
   padding-top: 20px;
   padding-bottom: 20px;
   margin-top: 30px;
-  background-color: rgba(7, 115, 215, 0.7);
+  background-color: #0773d7;
 }
 
 .App-mobile {
