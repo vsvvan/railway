@@ -6,9 +6,11 @@ import { TrainTicketSelection } from './checkout/TrainTicketSelection';
 import { Payment } from './checkout/Payment';
 import { useNavigate } from 'react-router-dom';
 import { UserData } from '../types';
+import { TrainInfo } from '../types';
 
 type Props = {
   userData: UserData;
+  trainInfo: TrainInfo;
   setEmail: (email: string) => void;
 };
 
@@ -56,7 +58,9 @@ export const Checkout = ({ userData, setEmail }: Props) => {
           </div>
         </Grid>
         <Grid item xs={4}>
-          <span>Summary</span>
+          <div className="SummaryInChechkout">
+            <span>Price: 18.68 €</span>
+          </div>
         </Grid>
       </Grid>
     </div>

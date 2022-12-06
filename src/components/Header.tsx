@@ -17,11 +17,6 @@ export const Header = () => {
           <div className="IconLayout">
             <img className="CartIcon" src={shoppingCart} alt="" />
           </div>
-          <div>
-            <button className="SignButton" type="button">
-              Sign in
-            </button>
-          </div>
         </div>
       </div>
     </header>
