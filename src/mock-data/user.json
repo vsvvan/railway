@@ -1,18 +1,18 @@
 {
-    "PassengerInformation":{
-      "Age": "22",
-      "Discount": "ISIC card",
-      "Name": "Jakub",
-      "Surname": "Lipták",
-      "RegistrationNumber": "2894573",
-      "e-mail":"Jakub.Lipták@gmail.com"
-    },
-    "TrainTicketSelection":{
+  "PassengerInformation": {
+    "Age": "22",
+    "Discount": "ISIC card",
+    "Name": "Jakub",
+    "Surname": "Lipták",
+    "RegistrationNumber": "2894573",
+    "e-mail": "Jakub.Lipták@gmail.com"
+  },
+  "TrainTicketSelection": {
     "TicketClass": "2nd Class",
-    "SeatSelection":"No preferences/Any"
-    },
-    "Payment":{
-        "Account": "2nd Class",
-        "CreditCards":"No preferences/Any"
-        }
+    "SeatSelection": "No preferences/Any"
+  },
+  "Payment": {
+    "Account": "2nd Class",
+    "CreditCards": "No preferences/Any"
+  }
 }

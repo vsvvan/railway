@@ -46,6 +46,6 @@ export type ConInfo = {
   day: number;
   hour: number;
   minute: number;
-}
+};
 
 export type Dispatch = ThunkDispatch<any, unknown, any>;

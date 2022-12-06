@@ -64,8 +64,7 @@ export const Summary = ({ trainInfo }: Props) => {
         {' '}
         Go to main page
       </Button>
-      <div className='Margin-div'>
-      </div>
+      <div className="Margin-div"></div>
     </>
   );
 };

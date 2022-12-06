@@ -1,4 +1,4 @@
-import { Button, Grid, Typography } from '@mui/material';
+import { Button, Grid } from '@mui/material';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import { PassengerData } from './checkout/PassengerData';
@@ -6,9 +6,7 @@ import { TrainTicketSelection } from './checkout/TrainTicketSelection';
 import { Payment } from './checkout/Payment';
 import { useNavigate } from 'react-router-dom';
 import { UserData } from '../types';
-import TrainIcon from '@mui/icons-material/Train';
 import { TrainInfo } from '../types';
-
 
 type Props = {
   userData: UserData;
@@ -57,10 +55,8 @@ export const Checkout = ({ userData, setEmail }: Props) => {
           </div>
         </Grid>
         <Grid item xs={4}>
-          <div className='Summary_in_Chechkout'>
-          <span>
-          Price: 18.68 €
-          </span>
+          <div className="SummaryInChechkout">
+            <span>Price: 18.68 €</span>
           </div>
         </Grid>
       </Grid>
