@@ -21,8 +21,8 @@ type FormValues = {
 };
 
 const favouriteRoute1 = {
-  departureTime: '14:13',
-  arrivalTime: '20:03',
+  departureTime: '12:13',
+  arrivalTime: '18:03',
   fromDestination: 'Bratislava',
   toDestination: 'Košice',
 };
@@ -42,7 +42,13 @@ type SearchBarProps = {
   setTo: (to: string) => void;
 };
 
-export const SearchBar = ({dispatch, from, to, setFrom, setTo}: SearchBarProps) => {
+export const SearchBar = ({
+  dispatch,
+  from,
+  to,
+  setFrom,
+  setTo,
+}: SearchBarProps) => {
   const [date, setDate] = React.useState<Dayjs | null>(dayjs(new Date()));
 
   const handleChange = (newDate: Dayjs | null) => {

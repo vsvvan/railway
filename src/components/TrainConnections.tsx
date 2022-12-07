@@ -18,7 +18,7 @@ export const TrainConnections = ({ trains, setChosenTrain }: Props) => {
   return (
     <>
       <div className="TrainConnectionsContainer">
-{/*        <Button
+        {/*        <Button
           id="previousConnections"
           variant="outlined"
           endIcon={<ExpandLessIcon />}
@@ -44,7 +44,7 @@ export const TrainConnections = ({ trains, setChosenTrain }: Props) => {
         })}
       </div>
       <div className="TrainConnectionsContainer">
-{/*        <Button
+        {/*        <Button
           id="nextConnections"
           variant="outlined"
           endIcon={<ExpandMoreIcon />}

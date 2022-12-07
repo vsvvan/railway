@@ -8,11 +8,11 @@ export const searchInfo = createSlice({
       return action.payload;
     },
     setFrom: (state: any, action) => {
-      return {... state, from: action.payload}
+      return { ...state, from: action.payload };
     },
     setTo: (state: any, action) => {
-      return {... state, to: action.payload}
-    }
+      return { ...state, to: action.payload };
+    },
   },
 });
 

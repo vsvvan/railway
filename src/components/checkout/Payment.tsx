@@ -12,7 +12,7 @@ import './Payment.css';
 import Sheet from '@mui/joy/Sheet';
 
 export const Payment = () => {
-  const [value, setValue] = useState('');
+  const [value, setValue] = useState('cards');
 
   const handleChangePayment = (event: ChangeEvent<HTMLInputElement>) => {
     setValue((event.target as HTMLInputElement).value);
