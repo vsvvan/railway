@@ -1,8 +1,6 @@
 .PaymentTitle {
   width: 33%;
   flex-shrink: 0;
-  font-size: 18px;
-  font-weight: 400;
   white-space: nowrap;
 }
 

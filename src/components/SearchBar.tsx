@@ -28,8 +28,8 @@ const favouriteRoute1 = {
 };
 
 const favouriteRoute2 = {
-  departureTime: '14:13',
-  arrivalTime: '20:03',
+  departureTime: '08:13',
+  arrivalTime: '12:03',
   fromDestination: 'Košice',
   toDestination: 'Bratislava',
 };
@@ -100,9 +100,9 @@ export const SearchBar = (props: SearchBarProps) => {
               >
                 <h2>
                   <span>
-                    {favouriteRoute1.toDestination}
-                    {' - '}
                     {favouriteRoute1.fromDestination}
+                    {' - '}
+                    {favouriteRoute1.toDestination}
                     <br /> {favouriteRoute1.departureTime}
                     {' - '}
                     {favouriteRoute1.arrivalTime}
@@ -118,9 +118,9 @@ export const SearchBar = (props: SearchBarProps) => {
               >
                 <h2>
                   <span>
-                    {favouriteRoute2.toDestination}
-                    {' - '}
                     {favouriteRoute2.fromDestination}
+                    {' - '}
+                    {favouriteRoute2.toDestination}
                     <br /> {favouriteRoute2.departureTime}
                     {' - '}
                     {favouriteRoute2.arrivalTime}

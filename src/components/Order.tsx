@@ -4,19 +4,20 @@ import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import { useNavigate } from 'react-router-dom';
 import TrainIcon from '@mui/icons-material/Train';
 import ScheduleIcon from '@mui/icons-material/Schedule';
-import { TrainInfo } from '../types';
+import { TrainInfo, UserData } from '../types';
 
 type Props = {
   trainInfo: TrainInfo;
+  userData: UserData;
 };
 
-export const Order = ({ trainInfo }: Props) => {
+export const Order = ({ trainInfo, userData }: Props) => {
   const navigate = useNavigate();
   return (
     <>
       <div className="TrainConnectionsContainer">
         <div className="DayStyle">
-          <span>Today 07.11.2022</span>
+          <span>Tomorrow 08.12.2022</span>
         </div>
         <div className="OrderContainer">
           <div className="ContentConainer">
@@ -70,9 +71,15 @@ export const Order = ({ trainInfo }: Props) => {
                   <Typography>
                     <strong>Personal Information</strong>{' '}
                   </Typography>
-                  <Typography>Name Surname</Typography>
-                  <Typography>1*Youth(16-26 yrs) (ISIC card)</Typography>
-                  <Typography>Name.Surname@gmail.com</Typography>
+                  <Typography>
+                    {userData.passengerInformation.name}{' '}
+                    {userData.passengerInformation.surname}
+                  </Typography>
+                  <Typography>
+                    1*Youth(16-26 yrs) ({userData.passengerInformation.discount}
+                    )
+                  </Typography>
+                  <Typography>{userData.passengerInformation.email}</Typography>
                 </div>
               </Grid>
               <Grid item xs={1}>
@@ -95,9 +102,13 @@ export const Order = ({ trainInfo }: Props) => {
                   </Typography>
                   <Typography>
                     {trainInfo.trainType} {'  '}
-                    {trainInfo.trainNumber} 1*2ndClass
+                    {trainInfo.trainNumber} 1*
+                    {userData.trainTicketSelection.ticketClass}
                   </Typography>
-                  <Typography>Seat selection: No preferences</Typography>
+                  <Typography>
+                    Seat selection:{' '}
+                    {userData.trainTicketSelection.seatSelection}
+                  </Typography>
                 </div>
               </Grid>
               <Grid item xs={1}>
@@ -118,8 +129,10 @@ export const Order = ({ trainInfo }: Props) => {
                   <Typography>
                     <strong>Method of payment:</strong>{' '}
                   </Typography>
-                  <Typography>Credit card</Typography>
-                  <Typography>Card number: SK44 **** 0044</Typography>
+                  <Typography>{userData.payment.paymentMethod}</Typography>
+                  <Typography>
+                    Card number: {userData.payment.cardNumber}
+                  </Typography>
                 </div>
               </Grid>
               <Grid item xs={1}>
@@ -147,7 +160,7 @@ export const Order = ({ trainInfo }: Props) => {
                 size="large"
                 onClick={() => navigate('/summary')}
               >
-                Payment
+                Pay
               </Button>
             </div>
           </div>

@@ -12,6 +12,7 @@
     "seatSelection": "No preferences/Any"
   },
   "payment": {
-    "paymentMethod": "credit account"
+    "paymentMethod": "Credit card",
+    "cardNumber": "SK44 **** 0044"
   }
 }

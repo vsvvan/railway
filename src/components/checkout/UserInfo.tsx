@@ -8,9 +8,10 @@ import {
   Typography,
 } from '@mui/material';
 import { useState } from 'react';
+import { PassengerInformation } from '../../types';
 
 type Props = {
-  passengerInfo: any;
+  passengerInfo: PassengerInformation;
   setName: (name: string) => void;
   setSurname: (name: string) => void;
   setGroupAge: (groupAge: number) => void;

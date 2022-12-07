@@ -20,12 +20,10 @@ export const PassengerData = ({ userData, setEmail }: Props) => {
           sx={{
             width: '33%',
             flexShrink: 0,
-            fontSize: '18px',
-            fontWeight: '400',
             whiteSpace: 'nowrap',
           }}
         >
-          Passenger information
+          <h3>Passenger information</h3>
         </Typography>
         <span>
           Please, fill in the passenger data to avoid abuse of your documents.

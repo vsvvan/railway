@@ -29,17 +29,16 @@ export const TrainTicketSelection = () => {
         sx={{
           width: '33%',
           flexShrink: 0,
-          fontSize: '18px',
-          fontWeight: '400',
           whiteSpace: 'nowrap',
         }}
       >
-        Train ticket selection
+        <h3>Train ticket selection</h3>
       </Typography>
       <Grid container spacing={0.5}>
         <Grid item xs={4}>
           <Typography>
-            16.10.2022 R 609 14:13 Bratislava hl. st. 20:03 Košice
+            08.12.2022 R 609 <br /> 14:13 Bratislava hl. st. <br />
+            20:03 Košice
           </Typography>
         </Grid>
         <Grid item xs={8}>
