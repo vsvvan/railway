@@ -7,7 +7,7 @@ import { TrainConnections } from './TrainConnections';
 import { TrainInfo, UserData } from '../types';
 import Checkout from '../containers/Checkout';
 import { Order } from './Order';
-import { SearchBar } from './SearchBar';
+import SearchBar from '../containers/SearchBar';
 import { ConInfo } from '../types';
 import { Summary } from './Summary';
 

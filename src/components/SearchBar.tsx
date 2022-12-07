@@ -36,9 +36,13 @@ const favouriteRoute2 = {
 
 type SearchBarProps = {
   dispatch: React.Dispatch<React.SetStateAction<ConInfo>>;
+  from: string;
+  to: string;
+  setFrom: (from: string) => void;
+  setTo: (to: string) => void;
 };
 
-export const SearchBar = (props: SearchBarProps) => {
+export const SearchBar = ({dispatch, from, to, setFrom, setTo}: SearchBarProps) => {
   const [date, setDate] = React.useState<Dayjs | null>(dayjs(new Date()));
 
   const handleChange = (newDate: Dayjs | null) => {
@@ -69,7 +73,7 @@ export const SearchBar = (props: SearchBarProps) => {
     formState: { errors },
   } = useForm<FormValues>({ defaultValues: DefVals() });
   const onSubmit: SubmitHandler<FormValues> = (data) => {
-    props.dispatch({
+    dispatch({
       from: data.from,
       to: data.to,
       month: data.month,
@@ -136,19 +140,16 @@ export const SearchBar = (props: SearchBarProps) => {
             <Grid item xs={5}>
               <Autocomplete
                 freeSolo
-                id="free-solo-2-demo"
-                disableClearable
+                id="fromDestination"
+                includeInputInList
                 options={cities.map((option) => option.city)}
                 renderInput={(params) => (
                   <TextField
                     {...params}
                     label="From"
+                    value={from}
                     className="textField"
-                    InputProps={{
-                      ...params.InputProps,
-                      type: 'search',
-                      ...register('from'),
-                    }}
+                    onBlur={(event) => setFrom(event.target.value)}
                   />
                 )}
               />
@@ -165,19 +166,16 @@ export const SearchBar = (props: SearchBarProps) => {
             <Grid item xs={5}>
               <Autocomplete
                 freeSolo
-                id="free-solo-2-demo"
-                disableClearable
+                id="toDestination"
+                includeInputInList
                 options={cities.map((option) => option.city)}
                 renderInput={(params) => (
                   <TextField
                     {...params}
                     label="To"
+                    value={to}
                     className="textField"
-                    InputProps={{
-                      ...params.InputProps,
-                      type: 'search',
-                      ...register('to'),
-                    }}
+                    onBlur={(event) => setTo(event.target.value)}
                   />
                 )}
               />
@@ -197,12 +195,15 @@ export const SearchBar = (props: SearchBarProps) => {
               </LocalizationProvider>
             </Grid>
             <Grid item xs={2.5}></Grid>
-            <Grid item xs={4}>
+            <Grid item xs={4} style={{ padding: '16px 0px 0px 9px' }}>
               <Button
                 variant="outlined"
                 className="submitbtn"
                 size="large"
-                onClick={navigateToInfo}
+                onClick={() => {
+                  navigateToInfo();
+                }}
+                disabled={!from || !to}
               >
                 Search Connections
               </Button>

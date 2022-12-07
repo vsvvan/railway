@@ -7,7 +7,15 @@ export const searchInfo = createSlice({
     setSearchInfo: (state: any, action) => {
       return action.payload;
     },
+    setFrom: (state: any, action) => {
+      return {... state, from: action.payload}
+    },
+    setTo: (state: any, action) => {
+      return {... state, to: action.payload}
+    }
   },
 });
+
+export const { setFrom, setTo } = searchInfo.actions;
 
 export default searchInfo.reducer;

@@ -53,6 +53,7 @@ export type State = {
   trains: TrainInfo[];
   chosenTrain: TrainInfo;
   userData: UserData;
+  searchInfo: any;
 };
 
 export type ConInfo = {
