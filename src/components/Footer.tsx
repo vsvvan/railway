@@ -112,6 +112,15 @@ export const Footer = () => {
             </ul>
           </div>
         </div>
+        <hr className="Last_line"></hr>
+        <div>
+        <div className="Authors_info">
+        © The Earths webbest developers 2022
+        <div className='Up_to_start'>
+        <a href="#" title="hore">Up</a>
+        </div>
+        </div>
+        </div>
       </footer>
     </div>
   );

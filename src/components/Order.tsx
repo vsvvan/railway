@@ -16,7 +16,10 @@ export const Order = ({ trainInfo }: Props) => {
     <>
       <div className="TrainConnectionsContainer">
         <div className="DayStyle">
-          <span>Today 07.11.2022</span>
+          <span>
+          <h1>Train ticket information</h1>
+          <h2>Today 07.12.2022</h2>
+          </span>
         </div>
         <div className="OrderContainer">
           <div className="ContentConainer">

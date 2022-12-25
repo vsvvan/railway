@@ -18,6 +18,10 @@ export const TrainConnections = ({ trains, setChosenTrain }: Props) => {
   return (
     <>
       <div className="TrainConnectionsContainer">
+      <span>
+          <h1>Connection search</h1> 
+          <h2>Today 07.11.2022</h2>
+      </span>
         <Button
           id="previousConnections"
           variant="outlined"
@@ -26,7 +30,6 @@ export const TrainConnections = ({ trains, setChosenTrain }: Props) => {
           Previous connections
         </Button>
         <div className="DayStyle">
-          <span>Today 07.11.2022</span>
         </div>
       </div>
       <div className="TrainConnectionsContainer">

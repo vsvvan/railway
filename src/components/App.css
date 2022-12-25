@@ -162,6 +162,13 @@ footer li::before {
   margin-left: 7%;
   display: flex;
 }
+.Authors_info {
+  height: 25%;
+  margin-top: auto;
+  margin-left: 7%;
+  color: #ffffff;
+  
+}
 
 footer {
   position: relative;
@@ -194,6 +201,23 @@ footer .icons {
   margin-right: auto;
   margin-left: auto;
   background-color: white;
+}
+.Last_line{
+  width: 86%;
+  height: 1px;
+  border: 0 none;
+  margin-right: auto;
+  margin-left: auto;
+  background-color: white;
+}
+.Up_to_start{
+  float: right !important;
+  margin-right: 8%;
+  z-index:9;
+}
+.Up_to_start:hover
+{
+text-decoration: underline;
 }
 
 .Socialmedia {
