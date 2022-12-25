@@ -46,12 +46,14 @@ export type TrainTicketSelection = {
 
 export type Payment = {
   paymentMethod: string;
+  cardNumber: string;
 };
 
 export type State = {
   trains: TrainInfo[];
   chosenTrain: TrainInfo;
   userData: UserData;
+  searchInfo: any;
 };
 
 export type ConInfo = {

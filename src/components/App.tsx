@@ -4,19 +4,20 @@ import './App.css';
 import { Footer } from './Footer';
 import { Header } from './Header';
 import { TrainConnections } from './TrainConnections';
-import { TrainInfo } from '../types';
+import { TrainInfo, UserData } from '../types';
 import Checkout from '../containers/Checkout';
 import { Order } from './Order';
-import { SearchBar } from './SearchBar';
+import SearchBar from '../containers/SearchBar';
 import { ConInfo } from '../types';
 import { Summary } from './Summary';
 
 type Props = {
   trains: TrainInfo[];
+  userData: UserData;
   setChosenTrain: (train: TrainInfo) => void;
 };
 
-export const App = ({ trains, setChosenTrain }: Props) => {
+export const App = ({ trains, userData, setChosenTrain }: Props) => {
   const [connections, setConnections] = useState<ConInfo>({
     from: '',
     to: '',
@@ -50,7 +51,7 @@ export const App = ({ trains, setChosenTrain }: Props) => {
           />
           <Route
             path="/checkout-order"
-            element={<Order trainInfo={trains[0]} />}
+            element={<Order trainInfo={trains[0]} userData={userData} />}
           />
           <Route path="/summary" element={<Summary trainInfo={trains[0]} />} />
         </Routes>

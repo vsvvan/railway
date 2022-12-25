@@ -280,6 +280,7 @@ text-decoration: underline;
 .ContentOfSummary {
   color: #002664;
   padding-right: 2%;
+  margin-top: 10px;
 }
 .ContentOfSummary:first-child {
   margin-bottom: 2%;

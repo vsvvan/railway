@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Button, TextField, Typography } from '@mui/material';
 import Sheet from '@mui/joy/Sheet';
 import AddIcon from '@mui/icons-material/Add';
@@ -10,6 +11,8 @@ type Props = {
 };
 
 export const PassengerData = ({ userData, setEmail }: Props) => {
+  const [email, setEm] = useState(userData.email);
+
   return (
     <>
       <Sheet
@@ -20,12 +23,10 @@ export const PassengerData = ({ userData, setEmail }: Props) => {
           sx={{
             width: '33%',
             flexShrink: 0,
-            fontSize: '18px',
-            fontWeight: '400',
             whiteSpace: 'nowrap',
           }}
         >
-          Passenger information
+          <h3>Passenger information</h3>
         </Typography>
         <span>
           Please, fill in the passenger data to avoid abuse of your documents.
@@ -47,7 +48,8 @@ export const PassengerData = ({ userData, setEmail }: Props) => {
             label="e-mail"
             variant="outlined"
             size="small"
-            value={userData.email}
+            value={email}
+            onChange={(event) => setEm(event.target.value)}
             onBlur={(event) => setEmail(event.target.value)}
           />
         </div>

@@ -8,9 +8,10 @@ import {
   Typography,
 } from '@mui/material';
 import { useState } from 'react';
+import { PassengerInformation } from '../../types';
 
 type Props = {
-  passengerInfo: any;
+  passengerInfo: PassengerInformation;
   setName: (name: string) => void;
   setSurname: (name: string) => void;
   setGroupAge: (groupAge: number) => void;
@@ -28,6 +29,8 @@ export const UserInfo = ({
 }: Props) => {
   const [age, setAge] = useState('3');
   const [discount, setDiscountValue] = useState('0');
+  const [name, setN] = useState(passengerInfo.name);
+  const [surname, setS] = useState(passengerInfo.surname);
 
   const handleChangeAge = (event: SelectChangeEvent) => {
     setAge(event.target.value as string);
@@ -111,7 +114,8 @@ export const UserInfo = ({
           label="Name"
           variant="outlined"
           type="text"
-          value={passengerInfo.name}
+          value={name}
+          onChange={(event) => setN(event.target.value)}
           onBlur={(event) => setName(event.target.value)}
         />
       </Grid>
@@ -120,7 +124,8 @@ export const UserInfo = ({
           id="surname-field"
           label="Surname"
           variant="outlined"
-          value={passengerInfo.surname}
+          value={surname}
+          onChange={(event) => setS(event.target.value)}
           onBlur={(event) => setSurname(event.target.value)}
         />
       </Grid>
