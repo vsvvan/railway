@@ -27,11 +27,18 @@
     "city": "Martin"
   },
   {
-    "city": "Poprad"
+    "city": "Margecany"
+  },
+  {
+    "city": "Kysak"
+  },
+  {
+    "city": "Poprad-Tatry"
   },
   {
     "city": "Prievidza"
   },
+
   {
     "city": "Zvolen"
   },
@@ -64,6 +71,9 @@
   },
   {
     "city": "Lučenec"
+  },
+  {
+    "city": "Bratislava-Vinohrady"
   },
   {
     "city": "Piešťany"
@@ -177,6 +187,9 @@
     "city": "Veľký Krtíš"
   },
   {
+    "city": "Kraľovany"
+  },
+  {
     "city": "Stupava"
   },
   {
@@ -211,6 +224,9 @@
   },
   {
     "city": "Štúrovo"
+  },
+  {
+    "city": "Štrba"
   },
   {
     "city": "Banská Štiavnica"

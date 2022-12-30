@@ -1,4 +1,10 @@
-import { Checkbox, FormControlLabel, Radio, RadioGroup } from '@mui/material';
+import {
+  Checkbox,
+  FormControlLabel,
+  Radio,
+  RadioGroup,
+  Typography,
+} from '@mui/material';
 import CreditCardIcon from '@mui/icons-material/CreditCard';
 import { ChangeEvent, useState } from 'react';
 import Logo from '../../images/logo.svg';
@@ -6,7 +12,7 @@ import './Payment.css';
 import Sheet from '@mui/joy/Sheet';
 
 export const Payment = () => {
-  const [value, setValue] = useState('');
+  const [value, setValue] = useState('cards');
 
   const handleChangePayment = (event: ChangeEvent<HTMLInputElement>) => {
     setValue((event.target as HTMLInputElement).value);
@@ -16,7 +22,9 @@ export const Payment = () => {
       variant="outlined"
       style={{ padding: '30px 20px 20px 20px', margin: '0px 0px 30px 0px' }}
     >
-      <span className="PaymentTitle">Payment</span>
+      <Typography>
+        <h3 className="PaymentTitle">Method of payment</h3>
+      </Typography>
       <RadioGroup
         aria-labelledby="demo-controlled-radio-buttons-group"
         name="controlled-radio-buttons-group"

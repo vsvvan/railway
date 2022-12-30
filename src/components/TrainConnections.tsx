@@ -20,15 +20,15 @@ export const TrainConnections = ({ trains, setChosenTrain }: Props) => {
     <>
       <SmallSearchBar/>
       <div className="TrainConnectionsContainer">
-        <Button
+        {/*        <Button
           id="previousConnections"
           variant="outlined"
           endIcon={<ExpandLessIcon />}
         >
           Previous connections
-        </Button>
+        </Button>*/}
         <div className="DayStyle">
-          <span>Today 07.11.2022</span>
+          <span>Tomorrow 08.12.2022</span>
         </div>
       </div>
       <div className="TrainConnectionsContainer">
@@ -46,13 +46,13 @@ export const TrainConnections = ({ trains, setChosenTrain }: Props) => {
         })}
       </div>
       <div className="TrainConnectionsContainer">
-        <Button
+        {/*        <Button
           id="nextConnections"
           variant="outlined"
           endIcon={<ExpandMoreIcon />}
         >
           Next connections
-        </Button>
+        </Button>*/}
       </div>
     </>
   );

@@ -1,0 +1,18 @@
+{
+  "passengerInformation": {
+    "age": 22,
+    "discount": "ISIC card",
+    "name": "Jakub",
+    "surname": "Lipták",
+    "registrationNumber": "2894573",
+    "email": "Jakub.Lipták@gmail.com"
+  },
+  "trainTicketSelection": {
+    "ticketClass": "2nd Class",
+    "seatSelection": "No preferences/Any"
+  },
+  "payment": {
+    "paymentMethod": "Credit card",
+    "cardNumber": "SK44 **** 0044"
+  }
+}

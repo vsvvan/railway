@@ -4,10 +4,10 @@ import './App.css';
 import { Footer } from './Footer';
 import { Header } from './Header';
 import { TrainConnections } from './TrainConnections';
-import { TrainInfo } from '../types';
+import { TrainInfo, UserData } from '../types';
 import Checkout from '../containers/Checkout';
 import { Order } from './Order';
-import { SearchBar } from './SearchBar';
+import SearchBar from '../containers/SearchBar';
 import { ConInfo } from '../types';
 import { Summary } from './Summary';
 import { Provider } from 'react-redux'
@@ -15,10 +15,11 @@ import { store } from '../store/store';
 
 type Props = {
   trains: TrainInfo[];
+  userData: UserData;
   setChosenTrain: (train: TrainInfo) => void;
 };
 
-export const App = ({ trains, setChosenTrain }: Props) => {
+export const App = ({ trains, userData, setChosenTrain }: Props) => {
   const [connections, setConnections] = useState<ConInfo>({
     from: '',
     to: '',
@@ -31,29 +32,35 @@ export const App = ({ trains, setChosenTrain }: Props) => {
   return (
     <Provider store={store}>
       <div className="App">
+      <Router>
         <Header />
-        <Router>
-          <Routes>
-            <Route path="/" element={<SearchBar /*dispatch={setConnections}*/ />} />
-            <Route
-              path="/connections"
-              element={
-                <TrainConnections
-                  trains={trains}
-                  setChosenTrain={setChosenTrain}
-                />
-              }
-            />
-            <Route path="/checkout" element={<Checkout />} />
-            <Route
-              path="/checkout-order"
-              element={<Order trainInfo={trains[0]} />}
-            />
-            <Route path="/summary" element={<Summary trainInfo={trains[0]} />} />
-          </Routes>
-        </Router>
-        <Footer />
-      </div>
+        <Routes>
+          <Route
+            path="/railway/"
+            element={<SearchBar /*dispatch={setConnections}*/ />}
+          />
+          <Route
+            path="/connections"
+            element={
+              <TrainConnections
+                trains={trains}
+                setChosenTrain={setChosenTrain}
+              />
+            }
+          />
+          <Route
+            path="/checkout"
+            element={<Checkout trainInfo={trains[0]} />}
+          />
+          <Route
+            path="/checkout-order"
+            element={<Order trainInfo={trains[0]} userData={userData} />}
+          />
+          <Route path="/summary" element={<Summary trainInfo={trains[0]} />} />
+        </Routes>
+      </Router>
+      <Footer />
+    </div>
     </Provider>
   );
 };

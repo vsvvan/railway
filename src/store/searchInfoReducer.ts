@@ -21,8 +21,16 @@ export const searchInfoSlice = createSlice({
     setSearchInfo: (state: any, action) => {
       state.searchInfo = action.payload;
     },
+    setFrom: (state: any, action) => {
+      return { ...state, from: action.payload };
+    },
+    setTo: (state: any, action) => {
+      return { ...state, to: action.payload };
+    },
   },
 });
-export const { setSearchInfo } =  searchInfoSlice.actions;
+//export const { setSearchInfo } =  searchInfoSlice.actions;
+
+export const { setSearchInfo, setFrom, setTo } = searchInfoSlice.actions;
 
 export default searchInfoSlice.reducer;

@@ -1,15 +1,18 @@
+import { useState } from 'react';
 import { Button, TextField, Typography } from '@mui/material';
 import Sheet from '@mui/joy/Sheet';
 import AddIcon from '@mui/icons-material/Add';
 import UserInfo from '../../containers/UserInfo';
-import { UserData } from '../../types';
+import { PassengerInformation } from '../../types';
 
 type Props = {
-  userData: UserData;
+  userData: PassengerInformation;
   setEmail: (email: string) => void;
 };
 
-export const PassengerData = ({ setEmail }: Props) => {
+export const PassengerData = ({ userData, setEmail }: Props) => {
+  const [email, setEm] = useState(userData.email);
+
   return (
     <>
       <Sheet
@@ -20,19 +23,17 @@ export const PassengerData = ({ setEmail }: Props) => {
           sx={{
             width: '33%',
             flexShrink: 0,
-            fontSize: '18px',
-            fontWeight: '400',
             whiteSpace: 'nowrap',
           }}
         >
-          Passenger information
+          <h3>Passenger information</h3>
         </Typography>
         <span>
           Please, fill in the passenger data to avoid abuse of your documents.
           The name will be directly on your travel document.
         </span>
         <br />
-        <UserInfo />
+        <UserInfo passengerInfo={userData} />
         <Button style={{ padding: '15px 0 0 25px' }} startIcon={<AddIcon />}>
           Add next passenger
         </Button>
@@ -47,6 +48,8 @@ export const PassengerData = ({ setEmail }: Props) => {
             label="e-mail"
             variant="outlined"
             size="small"
+            value={email}
+            onChange={(event) => setEm(event.target.value)}
             onBlur={(event) => setEmail(event.target.value)}
           />
         </div>

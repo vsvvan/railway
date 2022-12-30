@@ -3,7 +3,7 @@
   background-size: 500px;
 }
 .SearchBar {
-  background-color: rgba(7, 115, 215, 0.73);
+  background-color: rgba(7, 115, 215, 0.94);
   border-radius: 1em;
   padding: 3vw;
   width: 745px;
@@ -28,7 +28,7 @@
 
 .SearchBar h2 {
   align-content: center;
-  color: white;
+  color: #0773d7;
   cursor: pointer;
 }
 .SearchBar h2:hover {

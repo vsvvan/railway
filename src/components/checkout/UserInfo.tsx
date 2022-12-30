@@ -8,8 +8,10 @@ import {
   Typography,
 } from '@mui/material';
 import { useState } from 'react';
+import { PassengerInformation } from '../../types';
 
 type Props = {
+  passengerInfo: PassengerInformation;
   setName: (name: string) => void;
   setSurname: (name: string) => void;
   setGroupAge: (groupAge: number) => void;
@@ -18,6 +20,7 @@ type Props = {
 };
 
 export const UserInfo = ({
+  passengerInfo,
   setName,
   setSurname,
   setGroupAge,
@@ -26,6 +29,8 @@ export const UserInfo = ({
 }: Props) => {
   const [age, setAge] = useState('3');
   const [discount, setDiscountValue] = useState('0');
+  const [name, setN] = useState(passengerInfo.name);
+  const [surname, setS] = useState(passengerInfo.surname);
 
   const handleChangeAge = (event: SelectChangeEvent) => {
     setAge(event.target.value as string);
@@ -33,6 +38,32 @@ export const UserInfo = ({
   const handleChangeDiscount = (event: SelectChangeEvent) => {
     setDiscountValue(event.target.value as string);
   };
+  const findAge = (age: number): string => {
+    if (age >= 0 && age <= 5) {
+      return '0';
+    }
+    if (age >= 6 && age <= 15) {
+      return '1';
+    }
+    if (age >= 16 && age <= 25) {
+      return '2';
+    }
+    if (age >= 26 && age <= 61) {
+      return '3';
+    }
+    if (age >= 62) {
+      return '4';
+    }
+    return '3';
+  };
+
+  const getDiscount = (discount: string): string => {
+    if (discount.includes('ISIC')) {
+      return '1';
+    }
+    return '0';
+  };
+
   return (
     <Grid
       style={{ margin: '20px 0 0 0' }}
@@ -43,7 +74,7 @@ export const UserInfo = ({
       <Grid item xs={4}>
         <FormControl sx={{ minWidth: 210 }}>
           <Select
-            defaultValue={age}
+            defaultValue={findAge(passengerInfo.age)}
             variant="outlined"
             inputProps={{
               name: 'age',
@@ -63,7 +94,7 @@ export const UserInfo = ({
       <Grid item xs={6}>
         <FormControl sx={{ minWidth: 210 }}>
           <Select
-            defaultValue={discount}
+            defaultValue={getDiscount(passengerInfo.discount)}
             variant="outlined"
             inputProps={{
               name: 'discount',
@@ -83,6 +114,8 @@ export const UserInfo = ({
           label="Name"
           variant="outlined"
           type="text"
+          value={name}
+          onChange={(event) => setN(event.target.value)}
           onBlur={(event) => setName(event.target.value)}
         />
       </Grid>
@@ -91,6 +124,8 @@ export const UserInfo = ({
           id="surname-field"
           label="Surname"
           variant="outlined"
+          value={surname}
+          onChange={(event) => setS(event.target.value)}
           onBlur={(event) => setSurname(event.target.value)}
         />
       </Grid>
@@ -104,6 +139,7 @@ export const UserInfo = ({
           id="registration-number"
           size="small"
           label="Registration number"
+          value={passengerInfo.registrationNumber || ''}
           onBlur={(event) => setRegistrationNumber(event.target.value)}
         />
       </Grid>

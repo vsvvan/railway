@@ -25,18 +25,35 @@ export type Stop = {
 export type DiscountType = 'NO DISCOUNT' | 'ISIC card';
 
 export type UserData = {
+  passengerInformation: PassengerInformation;
+  trainTicketSelection: TrainTicketSelection;
+  payment: Payment;
+};
+
+export type PassengerInformation = {
   name: string;
   surname: string;
   discount: DiscountType;
-  passengerGroupAge: number;
+  age: number;
   email: string;
   registrationNumber?: string;
+};
+
+export type TrainTicketSelection = {
+  ticketClass: string;
+  seatSelection: string;
+};
+
+export type Payment = {
+  paymentMethod: string;
+  cardNumber: string;
 };
 
 export type State = {
   trains: TrainInfo[];
   chosenTrain: TrainInfo;
   userData: UserData;
+  searchInfo: any;
 };
 
 export type ConInfo = {
@@ -46,6 +63,6 @@ export type ConInfo = {
   day: number;
   hour: number;
   minute: number;
-}
+};
 
 export type Dispatch = ThunkDispatch<any, unknown, any>;

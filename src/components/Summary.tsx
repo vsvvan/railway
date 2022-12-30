@@ -22,7 +22,7 @@ export const Summary = ({ trainInfo }: Props) => {
           All information was sent to your email
         </h4>
         <br />
-        <span>16.10.2022 14:13 Bratislava-Košice</span>
+        <strong>08.12.2022 12:13 Bratislava-Košice</strong>
         <div
           className="ContentOfSummary"
           style={{ border: '1px solid #002664' }}
@@ -59,11 +59,12 @@ export const Summary = ({ trainInfo }: Props) => {
       <Button
         size="large"
         style={{ color: '#002664', margin: '30px auto auto', width: '100%' }}
-        onClick={() => navigate('/')}
+        onClick={() => navigate('/railway/')}
       >
         {' '}
         Go to main page
       </Button>
+      <div className="Margin-div"></div>
     </>
   );
 };
