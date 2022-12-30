@@ -10,6 +10,8 @@ import { Order } from './Order';
 import { SearchBar } from './SearchBar';
 import { ConInfo } from '../types';
 import { Summary } from './Summary';
+import { Provider } from 'react-redux'
+import { store } from '../store/store';
 
 type Props = {
   trains: TrainInfo[];
@@ -27,30 +29,32 @@ export const App = ({ trains, setChosenTrain }: Props) => {
   });
 
   return (
-    <div className="App">
-      <Header />
-      <Router>
-        <Routes>
-          <Route path="/" element={<SearchBar dispatch={setConnections} />} />
-          <Route
-            path="/connections"
-            element={
-              <TrainConnections
-                trains={trains}
-                setChosenTrain={setChosenTrain}
-              />
-            }
-          />
-          <Route path="/checkout" element={<Checkout />} />
-          <Route
-            path="/checkout-order"
-            element={<Order trainInfo={trains[0]} />}
-          />
-          <Route path="/summary" element={<Summary trainInfo={trains[0]} />} />
-        </Routes>
-      </Router>
-      <Footer />
-    </div>
+    <Provider store={store}>
+      <div className="App">
+        <Header />
+        <Router>
+          <Routes>
+            <Route path="/" element={<SearchBar /*dispatch={setConnections}*/ />} />
+            <Route
+              path="/connections"
+              element={
+                <TrainConnections
+                  trains={trains}
+                  setChosenTrain={setChosenTrain}
+                />
+              }
+            />
+            <Route path="/checkout" element={<Checkout />} />
+            <Route
+              path="/checkout-order"
+              element={<Order trainInfo={trains[0]} />}
+            />
+            <Route path="/summary" element={<Summary trainInfo={trains[0]} />} />
+          </Routes>
+        </Router>
+        <Footer />
+      </div>
+    </Provider>
   );
 };
 

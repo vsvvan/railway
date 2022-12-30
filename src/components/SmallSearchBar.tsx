@@ -14,25 +14,11 @@ import { RootState } from '../store/store';
 import { setSearchInfo } from '../store/searchInfoReducer';
 import { useSelector, useDispatch } from 'react-redux';
 
-const favouriteRoute1 = {
-  departureTime: '14:13',
-  arrivalTime: '20:03',
-  fromDestination: 'Bratislava',
-  toDestination: 'Košice',
-};
-
-const favouriteRoute2 = {
-  departureTime: '14:13',
-  arrivalTime: '20:03',
-  fromDestination: 'Košice',
-  toDestination: 'Bratislava',
-};
-
 type SearchBarProps = {
   //dispatch: React.Dispatch<React.SetStateAction<ConInfo>>;
 };
 
-export const SearchBar = (props: SearchBarProps) => {
+export const SmallSearchBar = (props: SearchBarProps) => {
   const [date, setDate] = React.useState<Dayjs | null>(dayjs(new Date()));
 
   const handleChange = (newDate: Dayjs | null) => {
@@ -43,7 +29,6 @@ export const SearchBar = (props: SearchBarProps) => {
   const navigateToInfo = () => {
     navigate('/connections');
   };
-
   // const DefVals = () => {
   //   const curD = new Date();
   //   const defVal: ConInfo = {
@@ -68,9 +53,6 @@ export const SearchBar = (props: SearchBarProps) => {
   const dispatch = useDispatch();
   const onSubmit: SubmitHandler<ConInfo> = (data) => {
     dispatch(setSearchInfo(data));
-    console.log(data, formVals, useSelector((state: RootState) => state.searchInfo));
-
-    //setSearchInfo(data);
     // props.dispatch({
     //   from: data.from,
     //   to: data.to,
@@ -90,38 +72,9 @@ export const SearchBar = (props: SearchBarProps) => {
     <div className="SearchContainer">
       <div className="SearchBar">
         <form onSubmit={handleSubmit(onSubmit)} className="searchForm">
-          <Grid container spacing={2}>
+          <Grid container spacing={0.5}>
             <Grid item xs={12}>
-              <h1>Choose your favorite route:</h1>
-            </Grid>
-            <Grid item xs={4}>
-              <h2 onClick={() => navigate('/checkout-order')}>
-                <span>
-                  {favouriteRoute1.toDestination}
-                  {' - '}
-                  {favouriteRoute1.fromDestination}
-                  <br /> {favouriteRoute1.departureTime}
-                  {' - '}
-                  {favouriteRoute1.arrivalTime}
-                </span>
-              </h2>
-            </Grid>
-            <Grid item xs={4}>
-              <h2>
-                <span>
-                  {favouriteRoute2.toDestination}
-                  {' - '}
-                  {favouriteRoute2.fromDestination}
-                  <br /> {favouriteRoute2.departureTime}
-                  {' - '}
-                  {favouriteRoute2.arrivalTime}
-                </span>
-              </h2>
-            </Grid>
-            <Grid item xs={4}></Grid>
-            <hr className="line" />
-            <Grid item xs={12}>
-              <h1 className="searchTitle">Connections and tickets:</h1>
+              <h1 className="searchTitle">Connection search</h1>
             </Grid>
             <Grid item xs={5}>
               <Autocomplete
@@ -186,7 +139,7 @@ export const SearchBar = (props: SearchBarProps) => {
                 </Stack>
               </LocalizationProvider>
             </Grid>
-            <Grid item xs={2.5}></Grid>
+            <Grid item xs={2.25}></Grid>
             <Grid item xs={4}>
               <Button
                 variant="outlined"

@@ -1,0 +1,98 @@
+.SearchContainer {
+    background-image: url('../images/subway_07.jpg');
+    background-size: 500px;
+  }
+  .SearchBar {
+    background-color: rgba(7, 115, 215, 0.73);
+    border-radius: 1em;
+    padding: 3vw;
+    width: 745px;
+    justify-self: center;
+    margin: 10px auto auto;
+  }
+  
+  .searchForm {
+  }
+  
+  .swapIcon {
+    padding-left: 0px;
+  }
+  .swapIcon svg {
+    fill: #ffffff;
+  }
+  
+  .SearchBar h1 {
+    margin: 0;
+    color: white;
+  }
+  
+  .SearchBar h2 {
+    align-content: center;
+    color: white;
+    cursor: pointer;
+  }
+  .SearchBar h2:hover {
+    text-decoration: underline;
+  }
+  
+  .searchTitle {
+  }
+  .textField {
+    font-size: larger !important;
+    font-weight: bold !important;
+    color: #0773d7 !important;
+    background-color: white !important;
+  }
+  .from {
+  }
+  .swapbtn {
+    justify-self: center;
+    margin-top: 10px;
+  }
+  .to {
+  }
+  .fromError {
+  }
+  .toError {
+  }
+  .day {
+    color: #0773d7;
+    font-weight: bold;
+  }
+  .month {
+    color: #0773d7;
+    font-weight: bold;
+  }
+  .hour {
+    color: #0773d7;
+    font-weight: bold;
+  }
+  .minute {
+    color: #0773d7;
+    font-weight: bold;
+  }
+  .timeError {
+  }
+  .submitbtn {
+    margin: 10px 0 10px 1vw;
+    border-radius: 0.8em;
+    font-size: medium;
+    border: 0px;
+    background-color: white !important;
+    padding-top: 31px;
+    padding-left: 6px;
+  }
+  
+  .error {
+    color: red;
+  }
+  
+  .line {
+    width: 100%;
+    height: 1px;
+    border: 0 none;
+    margin-right: auto;
+    margin-left: auto;
+    background-color: white;
+  }
+  

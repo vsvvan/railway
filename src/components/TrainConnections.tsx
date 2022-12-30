@@ -4,6 +4,7 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { TrainCard } from './TrainCard';
 import { TrainInfo } from '../types';
 import { useNavigate } from 'react-router-dom';
+import { SmallSearchBar } from './SmallSearchBar';
 
 type Props = {
   trains: TrainInfo[];
@@ -17,6 +18,7 @@ export const TrainConnections = ({ trains, setChosenTrain }: Props) => {
   };
   return (
     <>
+      <SmallSearchBar/>
       <div className="TrainConnectionsContainer">
         <Button
           id="previousConnections"

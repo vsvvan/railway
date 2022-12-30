@@ -9,6 +9,8 @@ export const store = configureStore({
     trains: trainReducer,
     chosenTrain: chooseTrainReducer,
     userData: userReducer,
-    searchInfor: searchInfoReducer,
+    searchInfo: searchInfoReducer,
   },
 });
+
+export type RootState = ReturnType<typeof store.getState>;
