@@ -11,6 +11,61 @@
   text-align: center;
   background: #0773d7;
 }
+.HeaderMainPage {
+  display: flex;
+  height: 55px;
+  padding: 10px 1% 10px 1%;
+  justify-content: space-between;
+  text-align: center;
+  background: #0773d7;
+}
+.Menu-bar{
+width: 120%;
+}
+.Menu-bar ul{
+display: inline-flex;
+list-style:none;
+padding: 0px;
+margin: 0px;
+color: #ffffff;
+}
+.Menu-bar ul li{
+  padding: 15px;
+  padding-top: 10px;
+  font-size: 24px;
+  }
+.Menu-bar ul li:hover{
+background-color: #002664;
+border-radius: 2px;
+  }
+.Menu-bar ul li:hover .Sub-menu-1{
+display: block;
+position: absolute;
+background-color: #0773d7;
+}
+.Menu-bar ul li:hover .Sub-menu-1 ul{
+display: block;
+margin: 10px;
+}
+.Sub-menu-1
+{
+ display: none;
+ z-index: 1;
+}
+.Sub-menu-1 li::before{
+  content: '\1F892';
+  width: 30px;
+  height: 30px;
+  align-self: flex-start;
+  padding-right: 1%;}
+.Sub-menu-1 li{
+  width: inherit;
+  text-align: left;
+  line-height: 120%;
+}
+.Sub-menu-1 li::before a{
+  display: inline-block;
+  }
 
 .Margin-div {
   width: 100%;
