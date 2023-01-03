@@ -29,16 +29,16 @@ padding: 0px;
 margin: 0px;
 color: #ffffff;
 }
-.Menu-bar ul li{
+.MenuBar ul li{
   padding: 15px;
   padding-top: 10px;
   font-size: 24px;
   }
-.Menu-bar ul li:hover{
+.MenuBar ul li:hover{
 background-color: #002664;
 border-radius: 2px;
   }
-.Menu-bar ul li:focus-within .Sub-menu-1{
+.MenuBar ul li:focus-within .SubMenu-1{
   display: block;
   position: absolute;
   background-color: #0773d7;
@@ -47,7 +47,7 @@ border-radius: 2px;
   {
     background-color: #0773d7;
     }
-.Menu-bar ul li:focus-within .Sub-menu-1 ul{
+.MenuBar ul li:focus-within .SubMenu-1 ul{
   display: block;
   padding: 20px;
   }
