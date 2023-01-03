@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css';
 import { Footer } from './Footer';
-import { Header } from './Header';
+import {Header} from './Header';
 import { TrainConnections } from './TrainConnections';
 import { TrainInfo, UserData } from '../types';
 import Checkout from '../containers/Checkout';

@@ -150,7 +150,7 @@ export const Order = ({ trainInfo }: Props) => {
                 size="large"
                 onClick={() => navigate('/summary')}
               >
-                Payment
+                Pay
               </Button>
             </div>
           </div>

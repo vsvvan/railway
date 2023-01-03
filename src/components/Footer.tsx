@@ -8,6 +8,8 @@ import AppStore from '../images/app-store.svg';
 import AppGallery from '../images/appgallery-logo-sk.svg';
 import GooglePlay from '../images/google-play.svg';
 import QrCode from '../images/qr-code.svg';
+import {FaFacebook,FaLinkedin,FaTwitter,FaInstagram,FaYoutube} from "react-icons/fa"
+
 
 export const Footer = () => {
   return (
@@ -36,11 +38,11 @@ export const Footer = () => {
               <a href="#">Integrated Transportation Systems</a>
             </li>
           </div>
-          <div className="footer-col">
-            <div>
-              <RssFeedIcon className="icons" />
+          <div className="footer-RSS">
+            <li>
+              <RssFeedIcon />
               <a href="#">RSS</a>
-            </div>
+            </li>
           </div>
         </div>
         <hr className="Line"></hr>
@@ -53,34 +55,36 @@ export const Footer = () => {
                 </a>
               </ul>
               <ul>
-                <i className="fa-brands fa-facebook"></i>
+              <li>
+              <FaFacebook/>
                 <a href="#"> Facebook</a>
-              </ul>
-              <ul>
-                <i className="fa-brands fa-linkedin"></i>
+              </li>
+              <li>
+              <FaLinkedin/>
                 <a href="#"> Linkedin</a>
-              </ul>
-              <ul>
-                <i className="fa-brands fa-twitter"></i>
+              </li>
+              <li>
+              <FaTwitter/>
                 <a href="#"> Twitter</a>
-              </ul>
-              <ul>
-                <i className="fa-brands fa-instagram"></i>
+              </li>
+              <li>
+              <FaInstagram/>
                 <a href="#"> Instagram</a>
-              </ul>
-              <ul>
-                <i className=""></i>
-                <a href="src/components/Footer#"> Youtube</a>
+              </li>
+              <li>
+              <FaYoutube/>
+                <a href="#"> Youtube</a>
+              </li>
               </ul>
             </div>
           </div>
           <div className="footer-col">
             <ul>
               <h4>Email:</h4>
-              <div className="phone">
+              <li className="phone">
                 <EmailIcon className="icons" width="19" height="19" />
-                <a href="#">info@slovakrail.sk</a>
-              </div>
+                <a href="#">Info@slovakrail.sk</a>
+              </li>
             </ul>
           </div>
           <div className="footer-col">

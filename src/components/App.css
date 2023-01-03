@@ -19,10 +19,10 @@
   text-align: center;
   background: #0773d7;
 }
-.Menu-bar{
+.MenuBar{
 width: 120%;
 }
-.Menu-bar ul{
+.MenuBar ul{
 display: inline-flex;
 list-style:none;
 padding: 0px;
@@ -38,50 +38,45 @@ color: #ffffff;
 background-color: #002664;
 border-radius: 2px;
   }
-.Menu-bar ul li:hover .Sub-menu-1{
-display: block;
-position: absolute;
-background-color: #0773d7;
-}
-.Menu-bar ul li:hover .Sub-menu-1 ul{
-  display: block;
-  margin: 10px;
-  }
 .Menu-bar ul li:focus-within .Sub-menu-1{
   display: block;
   position: absolute;
   background-color: #0773d7;
   }
+.MenuButton
+  {
+    background-color: #0773d7;
+    }
 .Menu-bar ul li:focus-within .Sub-menu-1 ul{
   display: block;
-  margin: 10px;
+  padding: 20px;
   }
 
-.Sub-menu-1
+.SubMenu-1
 {
  display: none;
  z-index: 1;
+ top: 70px;
+
 }
-.Sub-menu-1 li::before{
+.SubMenu-1 li::before a {
   content: '\1F892';
-  width: 30px;
-  height: 30px;
   align-self: flex-start;
-  padding-right: 1%;}
-.Sub-menu-1 li{
-
-  text-align: left;
-
-}
-.Sub-menu-1 li::before a{
-  display: inline-block;
+  padding-right: 1%;
+  display: inline-block;}
+  .SubMenu-1 li{
+    text-align: left;
+    border:#002664;
   }
-.menu-list{
+  
+.MenuList{
   padding: 0px;
   padding-top: 0px;
   font-size: 24px;
   }
-
+.MenuList li a{
+  border:#002664;
+  }
 
 
 
@@ -189,25 +184,28 @@ background-color: #0773d7;
 footer h4 {
   color: #ffffff;
   display: flex;
+  font-size: 20px;
+  line-height: 29px
 }
+
 
 a {
   text-decoration: none;
   color: #ffffff;
 }
 
-footer li {
+footer  li{
   list-style: none;
   font-style: normal;
   font-weight: 500;
-  font-size: 20px;
-  line-height: 29px;
+  font-size: 18px;
+  line-height: 200%;
   display: flex;
   align-items: center;
   color: #ffffff;
 }
 
-.footer li::before {
+.upper_container .footer-col li::before {
   content: '\1F892';
   width: 20px;
   height: 20px;
@@ -219,6 +217,13 @@ footer li {
   margin-left: 5%;
   margin-right: 2%;
 }
+.footer-RSS li{
+  float: left;
+  margin-left: 200%;
+  margin-right: 2%;
+  
+}
+
 
 .upper_container {
   height: 25%;
@@ -297,6 +302,15 @@ text-decoration: underline;
   list-style: none;
   color: #ffffff;
 }
+.Socialmedia li a{
+font-size: 18px;
+margin-left: 5%;
+}
+
+.phone a{
+  font-size: 18px;
+  margin-left: 1px;
+  }
 
 .img-logo {
   width: 267px;
