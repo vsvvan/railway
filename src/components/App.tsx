@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css';
 import { Footer } from './Footer';
-import { Header } from './Header';
+import { HeaderMainPage } from './HeaderMainPage';
 import { TrainConnections } from './TrainConnections';
 import { TrainInfo, UserData } from '../types';
 import Checkout from '../containers/Checkout';
@@ -31,7 +31,7 @@ export const App = ({ trains, userData, setChosenTrain }: Props) => {
   return (
     <div className="App">
       <Router>
-        <Header />
+        <HeaderMainPage />
         <Routes>
           <Route
             path="/railway/"

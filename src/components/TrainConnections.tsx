@@ -18,16 +18,18 @@ export const TrainConnections = ({ trains, setChosenTrain }: Props) => {
   return (
     <>
       <div className="TrainConnectionsContainer">
-        {/*        <Button
+        <span className="DayStyle">
+          <h1>Connection search</h1>
+          <h2>Today 07.11.2022</h2>
+        </span>
+        <Button
           id="previousConnections"
           variant="outlined"
           endIcon={<ExpandLessIcon />}
         >
           Previous connections
-        </Button>*/}
-        <div className="DayStyle">
-          <span>Tomorrow 08.12.2022</span>
-        </div>
+        </Button>
+        <div className="DayStyle"></div>
       </div>
       <div className="TrainConnectionsContainer">
         {trains.map((train: TrainInfo) => {
@@ -44,13 +46,13 @@ export const TrainConnections = ({ trains, setChosenTrain }: Props) => {
         })}
       </div>
       <div className="TrainConnectionsContainer">
-        {/*        <Button
+        <Button
           id="nextConnections"
           variant="outlined"
           endIcon={<ExpandMoreIcon />}
         >
           Next connections
-        </Button>*/}
+        </Button>
       </div>
     </>
   );
