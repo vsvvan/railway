@@ -8,8 +8,13 @@ import AppStore from '../images/app-store.svg';
 import AppGallery from '../images/appgallery-logo-sk.svg';
 import GooglePlay from '../images/google-play.svg';
 import QrCode from '../images/qr-code.svg';
-import {FaFacebook,FaLinkedin,FaTwitter,FaInstagram,FaYoutube} from "react-icons/fa"
-
+import {
+  FaFacebook,
+  FaLinkedin,
+  FaTwitter,
+  FaInstagram,
+  FaYoutube,
+} from 'react-icons/fa';
 
 export const Footer = () => {
   return (
@@ -55,26 +60,26 @@ export const Footer = () => {
                 </a>
               </ul>
               <ul>
-              <li>
-              <FaFacebook/>
-                <a href="#"> Facebook</a>
-              </li>
-              <li>
-              <FaLinkedin/>
-                <a href="#"> Linkedin</a>
-              </li>
-              <li>
-              <FaTwitter/>
-                <a href="#"> Twitter</a>
-              </li>
-              <li>
-              <FaInstagram/>
-                <a href="#"> Instagram</a>
-              </li>
-              <li>
-              <FaYoutube/>
-                <a href="#"> Youtube</a>
-              </li>
+                <li>
+                  <FaFacebook />
+                  <a href="#"> Facebook</a>
+                </li>
+                <li>
+                  <FaLinkedin />
+                  <a href="#"> Linkedin</a>
+                </li>
+                <li>
+                  <FaTwitter />
+                  <a href="#"> Twitter</a>
+                </li>
+                <li>
+                  <FaInstagram />
+                  <a href="#"> Instagram</a>
+                </li>
+                <li>
+                  <FaYoutube />
+                  <a href="#"> Youtube</a>
+                </li>
               </ul>
             </div>
           </div>
@@ -118,12 +123,14 @@ export const Footer = () => {
         </div>
         <hr className="Last_line"></hr>
         <div>
-        <div className="Authors_info">
-        © The Earths webbest developers 2022
-        <div className='Up_to_start'>
-        <a href="#" title="hore">Up</a>
-        </div>
-        </div>
+          <div className="Authors_info">
+            © The Earths webbest developers 2022
+            <div className="Up_to_start">
+              <a href="#" title="hore">
+                Up
+              </a>
+            </div>
+          </div>
         </div>
       </footer>
     </div>

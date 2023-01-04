@@ -4,26 +4,26 @@ import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import { useNavigate } from 'react-router-dom';
 import TrainIcon from '@mui/icons-material/Train';
 import ScheduleIcon from '@mui/icons-material/Schedule';
-import { TrainInfo,UserData } from '../types';
+import { TrainInfo, UserData } from '../types';
 
 type Props = {
   trainInfo: TrainInfo;
   userData: UserData;
 };
 
-export const Order = ({ trainInfo,userData }: Props) => {
+export const Order = ({ trainInfo, userData }: Props) => {
   const navigate = useNavigate();
   return (
     <>
       <div className="TrainConnectionsContainer">
         <div className="DayStyle">
           <span>
-          <h1>Train ticket information</h1>
-          <h2>Today 07.12.2022</h2>
+            <h1>Train ticket information</h1>
+            <h2>Today 07.12.2022</h2>
           </span>
         </div>
         <div className="OrderContainer">
-          <div className="ContentConainer">
+          <div className="ContentContainer">
             <Grid container spacing={2}>
               <Grid item xs={11}>
                 <div className="ContentOfSummary">
@@ -67,7 +67,7 @@ export const Order = ({ trainInfo,userData }: Props) => {
               </Grid>
             </Grid>
           </div>
-          <div className="ContentConainer">
+          <div className="ContentContainer">
             <Grid container spacing={2}>
               <Grid item xs={11}>
                 <div className="ContentOfSummary">
@@ -75,7 +75,7 @@ export const Order = ({ trainInfo,userData }: Props) => {
                     <strong>Personal Information</strong>{' '}
                   </Typography>
                   <Typography>
-                  {userData.passengerInformation.name}{' '}
+                    {userData.passengerInformation.name}{' '}
                     {userData.passengerInformation.surname}
                   </Typography>
                   <Typography>
@@ -96,7 +96,7 @@ export const Order = ({ trainInfo,userData }: Props) => {
               </Grid>
             </Grid>
           </div>
-          <div className="ContentConainer">
+          <div className="ContentContainer">
             <Grid container spacing={2}>
               <Grid item xs={11}>
                 <div className="ContentOfSummary">
@@ -126,7 +126,7 @@ export const Order = ({ trainInfo,userData }: Props) => {
               </Grid>
             </Grid>
           </div>
-          <div className="ContentConainer">
+          <div className="ContentContainer">
             <Grid container spacing={2}>
               <Grid item xs={11}>
                 <div className="ContentOfSummary">
@@ -150,7 +150,7 @@ export const Order = ({ trainInfo,userData }: Props) => {
               </Grid>
             </Grid>
           </div>
-          <div className="ContentConainer">
+          <div className="ContentContainer">
             <div className="ContentOfSummary">
               <Typography>
                 <strong>Summary</strong>

@@ -18,10 +18,10 @@ export const TrainConnections = ({ trains, setChosenTrain }: Props) => {
   return (
     <>
       <div className="TrainConnectionsContainer">
-      <span className='DayStyle'>
-          <h1>Connection search</h1> 
+        <span className="DayStyle">
+          <h1>Connection search</h1>
           <h2>Today 07.11.2022</h2>
-      </span>
+        </span>
         <Button
           id="previousConnections"
           variant="outlined"
@@ -29,8 +29,7 @@ export const TrainConnections = ({ trains, setChosenTrain }: Props) => {
         >
           Previous connections
         </Button>
-        <div className="DayStyle">
-        </div>
+        <div className="DayStyle"></div>
       </div>
       <div className="TrainConnectionsContainer">
         {trains.map((train: TrainInfo) => {
