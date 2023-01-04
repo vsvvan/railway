@@ -17,10 +17,13 @@ export const Order = ({ trainInfo, userData }: Props) => {
     <>
       <div className="TrainConnectionsContainer">
         <div className="DayStyle">
-          <span>Tomorrow 08.12.2022</span>
+          <span>
+            <h1>Train ticket information</h1>
+            <h2>Today 07.12.2022</h2>
+          </span>
         </div>
         <div className="OrderContainer">
-          <div className="ContentConainer">
+          <div className="ContentContainer">
             <Grid container spacing={2}>
               <Grid item xs={11}>
                 <div className="ContentOfSummary">
@@ -64,7 +67,7 @@ export const Order = ({ trainInfo, userData }: Props) => {
               </Grid>
             </Grid>
           </div>
-          <div className="ContentConainer">
+          <div className="ContentContainer">
             <Grid container spacing={2}>
               <Grid item xs={11}>
                 <div className="ContentOfSummary">
@@ -93,7 +96,7 @@ export const Order = ({ trainInfo, userData }: Props) => {
               </Grid>
             </Grid>
           </div>
-          <div className="ContentConainer">
+          <div className="ContentContainer">
             <Grid container spacing={2}>
               <Grid item xs={11}>
                 <div className="ContentOfSummary">
@@ -109,6 +112,7 @@ export const Order = ({ trainInfo, userData }: Props) => {
                     Seat selection:{' '}
                     {userData.trainTicketSelection.seatSelection}
                   </Typography>
+                  <Typography>Seat selection: No preferences</Typography>
                 </div>
               </Grid>
               <Grid item xs={1}>
@@ -122,7 +126,7 @@ export const Order = ({ trainInfo, userData }: Props) => {
               </Grid>
             </Grid>
           </div>
-          <div className="ContentConainer">
+          <div className="ContentContainer">
             <Grid container spacing={2}>
               <Grid item xs={11}>
                 <div className="ContentOfSummary">
@@ -146,7 +150,7 @@ export const Order = ({ trainInfo, userData }: Props) => {
               </Grid>
             </Grid>
           </div>
-          <div className="ContentConainer">
+          <div className="ContentContainer">
             <div className="ContentOfSummary">
               <Typography>
                 <strong>Summary</strong>

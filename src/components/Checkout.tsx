@@ -58,7 +58,7 @@ export const Checkout = ({ userData, setEmail }: Props) => {
           </div>
         </Grid>
         <Grid item xs={4}>
-          <div className="SummaryInChechkout">
+          <div className="SummaryInCheckout">
             <span>Price: 18.68 €</span>
           </div>
         </Grid>
