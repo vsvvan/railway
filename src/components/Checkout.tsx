@@ -34,6 +34,7 @@ export const Checkout = ({ userData, setEmail }: Props) => {
         <Grid item xs={10}>
           <PassengerData
             userData={userData.passengerInformation}
+            userEmail={userData.email}
             setEmail={setEmail}
           />
           <TrainTicketSelection />

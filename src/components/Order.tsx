@@ -71,15 +71,19 @@ export const Order = ({ trainInfo, userData }: Props) => {
                   <Typography>
                     <strong>Personal Information</strong>{' '}
                   </Typography>
-                  <Typography>
-                    {userData.passengerInformation.name}{' '}
-                    {userData.passengerInformation.surname}
-                  </Typography>
-                  <Typography>
-                    1*Youth(16-26 yrs) ({userData.passengerInformation.discount}
-                    )
-                  </Typography>
-                  <Typography>{userData.passengerInformation.email}</Typography>
+                  {userData.passengerInformation.map((passenger) => {
+                    return (
+                      <div>
+                        <Typography>
+                          {passenger.name} {passenger.surname}
+                        </Typography>
+                        <Typography>
+                          1*Youth(16-26 yrs) ({passenger.discount})
+                        </Typography>
+                        <Typography>{userData.email}</Typography>
+                      </div>
+                    );
+                  })}
                 </div>
               </Grid>
               <Grid item xs={1}>

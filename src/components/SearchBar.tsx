@@ -89,9 +89,9 @@ export const SearchBar = ({
     });
   };
   const SwapDestinations = () => {
-    const tmp = getValues('to');
+    const toDestination = getValues('to');
     setValue('to', getValues('from'));
-    setValue('from', tmp);
+    setValue('from', toDestination);
   };
 
   return (
@@ -113,9 +113,6 @@ export const SearchBar = ({
                     {favouriteRoute1.fromDestination}
                     {' - '}
                     {favouriteRoute1.toDestination}
-                    <br /> {favouriteRoute1.departureTime}
-                    {' - '}
-                    {favouriteRoute1.arrivalTime}
                   </span>
                 </h2>
               </Button>
@@ -131,9 +128,6 @@ export const SearchBar = ({
                     {favouriteRoute2.fromDestination}
                     {' - '}
                     {favouriteRoute2.toDestination}
-                    <br /> {favouriteRoute2.departureTime}
-                    {' - '}
-                    {favouriteRoute2.arrivalTime}
                   </span>
                 </h2>
               </Button>
@@ -155,9 +149,11 @@ export const SearchBar = ({
                     label="From"
                     value={from}
                     className="textField"
-                    onBlur={(event) => setFrom(event.target.value)}
                   />
                 )}
+                onChange={(event: any, newValue: any) => {
+                  setFrom(newValue);
+                }}
               />
             </Grid>
             <Grid item xs={1}>
@@ -181,9 +177,11 @@ export const SearchBar = ({
                     label="To"
                     value={to}
                     className="textField"
-                    onBlur={(event) => setTo(event.target.value)}
                   />
                 )}
+                onChange={(event: any, newValue: any) => {
+                  setTo(newValue);
+                }}
               />
             </Grid>
             <Grid item xs={5}>
