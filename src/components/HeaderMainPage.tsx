@@ -54,12 +54,6 @@ export const HeaderMainPage = () => {
               <div className="SubMenu-1">
                 <ul className="MenuList">
                   <li className="Link">
-                    <a href="">
-                      Pu qsadasdasdasdasdasdasdsdsdrchase of one-way travel
-                      ticket
-                    </a>
-                  </li>
-                  <li className="Link">
                     <a href="">Purchase of one-way travel ticket</a>
                   </li>
                   <li className="Link">
