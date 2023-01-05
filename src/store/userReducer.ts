@@ -1,11 +1,11 @@
-import { createSlice } from '@reduxjs/toolkit';
-import { UserData } from '../types';
-import userData from '../mock-data/user.json';
+import { createSlice } from "@reduxjs/toolkit";
+import { UserData } from "../types";
+import userData from "../mock-data/user.json";
 
 const initialState = userData;
 
 export const userSlice = createSlice({
-  name: 'userData',
+  name: "userData",
   initialState,
   reducers: {
     // @ts-ignore
@@ -13,8 +13,8 @@ export const userSlice = createSlice({
       return {
         ...state,
         passengerInformation: state?.passengerInformation?.map((u) =>
-          u.id === action.payload.id ? { ...u, name: action.payload.name } : u,
-        ),
+          u.id === action.payload.id ? { ...u, name: action.payload.name } : u
+        )
       };
     },
     // @ts-ignore
@@ -24,8 +24,8 @@ export const userSlice = createSlice({
         passengerInformation: state?.passengerInformation?.map((u) =>
           u.id === action.payload.id
             ? { ...u, surname: action.payload.surname }
-            : u,
-        ),
+            : u
+        )
       };
     },
     // @ts-ignore
@@ -35,8 +35,8 @@ export const userSlice = createSlice({
         passengerInformation: state?.passengerInformation?.map((u) =>
           u.id === action.payload.id
             ? { ...u, passengerGroup: action.payload.groupAge }
-            : u,
-        ),
+            : u
+        )
       };
     },
     // @ts-ignore
@@ -46,8 +46,8 @@ export const userSlice = createSlice({
         passengerInformation: state?.passengerInformation?.map((u) =>
           u.id === action.payload.id
             ? { ...u, discount: action.payload.discount }
-            : u,
-        ),
+            : u
+        )
       };
     },
     // @ts-ignore
@@ -61,11 +61,19 @@ export const userSlice = createSlice({
         passengerInformation: state?.passengerInformation?.map((u) =>
           u.id === action.payload.id
             ? { ...u, registrationNumber: action.payload.number }
-            : u,
-        ),
+            : u
+        )
       };
     },
-  },
+    // @ts-ignore
+    addPassenger: (state: UserData, action) => {
+      state.passengerInformation.push(action.payload);
+    },
+    // @ts-ignore
+    removePassenger: (state: UserData, action) => {
+      state.passengerInformation = state.passengerInformation.filter(passenger => passenger.id !== action.payload);
+    }
+  }
 });
 
 export const {
@@ -75,6 +83,8 @@ export const {
   setDiscount,
   setEmail,
   setRegistrationNumber,
+  addPassenger,
+  removePassenger
 } = userSlice.actions;
 
 export default userSlice.reducer;
