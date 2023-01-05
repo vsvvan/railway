@@ -23,6 +23,9 @@
 
 .MenuBar {
   width: 120%;
+  display: flex;
+  justify-items: center;
+  justify-content: center;
 }
 
 .MenuBar ul {
@@ -40,7 +43,7 @@
 
 .MenuBar ul li {
   padding: 10px 15px 15px;
-  font-size: 24px;
+  font-size: 18px;
 }
 
 .MenuBar ul li:hover {
@@ -83,7 +86,7 @@
 
 .MenuList {
   padding: 0px;
-  font-size: 24px;
+  font-size: 18px;
 }
 
 .MenuList li a {
@@ -388,4 +391,15 @@ footer .icons {
 
 .BackButton {
   margin-top: 5%;
+}
+
+.InformationCardContainer {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding-top: 40px;
+}
+
+.InformationCardContainer .css-1xkonbu-MuiPaper-root-MuiCard-root {
+  color: #002664;
 }

@@ -10,6 +10,7 @@ import { Order } from './Order';
 import SearchBar from '../containers/SearchBar';
 import { ConInfo } from '../types';
 import { Summary } from './Summary';
+import { InformationBlock } from './InformationBlock';
 
 type Props = {
   trains: TrainInfo[];
@@ -34,7 +35,12 @@ export const App = ({ trains, userData, setChosenTrain }: Props) => {
         <Routes>
           <Route
             path="/railway/"
-            element={<SearchBar dispatch={setConnections} />}
+            element={
+              <>
+                <SearchBar dispatch={setConnections} />
+                <InformationBlock />
+              </>
+            }
           />
           <Route
             path="/connections"
