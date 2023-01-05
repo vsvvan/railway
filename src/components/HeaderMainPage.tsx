@@ -25,7 +25,7 @@ export const HeaderMainPage = () => {
           <ul>
             <li>
               {' '}
-              <a href="#">Ticket Purchase ▼</a>
+              <a href="#">Ticket Purchase<span className='Pointer'> ▼</span></a>
               <div className="SubMenu-1">
                 <ul className="MenuList">
                   <li className="Link">
@@ -46,24 +46,27 @@ export const HeaderMainPage = () => {
                 </ul>
               </div>
             </li>
-            <li>Timetable</li>
-            <li>Tickets and Offers </li>
+            <li><a href="">Timetable</a></li>
+            <li><a href="">Tickets and Offers</a> </li>
             <li>
               {' '}
-              <a href="#">Service ▼</a>
+              <a href="#">Service<span className='Pointer'> ▼</span></a>
               <div className="SubMenu-1">
                 <ul className="MenuList">
                   <li className="Link">
-                    <a href="">Purchase of one-way travel ticket</a>
+                    <a href="">Lost and found</a>
                   </li>
                   <li className="Link">
-                    <a href="">Cancellation online</a>
+                    <a href="">Free car parking</a>
                   </li>
                   <li className="Link">
-                    <a href="">Conditions of payments</a>
+                    <a href="">Travel information</a>
                   </li>
                   <li className="Link">
-                    <a href="">Online sale terms and conditions </a>
+                    <a href="">Customers centers</a>
+                  </li>
+                  <li className="Link">
+                    <a href="">Special transport</a>
                   </li>
                 </ul>
               </div>
