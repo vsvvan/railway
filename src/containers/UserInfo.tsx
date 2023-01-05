@@ -1,17 +1,17 @@
-import { connect } from "react-redux";
-import { Dispatch, State } from "../types";
-import { UserInfo } from "../components/checkout/UserInfo";
+import { connect } from 'react-redux';
+import { Dispatch, State } from '../types';
+import { UserInfo } from '../components/checkout/UserInfo';
 import {
   removePassenger,
   setDiscount,
   setGroupAge,
   setName,
   setRegistrationNumber,
-  setSurname
-} from "../store/userReducer";
+  setSurname,
+} from '../store/userReducer';
 
 const mapStateToProps = (state: State) => ({
-  isMultipleUsers: state.userData.passengerInformation.length > 1
+  isMultipleUsers: state.userData.passengerInformation.length > 1,
 });
 
 const mapDispatchToProps = (dispatch: Dispatch) => ({
@@ -24,7 +24,8 @@ const mapDispatchToProps = (dispatch: Dispatch) => ({
     dispatch(setDiscount({ discount, id })),
   setRegistrationNumber: (number: string, id: number) =>
     dispatch(setRegistrationNumber({ number, id })),
-  removePassenger: (passengerId: number) => dispatch(removePassenger(passengerId))
+  removePassenger: (passengerId: number) =>
+    dispatch(removePassenger(passengerId)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(UserInfo);

@@ -22,7 +22,7 @@ export type Stop = {
   time: string;
   city: string;
 };
-export type DiscountType = { 0: "NO DISCOUNT", 1: "ISIC card" };
+export type DiscountType = { 0: 'NO DISCOUNT'; 1: 'ISIC card' };
 
 export type UserData = {
   passengerInformation: PassengerInformation[];

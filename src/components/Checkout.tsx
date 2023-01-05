@@ -5,7 +5,7 @@ import { PassengerData } from './checkout/PassengerData';
 import { TrainTicketSelection } from './checkout/TrainTicketSelection';
 import { Payment } from './checkout/Payment';
 import { useNavigate } from 'react-router-dom';
-import { PassengerInformation, UserData } from "../types";
+import { PassengerInformation, UserData } from '../types';
 import { TrainInfo } from '../types';
 
 type Props = {

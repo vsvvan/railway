@@ -1,7 +1,15 @@
-import { FormControl, Grid, MenuItem, Select, SelectChangeEvent, TextField, Typography } from "@mui/material";
-import { useState } from "react";
-import { PassengerInformation } from "../../types";
-import CloseIcon from "@mui/icons-material/Close";
+import {
+  FormControl,
+  Grid,
+  MenuItem,
+  Select,
+  SelectChangeEvent,
+  TextField,
+  Typography,
+} from '@mui/material';
+import { useState } from 'react';
+import { PassengerInformation } from '../../types';
+import CloseIcon from '@mui/icons-material/Close';
 
 type Props = {
   id: number;
@@ -16,18 +24,18 @@ type Props = {
 };
 
 export const UserInfo = ({
-                           id,
-                           passengerInfo,
-                           isMultipleUsers,
-                           setName,
-                           setSurname,
-                           setGroupAge,
-                           setDiscount,
-                           setRegistrationNumber,
-                           removePassenger
-                         }: Props) => {
-  const [age, setAge] = useState("3");
-  const [discount, setDiscountValue] = useState("0");
+  id,
+  passengerInfo,
+  isMultipleUsers,
+  setName,
+  setSurname,
+  setGroupAge,
+  setDiscount,
+  setRegistrationNumber,
+  removePassenger,
+}: Props) => {
+  const [age, setAge] = useState(passengerInfo.passengerGroup.toString());
+  const [discount, setDiscountValue] = useState(passengerInfo.discount);
   const [name, setN] = useState(passengerInfo.name);
   const [surname, setS] = useState(passengerInfo.surname);
   const [regNum, setRegNum] = useState(passengerInfo.registrationNumber);
@@ -42,10 +50,10 @@ export const UserInfo = ({
   };
 
   return (
-    <div style={{ display: "flex", margin: "0 0  25px 0" }}>
+    <div style={{ display: 'flex', margin: '0 0  25px 0' }}>
       <div>
         <Grid
-          style={{ margin: "20px 0 0 0" }}
+          style={{ margin: '20px 0 0 0' }}
           container
           rowSpacing={1}
           columnSpacing={{ xs: 1, sm: 2, md: 3 }}
@@ -53,11 +61,11 @@ export const UserInfo = ({
           <Grid item xs={4}>
             <FormControl sx={{ minWidth: 210 }}>
               <Select
-                defaultValue={passengerInfo?.passengerGroup.toString()}
+                defaultValue={age}
                 variant="outlined"
                 inputProps={{
-                  name: "age",
-                  id: "uncontrolled-native"
+                  name: 'age',
+                  id: 'uncontrolled-native',
                 }}
                 onChange={handleChangeAge}
               >
@@ -72,11 +80,11 @@ export const UserInfo = ({
           <Grid item xs={6}>
             <FormControl sx={{ minWidth: 210 }}>
               <Select
-                defaultValue={passengerInfo.discount}
+                defaultValue={discount}
                 variant="outlined"
                 inputProps={{
-                  name: "discount",
-                  id: "uncontrolled-native"
+                  name: 'discount',
+                  id: 'uncontrolled-native',
                 }}
                 onChange={handleChangeDiscount}
               >
@@ -106,9 +114,9 @@ export const UserInfo = ({
               onBlur={(event) => setSurname(event.target.value, id)}
             />
           </Grid>
-          <Grid item xs={12} style={{ padding: "15px 0 0 20px" }}>
+          <Grid item xs={12} style={{ padding: '15px 0 0 20px' }}>
             <Typography
-              style={{ textDecoration: "underline", padding: "0 0 7px 0" }}
+              style={{ textDecoration: 'underline', padding: '0 0 7px 0' }}
             >
               Assign the travel document to the customer account
             </Typography>
@@ -123,7 +131,12 @@ export const UserInfo = ({
           </Grid>
         </Grid>
       </div>
-      {isMultipleUsers ? <CloseIcon style={{ margin: "20px", cursor: "pointer" }} onClick={() => removePassenger(id)} /> : null}
+      {isMultipleUsers ? (
+        <CloseIcon
+          style={{ margin: '20px', cursor: 'pointer' }}
+          onClick={() => removePassenger(passengerInfo.id)}
+        />
+      ) : null}
     </div>
   );
 };

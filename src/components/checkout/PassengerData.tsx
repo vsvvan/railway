@@ -1,10 +1,10 @@
-import { useState } from "react";
-import { Button, TextField, Typography } from "@mui/material";
-import Sheet from "@mui/joy/Sheet";
-import AddIcon from "@mui/icons-material/Add";
-import UserInfo from "../../containers/UserInfo";
-import { PassengerInformation } from "../../types";
-import "./PassengerData.css";
+import { useState } from 'react';
+import { Button, TextField, Typography } from '@mui/material';
+import Sheet from '@mui/joy/Sheet';
+import AddIcon from '@mui/icons-material/Add';
+import UserInfo from '../../containers/UserInfo';
+import { PassengerInformation } from '../../types';
+import './PassengerData.css';
 
 type Props = {
   userData: PassengerInformation[];
@@ -13,26 +13,26 @@ type Props = {
   addPassenger: (passenger: PassengerInformation) => void;
 };
 
-export const PassengerData = ({ userData, userEmail, setEmail, addPassenger }: Props) => {
+export const PassengerData = ({
+  userData,
+  userEmail,
+  setEmail,
+  addPassenger,
+}: Props) => {
   const [email, setEm] = useState(userEmail);
   const isMultipleUsers: boolean = userData.length > 1;
   const newPassInfo: PassengerInformation = {
     id: Math.max(...userData.map((user) => user.id)) + 1,
-    name: "",
-    surname: "",
-    discount: "0",
-    passengerGroup: 3
+    name: '',
+    surname: '',
+    discount: '0',
+    passengerGroup: 3,
   };
 
   return (
     <>
-      <Sheet
-        variant="outlined"
-        className="ContainerPlace"
-      >
-        <Typography
-          className="HeaderStyle"
-        >
+      <Sheet variant="outlined" className="ContainerPlace">
+        <Typography className="HeaderStyle">
           <h3>Passenger information</h3>
         </Typography>
         <span>
@@ -40,12 +40,16 @@ export const PassengerData = ({ userData, userEmail, setEmail, addPassenger }: P
           The name will be directly on your travel document.
         </span>
         <br />
-        <div className={`${isMultipleUsers ? "MultipleUsers" : "SingleUser"}`}>
+        <div className={`${isMultipleUsers ? 'MultipleUsers' : 'SingleUser'}`}>
           {userData.map((passenger, idx) => {
             return <UserInfo passengerInfo={passenger} id={idx} />;
           })}
         </div>
-        <Button className="ButtonPadding" startIcon={<AddIcon />} onClick={() => addPassenger(newPassInfo)}>
+        <Button
+          className="ButtonPadding"
+          startIcon={<AddIcon />}
+          onClick={() => addPassenger(newPassInfo)}
+        >
           Add next passenger
         </Button>
         <br />
