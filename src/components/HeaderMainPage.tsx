@@ -46,8 +46,8 @@ export const HeaderMainPage = () => {
                 </ul>
               </div>
             </li>
-            <li><a href="">Timetable</a></li>
-            <li><a href="">Tickets and Offers</a> </li>
+            <li>Timetable</li>
+            <li>Tickets and Offers</li>
             <li>
               {' '}
               <a href="#">Service<span className='Pointer'> ▼</span></a>
