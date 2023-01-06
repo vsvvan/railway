@@ -45,7 +45,10 @@ export const App = ({
             path="/railway/"
             element={
               <>
-                <SearchBar dispatch={setConnections} />
+                <SearchBar
+                  searchInfo={searchInfo}
+                  setConnections={setConnections}
+                />
                 <InformationBlock />
               </>
             }
@@ -55,6 +58,7 @@ export const App = ({
             element={
               <TrainConnections
                 trains={trains}
+                searchInfo={searchInfo}
                 setChosenTrain={setChosenTrain}
               />
             }

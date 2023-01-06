@@ -1,5 +1,320 @@
 [
   {
+    "departureTime": "6:13",
+    "arrivalTime": "12:03",
+    "travelDuration": "5:50",
+    "fromDestination": "Bratislava",
+    "toDestination": "Košice",
+    "trainType": "R",
+    "trainNumber": 607,
+    "distance": 443,
+    "price": 18.68,
+    "stops": [
+      {
+        "time": "12:13",
+        "city": "Bratislava hl.st"
+      },
+      {
+        "time": "12:20",
+        "city": "Bratislava-Vinohrady"
+      },
+      {
+        "time": "12:44",
+        "city": "Trnava"
+      },
+      {
+        "time": "12:56",
+        "city": "Leopoldov"
+      },
+      {
+        "time": "13:07",
+        "city": "Piešťany"
+      },
+      {
+        "time": "13:19",
+        "city": "Nové Mesto nad Váhom"
+      },
+      {
+        "time": "13:35",
+        "city": "Trenčin"
+      },
+      {
+        "time": "13:43",
+        "city": "Trenčianska Teplá"
+      },
+      {
+        "time": "14:00",
+        "city": "Púchov"
+      },
+      {
+        "time": "14:12",
+        "city": "Považská Bystrica"
+      },
+      {
+        "time": "14:40",
+        "city": "Žilina"
+      },
+      {
+        "time": "15:07",
+        "city": "Vrútky"
+      },
+      {
+        "time": "15:21",
+        "city": "Ružomberok"
+      },
+      {
+        "time": "15:58",
+        "city": "Liptovský Mikuláš"
+      },
+      {
+        "time": "16:27",
+        "city": "Štrba"
+      },
+      {
+        "time": "16:50",
+        "city": "Poprad-Tatry"
+      },
+      {
+        "time": "17:09",
+        "city": "Spišská Nová Ves"
+      },
+      {
+        "time": "17:36",
+        "city": "Margecany"
+      },
+      {
+        "time": "17:51",
+        "city": "Kysak"
+      },
+      {
+        "time": "18:03",
+        "city": "Košice"
+      }
+    ],
+    "capacity": {
+      "freePlaces1": 9,
+      "freePlaces2": 6,
+      "bicyclePlace": 5
+    },
+    "schedule": [
+      {
+        "days": [],
+        "departure": "",
+        "arrival": ""
+      }
+    ]
+  },
+  {
+    "departureTime": "8:13",
+    "arrivalTime": "14:03",
+    "travelDuration": "5:50",
+    "fromDestination": "Bratislava",
+    "toDestination": "Košice",
+    "trainType": "R",
+    "trainNumber": 607,
+    "distance": 443,
+    "price": 18.68,
+    "stops": [
+      {
+        "time": "12:13",
+        "city": "Bratislava hl.st"
+      },
+      {
+        "time": "12:20",
+        "city": "Bratislava-Vinohrady"
+      },
+      {
+        "time": "12:44",
+        "city": "Trnava"
+      },
+      {
+        "time": "12:56",
+        "city": "Leopoldov"
+      },
+      {
+        "time": "13:07",
+        "city": "Piešťany"
+      },
+      {
+        "time": "13:19",
+        "city": "Nové Mesto nad Váhom"
+      },
+      {
+        "time": "13:35",
+        "city": "Trenčin"
+      },
+      {
+        "time": "13:43",
+        "city": "Trenčianska Teplá"
+      },
+      {
+        "time": "14:00",
+        "city": "Púchov"
+      },
+      {
+        "time": "14:12",
+        "city": "Považská Bystrica"
+      },
+      {
+        "time": "14:40",
+        "city": "Žilina"
+      },
+      {
+        "time": "15:07",
+        "city": "Vrútky"
+      },
+      {
+        "time": "15:21",
+        "city": "Ružomberok"
+      },
+      {
+        "time": "15:58",
+        "city": "Liptovský Mikuláš"
+      },
+      {
+        "time": "16:27",
+        "city": "Štrba"
+      },
+      {
+        "time": "16:50",
+        "city": "Poprad-Tatry"
+      },
+      {
+        "time": "17:09",
+        "city": "Spišská Nová Ves"
+      },
+      {
+        "time": "17:36",
+        "city": "Margecany"
+      },
+      {
+        "time": "17:51",
+        "city": "Kysak"
+      },
+      {
+        "time": "18:03",
+        "city": "Košice"
+      }
+    ],
+    "capacity": {
+      "freePlaces1": 9,
+      "freePlaces2": 6,
+      "bicyclePlace": 5
+    },
+    "schedule": [
+      {
+        "days": [],
+        "departure": "",
+        "arrival": ""
+      }
+    ]
+  },
+  {
+    "departureTime": "10:13",
+    "arrivalTime": "16:03",
+    "travelDuration": "5:50",
+    "fromDestination": "Bratislava",
+    "toDestination": "Košice",
+    "trainType": "R",
+    "trainNumber": 607,
+    "distance": 443,
+    "price": 18.68,
+    "stops": [
+      {
+        "time": "12:13",
+        "city": "Bratislava hl.st"
+      },
+      {
+        "time": "12:20",
+        "city": "Bratislava-Vinohrady"
+      },
+      {
+        "time": "12:44",
+        "city": "Trnava"
+      },
+      {
+        "time": "12:56",
+        "city": "Leopoldov"
+      },
+      {
+        "time": "13:07",
+        "city": "Piešťany"
+      },
+      {
+        "time": "13:19",
+        "city": "Nové Mesto nad Váhom"
+      },
+      {
+        "time": "13:35",
+        "city": "Trenčin"
+      },
+      {
+        "time": "13:43",
+        "city": "Trenčianska Teplá"
+      },
+      {
+        "time": "14:00",
+        "city": "Púchov"
+      },
+      {
+        "time": "14:12",
+        "city": "Považská Bystrica"
+      },
+      {
+        "time": "14:40",
+        "city": "Žilina"
+      },
+      {
+        "time": "15:07",
+        "city": "Vrútky"
+      },
+      {
+        "time": "15:21",
+        "city": "Ružomberok"
+      },
+      {
+        "time": "15:58",
+        "city": "Liptovský Mikuláš"
+      },
+      {
+        "time": "16:27",
+        "city": "Štrba"
+      },
+      {
+        "time": "16:50",
+        "city": "Poprad-Tatry"
+      },
+      {
+        "time": "17:09",
+        "city": "Spišská Nová Ves"
+      },
+      {
+        "time": "17:36",
+        "city": "Margecany"
+      },
+      {
+        "time": "17:51",
+        "city": "Kysak"
+      },
+      {
+        "time": "18:03",
+        "city": "Košice"
+      }
+    ],
+    "capacity": {
+      "freePlaces1": 9,
+      "freePlaces2": 6,
+      "bicyclePlace": 5
+    },
+    "schedule": [
+      {
+        "days": [],
+        "departure": "",
+        "arrival": ""
+      }
+    ]
+  },
+  {
     "departureTime": "12:13",
     "arrivalTime": "18:03",
     "travelDuration": "5:50",
@@ -354,6 +669,111 @@
   {
     "departureTime": "18:13",
     "arrivalTime": "0:03",
+    "travelDuration": "5:50",
+    "fromDestination": "Bratislava",
+    "toDestination": "Košice",
+    "trainType": "R",
+    "trainNumber": 613,
+    "distance": 443,
+    "price": 18.68,
+    "stops": [
+      {
+        "time": "18:13",
+        "city": "Bratislava hl.st"
+      },
+      {
+        "time": "18:20",
+        "city": "Bratislava-Vinohrady"
+      },
+      {
+        "time": "18:44",
+        "city": "Trnava"
+      },
+      {
+        "time": "18:56",
+        "city": "Leopoldov"
+      },
+      {
+        "time": "19:07",
+        "city": "Piešťany"
+      },
+      {
+        "time": "19:19",
+        "city": "Nové Mesto nad Váhom"
+      },
+      {
+        "time": "19:35",
+        "city": "Trenčin"
+      },
+      {
+        "time": "19:43",
+        "city": "Trenčianska Teplá"
+      },
+      {
+        "time": "20:00",
+        "city": "Púchov"
+      },
+      {
+        "time": "20:12",
+        "city": "Považská Bystrica"
+      },
+      {
+        "time": "20:40",
+        "city": "Žilina"
+      },
+      {
+        "time": "21:07",
+        "city": "Vrútky"
+      },
+      {
+        "time": "21:12",
+        "city": "Ružomberok"
+      },
+      {
+        "time": "21:58",
+        "city": "Liptovský Mikuláš"
+      },
+      {
+        "time": "22:27",
+        "city": "Štrba"
+      },
+      {
+        "time": "22:50",
+        "city": "Poprad-Tatry"
+      },
+      {
+        "time": "23:09",
+        "city": "Spišská Nová Ves"
+      },
+      {
+        "time": "23:36",
+        "city": "Margecany"
+      },
+      {
+        "time": "23:51",
+        "city": "Kysak"
+      },
+      {
+        "time": "0:03",
+        "city": "Košice"
+      }
+    ],
+    "capacity": {
+      "freePlaces1": 9,
+      "freePlaces2": 6,
+      "bicyclePlace": 5
+    },
+    "schedule": [
+      {
+        "days": [],
+        "departure": "",
+        "arrival": ""
+      }
+    ]
+  },
+  {
+    "departureTime": "20:13",
+    "arrivalTime": "02:03",
     "travelDuration": "5:50",
     "fromDestination": "Bratislava",
     "toDestination": "Košice",

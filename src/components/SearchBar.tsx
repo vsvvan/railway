@@ -35,9 +35,10 @@ const favouriteRoute2 = {
 };
 
 type SearchBarProps = {
-  dispatch: React.Dispatch<React.SetStateAction<ConInfo>>;
+  setConnections: React.Dispatch<React.SetStateAction<ConInfo>>;
   from: string;
   to: string;
+  searchInfo: any;
   setFrom: (from: string) => void;
   setTo: (to: string) => void;
   setdate: (date: string) => void;
@@ -45,7 +46,7 @@ type SearchBarProps = {
 };
 
 export const SearchBar = ({
-  dispatch,
+  setConnections,
   from,
   to,
   setFrom,
@@ -83,7 +84,7 @@ export const SearchBar = ({
     formState: { errors },
   } = useForm<FormValues>({ defaultValues: DefVals() });
   const onSubmit: SubmitHandler<FormValues> = (data) => {
-    dispatch({
+    setConnections({
       from: data.from,
       to: data.to,
       month: data.month,
