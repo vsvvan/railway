@@ -10,21 +10,29 @@ import CreditCardIcon from '@mui/icons-material/CreditCard';
 import WifiIcon from '@mui/icons-material/Wifi';
 import './TrainTicketSelection.css';
 import Sheet from '@mui/joy/Sheet';
+import { Multiselect } from "multiselect-react-dropdown";
+import { SeatPreferences } from './SeatPreferences';
 
 export const TrainTicketSelection = () => {
   const [seatValue, setSeatValue] = useState('no-pref-seat');
   const [seatType, setSeatType] = useState('2nd-class');
-  const[seatPreferences,setSeatPreferences] =useState('wi-fi');
+  const [seatPreferences, setSeatPreferences] = useState(false);
+  const [popUpMenu, setPopUpMenu] = useState(false);
+  const[visible, setVisible]=useState(false);
 
+
+  
   const handleChangeSeat = (event: ChangeEvent<HTMLInputElement>) => {
     setSeatValue((event.target as HTMLInputElement).value);
   };
-  const handleChangePreferences = (event: ChangeEvent<HTMLInputElement>) => {
-    setSeatPreferences((event.target as HTMLInputElement).value);
-  };
+
   const handleChangeType = (event: ChangeEvent<HTMLInputElement>) => {
     setSeatType((event.target as HTMLInputElement).value);
   };
+  function handleseatPreferences() {
+    return (
+      seatPreferences)
+  }
   return (
     <Sheet
       variant="outlined"
@@ -96,67 +104,25 @@ export const TrainTicketSelection = () => {
             value="no-pref-seat"
             control={<Radio />}
             label="No preferences / Any"
+            onClick={()=>setVisible(false)}
+            
           />
         </div>
-        <div className="TrainSeatBox">
-          
-          <FormControlLabel
-            value="choose-seat"
-            control={<Radio />}
-            label="Choose certain reservation"
-          />
-        
-          <CreditCardIcon />
-        </div>
-        </RadioGroup>
+        <div  className="TrainSeatBox">
 
-        <RadioGroup
-        aria-labelledby="demo-controlled-radio-buttons-group"
-        name="controlled-radio-buttons-group"
-        value={seatPreferences}
-        onChange={handleChangePreferences}
-      >
-        <div className="TrainSeatBox">
-          <FormControlLabel
-            value="Wifi"
-            control={<Radio />}
-            label="Wifi"
-          />
-          <WifiIcon />
-        </div>
-        <div className="TrainSeatBox">
-          <FormControlLabel
-            value="Railway car with coupe"
-            control={<Radio />}
-            label="Railway car with coupe"
-          />
+        <FormControlLabel
+          value="choose-seat"
+          control={<Radio />}
+          label="Choose certain reservation"
+          onClick={()=>setVisible(true)}
           
+        />
+        <CreditCardIcon />
         </div>
-        <div className="TrainSeatBox">
-          <FormControlLabel
-            value="In direction of travel"
-            control={<Radio />}
-            label="In direction of travel"
-          />
-          
-        </div>
-        <div className="TrainSeatBox">
-          <FormControlLabel
-            value="Against direction of travel"
-            control={<Radio />}
-            label="Against direction of travel"
-          />
-          
-        </div>
-        <div className="TrainSeatBox">
-          <FormControlLabel
-            value="Table"
-            control={<Radio />}
-            label="Table"
-          />
-          
-        </div>
-        </RadioGroup>
-    </Sheet>
+        
+    </RadioGroup>
+    {visible && <SeatPreferences/>}
+
+    </Sheet >
   );
 };
