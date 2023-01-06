@@ -2,7 +2,7 @@ import { Button, Grid } from '@mui/material';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import { PassengerData } from './checkout/PassengerData';
-import { TrainTicketSelection } from './checkout/TrainTicketSelection';
+import TrainTicketSelection from '../containers/TrainTicketSelection';
 import { Payment } from './checkout/Payment';
 import { useNavigate } from 'react-router-dom';
 import { PassengerInformation, UserData } from '../types';

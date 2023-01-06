@@ -13,9 +13,18 @@ export const searchInfo = createSlice({
     setTo: (state: any, action) => {
       return { ...state, to: action.payload };
     },
+    setDate: (state: any, action) => {
+      return { ...state, date: action.payload };
+    },
+    setTime: (state: any, action) => {
+      return {
+        ...state,
+        time: { hours: action.payload.hours, minutes: action.payload.minutes },
+      };
+    },
   },
 });
 
-export const { setFrom, setTo } = searchInfo.actions;
+export const { setFrom, setTo, setDate, setTime } = searchInfo.actions;
 
 export default searchInfo.reducer;

@@ -15,10 +15,18 @@ import { InformationBlock } from './InformationBlock';
 type Props = {
   trains: TrainInfo[];
   userData: UserData;
+  chosenTrain: TrainInfo;
+  searchInfo: any;
   setChosenTrain: (train: TrainInfo) => void;
 };
 
-export const App = ({ trains, userData, setChosenTrain }: Props) => {
+export const App = ({
+  trains,
+  userData,
+  searchInfo,
+  chosenTrain,
+  setChosenTrain,
+}: Props) => {
   const [connections, setConnections] = useState<ConInfo>({
     from: '',
     to: '',
@@ -51,15 +59,23 @@ export const App = ({ trains, userData, setChosenTrain }: Props) => {
               />
             }
           />
-          <Route
-            path="/checkout"
-            element={<Checkout trainInfo={trains[0]} />}
-          />
+          <Route path="/checkout" element={<Checkout />} />
           <Route
             path="/checkout-order"
-            element={<Order trainInfo={trains[0]} userData={userData} />}
+            element={
+              <Order
+                trainInfo={chosenTrain}
+                userData={userData}
+                searchInfo={searchInfo}
+              />
+            }
           />
-          <Route path="/summary" element={<Summary trainInfo={trains[0]} />} />
+          <Route
+            path="/summary"
+            element={
+              <Summary trainInfo={chosenTrain} searchInfo={searchInfo} />
+            }
+          />
         </Routes>
       </Router>
       <Footer />

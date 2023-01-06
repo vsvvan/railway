@@ -41,8 +41,8 @@ export const PassengerData = ({
         </span>
         <br />
         <div className={`${isMultipleUsers ? 'MultipleUsers' : 'SingleUser'}`}>
-          {userData.map((passenger, idx) => {
-            return <UserInfo passengerInfo={passenger} id={idx} />;
+          {userData.map((passenger) => {
+            return <UserInfo passengerInfo={passenger} />;
           })}
         </div>
         <Button
@@ -64,8 +64,10 @@ export const PassengerData = ({
             variant="outlined"
             size="small"
             value={email}
-            onChange={(event) => setEm(event.target.value)}
-            onBlur={(event) => setEmail(event.target.value)}
+            onChange={(event) => {
+              setEm(event.target.value);
+              setEmail(event.target.value);
+            }}
           />
         </div>
       </Sheet>

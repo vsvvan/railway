@@ -6,19 +6,33 @@ import {
   Typography,
 } from '@mui/material';
 import { ChangeEvent, useState } from 'react';
-import CreditCardIcon from '@mui/icons-material/CreditCard';
 import './TrainTicketSelection.css';
 import Sheet from '@mui/joy/Sheet';
+import { TrainInfo } from '../../types';
+import dayjs from 'dayjs';
+import './TrainTicketSelection.css';
 
-export const TrainTicketSelection = () => {
+type Props = {
+  trainInfo: TrainInfo;
+  changeClass: (type: string) => void;
+  changeSeat: (seat: string, preferences?: string[]) => void;
+};
+
+export const TrainTicketSelection = ({
+  trainInfo,
+  changeSeat,
+  changeClass,
+}: Props) => {
   const [seatValue, setSeatValue] = useState('no-pref-seat');
   const [seatType, setSeatType] = useState('2nd-class');
 
   const handleChangeSeat = (event: ChangeEvent<HTMLInputElement>) => {
     setSeatValue((event.target as HTMLInputElement).value);
+    changeSeat(event.target.value);
   };
   const handleChangeType = (event: ChangeEvent<HTMLInputElement>) => {
     setSeatType((event.target as HTMLInputElement).value);
+    changeClass(event.target.value);
   };
   return (
     <Sheet
@@ -37,8 +51,10 @@ export const TrainTicketSelection = () => {
       <Grid container spacing={0.5}>
         <Grid item xs={4}>
           <Typography>
-            08.12.2022 R 609 <br /> 12:13 Bratislava hl. st. <br />
-            18:03 Košice
+            {trainInfo?.date || dayjs(new Date()).format('DD.MM.YYYY')}{' '}
+            {trainInfo.trainType} {trainInfo.trainNumber}
+            <br /> {trainInfo.departureTime} {trainInfo.fromDestination} <br />
+            {trainInfo.arrivalTime} {trainInfo.toDestination}
           </Typography>
         </Grid>
         <Grid item xs={8}>
@@ -66,6 +82,9 @@ export const TrainTicketSelection = () => {
                 control={<Radio />}
                 label="2nd Class - Compartment for children"
               />
+              <span style={{ color: 'red', float: 'right' }}>
+                no additional price
+              </span>
             </div>
             <div className="TrainClassBox">
               <FormControlLabel
@@ -73,6 +92,9 @@ export const TrainTicketSelection = () => {
                 control={<Radio />}
                 label="1st Class"
               />
+              <span style={{ color: 'red', float: 'right', fontWeight: '600' }}>
+                +8.10€
+              </span>
             </div>
           </RadioGroup>
         </Grid>
@@ -99,7 +121,6 @@ export const TrainTicketSelection = () => {
             control={<Radio />}
             label="Choose certain reservation"
           />
-          <CreditCardIcon />
         </div>
       </RadioGroup>
     </Sheet>

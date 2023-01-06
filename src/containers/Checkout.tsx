@@ -5,6 +5,7 @@ import { Checkout } from '../components/Checkout';
 
 const mapStateToProps = (state: State) => ({
   userData: state.userData,
+  trainInfo: state.chosenTrain,
 });
 
 const mapDispatchToProps = (dispatch: Dispatch) => ({

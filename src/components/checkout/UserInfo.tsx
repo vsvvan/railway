@@ -7,12 +7,11 @@ import {
   TextField,
   Typography,
 } from '@mui/material';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { PassengerInformation } from '../../types';
 import CloseIcon from '@mui/icons-material/Close';
 
 type Props = {
-  id: number;
   passengerInfo: PassengerInformation;
   isMultipleUsers: boolean;
   setName: (name: string, id: number) => void;
@@ -24,7 +23,6 @@ type Props = {
 };
 
 export const UserInfo = ({
-  id,
   passengerInfo,
   isMultipleUsers,
   setName,
@@ -40,15 +38,22 @@ export const UserInfo = ({
   const [surname, setS] = useState(passengerInfo.surname);
   const [regNum, setRegNum] = useState(passengerInfo.registrationNumber);
 
+  useEffect(() => {
+    setAge(passengerInfo.passengerGroup.toString());
+    setDiscountValue(passengerInfo.discount);
+    setN(passengerInfo.name);
+    setS(passengerInfo.surname);
+    setRegNum(passengerInfo.registrationNumber);
+  }, [passengerInfo]);
+
   const handleChangeAge = (event: SelectChangeEvent) => {
     setAge(event.target.value as string);
-    setGroupAge(+event.target.value, id);
+    setGroupAge(+event.target.value, passengerInfo.id);
   };
   const handleChangeDiscount = (event: SelectChangeEvent) => {
     setDiscountValue(event.target.value as string);
-    setDiscount(event.target.value, id);
+    setDiscount(event.target.value, passengerInfo.id);
   };
-
   return (
     <div style={{ display: 'flex', margin: '0 0  25px 0' }}>
       <div>
@@ -61,7 +66,7 @@ export const UserInfo = ({
           <Grid item xs={4}>
             <FormControl sx={{ minWidth: 210 }}>
               <Select
-                defaultValue={age}
+                value={age}
                 variant="outlined"
                 inputProps={{
                   name: 'age',
@@ -80,7 +85,7 @@ export const UserInfo = ({
           <Grid item xs={6}>
             <FormControl sx={{ minWidth: 210 }}>
               <Select
-                defaultValue={discount}
+                value={discount}
                 variant="outlined"
                 inputProps={{
                   name: 'discount',
@@ -100,8 +105,10 @@ export const UserInfo = ({
               variant="outlined"
               type="text"
               value={name}
-              onChange={(event) => setN(event.target.value)}
-              onBlur={(event) => setName(event.target.value, id)}
+              onChange={(event) => {
+                setN(event.target.value);
+                setName(event.target.value, passengerInfo.id);
+              }}
             />
           </Grid>
           <Grid item xs={6}>
@@ -110,8 +117,10 @@ export const UserInfo = ({
               label="Surname"
               variant="outlined"
               value={surname}
-              onChange={(event) => setS(event.target.value)}
-              onBlur={(event) => setSurname(event.target.value, id)}
+              onChange={(event) => {
+                setS(event.target.value);
+                setSurname(event.target.value, passengerInfo.id);
+              }}
             />
           </Grid>
           <Grid item xs={12} style={{ padding: '15px 0 0 20px' }}>
@@ -124,9 +133,11 @@ export const UserInfo = ({
               id="registration-number"
               size="small"
               label="Registration number"
-              value={regNum}
+              value={regNum || ''}
               onChange={(event) => setRegNum(event.target.value)}
-              onBlur={(event) => setRegistrationNumber(event.target.value, id)}
+              onBlur={(event) =>
+                setRegistrationNumber(event.target.value, passengerInfo.id)
+              }
             />
           </Grid>
         </Grid>
@@ -134,7 +145,9 @@ export const UserInfo = ({
       {isMultipleUsers ? (
         <CloseIcon
           style={{ margin: '20px', cursor: 'pointer' }}
-          onClick={() => removePassenger(passengerInfo.id)}
+          onClick={() => {
+            removePassenger(passengerInfo.id);
+          }}
         />
       ) : null}
     </div>

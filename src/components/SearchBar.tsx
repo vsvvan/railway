@@ -40,6 +40,8 @@ type SearchBarProps = {
   to: string;
   setFrom: (from: string) => void;
   setTo: (to: string) => void;
+  setdate: (date: string) => void;
+  setTime: (hours: number, minutes: number) => void;
 };
 
 export const SearchBar = ({
@@ -48,6 +50,8 @@ export const SearchBar = ({
   to,
   setFrom,
   setTo,
+  setdate,
+  setTime,
 }: SearchBarProps) => {
   const [date, setDate] = React.useState<Dayjs | null>(dayjs(new Date()));
 
@@ -205,6 +209,8 @@ export const SearchBar = ({
                 className="submitbtn"
                 size="large"
                 onClick={() => {
+                  setdate(dayjs(date).format('DD.MM.YYYY'));
+                  setTime(dayjs(date).hour(), dayjs(date).minute());
                   navigateToInfo();
                 }}
                 disabled={!from || !to}

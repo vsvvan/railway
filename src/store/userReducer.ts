@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { UserData } from '../types';
+import { State, UserData } from '../types';
 import userData from '../mock-data/user.json';
 
 const initialState = userData;
@@ -9,7 +9,7 @@ export const userSlice = createSlice({
   initialState,
   reducers: {
     // @ts-ignore
-    setName: (state: UserData | null, action) => {
+    setName: (state: UserData, action) => {
       return {
         ...state,
         passengerInformation: state?.passengerInformation?.map((u) =>
@@ -75,6 +75,30 @@ export const userSlice = createSlice({
         (passenger) => passenger.id !== action.payload,
       );
     },
+    // @ts-ignore
+    changeSeat: (state: UserData, action) => {
+      return {
+        ...state,
+        trainTicketSelection: {
+          ...state.trainTicketSelection,
+          seatSelection: action.payload,
+        },
+      };
+    },
+    // @ts-ignore
+    changeClass: (state: UserData, action) => {
+      return {
+        ...state,
+        trainTicketSelection: {
+          ...state.trainTicketSelection,
+          ticketClass: action.payload,
+        },
+      };
+    },
+    // @ts-ignore
+    changePreferences: (state: UserData, action) => {
+      state.trainTicketSelection.preferences?.push(action.payload);
+    },
   },
 });
 
@@ -87,6 +111,12 @@ export const {
   setRegistrationNumber,
   addPassenger,
   removePassenger,
+  changeClass,
+  changeSeat,
+  changePreferences,
 } = userSlice.actions;
+
+export const selectUsers = (state: State) =>
+  state.userData.passengerInformation;
 
 export default userSlice.reducer;
