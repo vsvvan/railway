@@ -7,17 +7,13 @@ import {
 } from '@mui/material';
 import { ChangeEvent, useState } from 'react';
 import CreditCardIcon from '@mui/icons-material/CreditCard';
-import WifiIcon from '@mui/icons-material/Wifi';
 import './TrainTicketSelection.css';
 import Sheet from '@mui/joy/Sheet';
-import { Multiselect } from "multiselect-react-dropdown";
 import { SeatPreferences } from './SeatPreferences';
 
 export const TrainTicketSelection = () => {
   const [seatValue, setSeatValue] = useState('no-pref-seat');
   const [seatType, setSeatType] = useState('2nd-class');
-  const [seatPreferences, setSeatPreferences] = useState(false);
-  const [popUpMenu, setPopUpMenu] = useState(false);
   const[visible, setVisible]=useState(false);
 
 
@@ -29,10 +25,6 @@ export const TrainTicketSelection = () => {
   const handleChangeType = (event: ChangeEvent<HTMLInputElement>) => {
     setSeatType((event.target as HTMLInputElement).value);
   };
-  function handleseatPreferences() {
-    return (
-      seatPreferences)
-  }
   return (
     <Sheet
       variant="outlined"
