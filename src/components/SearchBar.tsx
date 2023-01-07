@@ -5,10 +5,20 @@ import RouteOutlinedIcon from '@mui/icons-material/RouteOutlined';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { useNavigate } from 'react-router-dom';
-import { Autocomplete, Button, Grid, Stack, TextField } from '@mui/material';
-import { DateTimePicker } from '@mui/x-date-pickers';
+import {
+  Autocomplete,
+  Box,
+  Button,
+  Chip,
+  Grid,
+  Modal,
+  Stack,
+  TextField,
+  Typography,
+} from '@mui/material';
+import { DateTimePicker, DesktopDatePicker } from '@mui/x-date-pickers';
 import './SearchBar.css';
-import { ConInfo } from '../types';
+import { ConInfo, TrainInfo } from '../types';
 import cities from '../mock-data/cities.json';
 
 type FormValues = {
@@ -20,25 +30,40 @@ type FormValues = {
   minute: number;
 };
 
-const favouriteRoute1 = {
-  fromDestination: 'Bratislava',
-  toDestination: 'Košice',
-};
+const favouriteRoutes = [
+  {
+    fromDestination: 'Bratislava',
+    toDestination: 'Košice',
+  },
+  {
+    fromDestination: 'Košice',
+    toDestination: 'Bratislava',
+  },
+];
 
-const favouriteRoute2 = {
-  fromDestination: 'Košice',
-  toDestination: 'Bratislava',
+const style = {
+  position: 'absolute' as const,
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
+  width: 400,
+  bgcolor: 'background.paper',
+  border: '2px solid #000',
+  boxShadow: 24,
+  p: 4,
 };
 
 type SearchBarProps = {
   setConnections: React.Dispatch<React.SetStateAction<ConInfo>>;
   searchInfo: any;
+  trains: TrainInfo[];
   isMain: boolean;
   setFrom: (from: string) => void;
   setTo: (to: string) => void;
   setdate: (date: string) => void;
   setTime: (hours: number, minutes: number) => void;
   updateDestinations: (from: string, to: string) => void;
+  setChosenTrain: (train: TrainInfo) => void;
 };
 
 export const SearchBar = ({
@@ -50,10 +75,16 @@ export const SearchBar = ({
   searchInfo,
   isMain,
   updateDestinations,
+  trains,
+  setChosenTrain,
 }: SearchBarProps) => {
   const [date, setDate] = useState<Dayjs | null>(dayjs(new Date()));
   const [from, setF] = useState(searchInfo?.from || '');
   const [to, setT] = useState(searchInfo?.to || '');
+  const [open, setOpen] = React.useState(false);
+
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
 
   useEffect(() => {
     setF(searchInfo?.from || '');
@@ -83,8 +114,6 @@ export const SearchBar = ({
   const {
     register,
     handleSubmit,
-    getValues,
-    setValue,
     formState: { errors },
   } = useForm<FormValues>({ defaultValues: DefVals() });
   const onSubmit: SubmitHandler<FormValues> = (data) => {
@@ -112,37 +141,32 @@ export const SearchBar = ({
                 <Grid item xs={12}>
                   <h1>Choose your favorite route:</h1>
                 </Grid>
-                <Grid item xs={4}>
-                  <Button
-                    variant="outlined"
-                    style={{ padding: '0px 10px', backgroundColor: 'white' }}
-                    onClick={() => navigate('/checkout-order')}
-                  >
-                    <h2>
-                      <span>
-                        {favouriteRoute1.fromDestination}
-                        {' - '}
-                        {favouriteRoute1.toDestination}
-                      </span>
-                    </h2>
-                  </Button>
-                </Grid>
-                <Grid item xs={4}>
-                  <Button
-                    variant="outlined"
-                    style={{ padding: '0px 10px', backgroundColor: 'white' }}
-                    onClick={() => navigate('/checkout-order')}
-                  >
-                    <h2>
-                      <span>
-                        {favouriteRoute2.fromDestination}
-                        {' - '}
-                        {favouriteRoute2.toDestination}
-                      </span>
-                    </h2>
-                  </Button>
-                </Grid>
-                <Grid item xs={4}></Grid>
+                {favouriteRoutes.map((favouriteRoute) => (
+                  <>
+                    <Grid item xs={4}>
+                      <Button
+                        variant="outlined"
+                        style={{
+                          padding: '0px 10px',
+                          backgroundColor: 'white',
+                        }}
+                        onClick={() => {
+                          setFrom(favouriteRoute.fromDestination);
+                          setTo(favouriteRoute.toDestination);
+                          handleOpen();
+                        }}
+                      >
+                        <h2>
+                          <span>
+                            {favouriteRoute.fromDestination}
+                            {' - '}
+                            {favouriteRoute.toDestination}
+                          </span>
+                        </h2>
+                      </Button>
+                    </Grid>
+                  </>
+                ))}
                 <hr className="line" />
               </>
             ) : null}
@@ -168,7 +192,7 @@ export const SearchBar = ({
                     className="textField"
                   />
                 )}
-                onChange={(event: any, newValue: any) => {
+                onChange={(event, newValue) => {
                   setFrom(newValue);
                 }}
               />
@@ -199,7 +223,7 @@ export const SearchBar = ({
                     className="textField"
                   />
                 )}
-                onChange={(event: any, newValue: any) => {
+                onChange={(event, newValue) => {
                   setTo(newValue);
                 }}
               />
@@ -208,7 +232,6 @@ export const SearchBar = ({
               <LocalizationProvider dateAdapter={AdapterDayjs}>
                 <Stack spacing={3}>
                   <DateTimePicker
-                    label="Date&Time picker"
                     value={date}
                     onChange={handleChange}
                     renderInput={(params) => (
@@ -237,6 +260,53 @@ export const SearchBar = ({
             </Grid>
           </Grid>
         </form>
+        <Modal
+          open={open}
+          onClose={handleClose}
+          aria-labelledby="modal-modal-title"
+          aria-describedby="modal-modal-description"
+        >
+          <Box sx={style}>
+            <Typography id="modal-modal-title" variant="h6" component="h2">
+              Preferred time of departure
+            </Typography>
+            <Typography>
+              Route: {from} - {to}
+            </Typography>
+            <LocalizationProvider dateAdapter={AdapterDayjs}>
+              <Stack sx={{ width: '150px' }}>
+                <DesktopDatePicker
+                  inputFormat="DD.MM.YYYY"
+                  value={date}
+                  onChange={handleChange}
+                  renderInput={(params) => <TextField {...params} />}
+                />
+              </Stack>
+            </LocalizationProvider>
+            <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+              {trains.map((train) => (
+                <Chip
+                  sx={{
+                    marginRight: '8px',
+                    marginBottom: '8px',
+                    width: '120px',
+                  }}
+                  label={`${train.departureTime} - ${train.arrivalTime}`}
+                  component="a"
+                  variant="outlined"
+                  color="primary"
+                  clickable
+                  onClick={() => {
+                    setdate(dayjs(date).format('DD.MM.YYYY'));
+                    setChosenTrain(train);
+                    updateDestinations(from, to);
+                    navigate('/checkout-order');
+                  }}
+                />
+              ))}
+            </Typography>
+          </Box>
+        </Modal>
       </div>
     </div>
   );

@@ -11,6 +11,7 @@ import {
   TrainInfo,
   UserData,
 } from '../types';
+import { getDescDay } from '../util';
 
 type Props = {
   trainInfo: TrainInfo;
@@ -26,7 +27,9 @@ export const Order = ({ trainInfo, userData, searchInfo }: Props) => {
         <div className="DayStyle">
           <span>
             <h1>Train ticket information</h1>
-            <h2>Today {searchInfo.date}</h2>
+            <h2>
+              {getDescDay(searchInfo.date)} {searchInfo?.date}
+            </h2>
           </span>
         </div>
         <div className="OrderContainer">

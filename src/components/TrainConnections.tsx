@@ -4,8 +4,8 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { TrainCard } from './TrainCard';
 import { TrainInfo } from '../types';
 import { useNavigate } from 'react-router-dom';
-import dayjs from 'dayjs';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
+import { getDescDay } from '../util';
 
 type Props = {
   trains: TrainInfo[];
@@ -27,7 +27,9 @@ export const TrainConnections = ({
     <>
       <div className="TrainConnectionsContainer">
         <span className="DayStyle">
-          <h2>Today {dayjs(new Date()).format('DD.MM.YYYY')}</h2>
+          <h2>
+            {getDescDay(searchInfo.date)} {searchInfo.date}
+          </h2>
         </span>
         <Button
           id="previousConnections"
