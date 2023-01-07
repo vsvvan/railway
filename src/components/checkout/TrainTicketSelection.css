@@ -22,3 +22,10 @@
   padding-left: 15px;
   align-items: center;
 }
+
+.TrainPreferences {
+  display: flex;
+  width: 300px;
+  padding-left: 15px;
+  align-items: center;
+}

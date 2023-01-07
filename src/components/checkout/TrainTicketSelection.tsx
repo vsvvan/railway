@@ -26,12 +26,13 @@ export const TrainTicketSelection = ({
 }: Props) => {
   const [seatValue, setSeatValue] = useState('no-pref-seat');
   const [seatType, setSeatType] = useState('2nd-class');
-  const[visible, setVisible]=useState(false);
+  const [visible, setVisible] = useState(false);
 
   const handleChangeSeat = (event: ChangeEvent<HTMLInputElement>) => {
     setSeatValue((event.target as HTMLInputElement).value);
     changeSeat(event.target.value);
   };
+
   const handleChangeType = (event: ChangeEvent<HTMLInputElement>) => {
     setSeatType((event.target as HTMLInputElement).value);
     changeClass(event.target.value);
@@ -115,8 +116,7 @@ export const TrainTicketSelection = ({
             value="no-pref-seat"
             control={<Radio />}
             label="No preferences / Any"
-            onClick={()=>setVisible(false)}
-
+            onClick={() => setVisible(false)}
           />
         </div>
         <div className="TrainSeatBox">
@@ -124,11 +124,11 @@ export const TrainTicketSelection = ({
             value="choose-seat"
             control={<Radio />}
             label="Choose certain reservation"
-            onClick={()=>setVisible(true)}
+            onClick={() => setVisible(true)}
           />
         </div>
-    </RadioGroup>
-    {visible && <SeatPreferences/>}
-    </Sheet >
+      </RadioGroup>
+      {visible && <SeatPreferences />}
+    </Sheet>
   );
 };

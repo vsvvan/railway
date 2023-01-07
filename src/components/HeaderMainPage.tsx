@@ -25,7 +25,9 @@ export const HeaderMainPage = () => {
           <ul>
             <li>
               {' '}
-              <a href="#">Ticket Purchase<span className='Pointer'> ▼</span></a>
+              <a href="#">
+                Ticket Purchase<span className="Pointer"> ▼</span>
+              </a>
               <div className="SubMenu-1">
                 <ul className="MenuList">
                   <li className="Link">
@@ -50,7 +52,9 @@ export const HeaderMainPage = () => {
             <li>Tickets and Offers</li>
             <li>
               {' '}
-              <a href="#">Service<span className='Pointer'> ▼</span></a>
+              <a href="#">
+                Service<span className="Pointer"> ▼</span>
+              </a>
               <div className="SubMenu-1">
                 <ul className="MenuList">
                   <li className="Link">
