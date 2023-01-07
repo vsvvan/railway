@@ -4,23 +4,30 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { TrainCard } from './TrainCard';
 import { TrainInfo } from '../types';
 import { useNavigate } from 'react-router-dom';
+import dayjs from 'dayjs';
+import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 
 type Props = {
   trains: TrainInfo[];
+  searchInfo: any;
   setChosenTrain: (train: TrainInfo) => void;
 };
 
-export const TrainConnections = ({ trains, setChosenTrain }: Props) => {
+export const TrainConnections = ({
+  trains,
+  searchInfo,
+  setChosenTrain,
+}: Props) => {
   const navigate = useNavigate();
   const navigateToCheckout = () => {
     navigate('/checkout');
   };
+
   return (
     <>
       <div className="TrainConnectionsContainer">
         <span className="DayStyle">
-          <h1>Connection search</h1>
-          <h2>Today 07.11.2022</h2>
+          <h2>Today {dayjs(new Date()).format('DD.MM.YYYY')}</h2>
         </span>
         <Button
           id="previousConnections"
@@ -32,18 +39,31 @@ export const TrainConnections = ({ trains, setChosenTrain }: Props) => {
         <div className="DayStyle"></div>
       </div>
       <div className="TrainConnectionsContainer">
-        {trains.map((train: TrainInfo) => {
-          return (
-            <div className="TrainCard">
-              {' '}
-              <TrainCard
-                train={train}
-                navigateToCheckout={navigateToCheckout}
-                setChosenTrain={setChosenTrain}
-              />{' '}
-            </div>
-          );
-        })}
+        {trains
+          .filter((train) => {
+            const date1 = new Date('2020-01-01 ' + train.departureTime);
+            const date2 = new Date(
+              '2020-01-01 ' +
+                (
+                  searchInfo.time.hours +
+                  ':' +
+                  searchInfo.time.minutes
+                ).toString(),
+            );
+            return date1.getTime() > date2.getTime();
+          })
+          .map((train: TrainInfo) => {
+            return (
+              <div className="TrainCard">
+                {' '}
+                <TrainCard
+                  train={train}
+                  navigateToCheckout={navigateToCheckout}
+                  setChosenTrain={setChosenTrain}
+                />{' '}
+              </div>
+            );
+          })}
       </div>
       <div className="TrainConnectionsContainer">
         <Button
@@ -52,6 +72,16 @@ export const TrainConnections = ({ trains, setChosenTrain }: Props) => {
           endIcon={<ExpandMoreIcon />}
         >
           Next connections
+        </Button>
+      </div>
+      <div className="TrainConnectionsContainer">
+        <Button
+          variant="outlined"
+          size="large"
+          startIcon={<ArrowBackIosIcon />}
+          onClick={() => navigate('/railway')}
+        >
+          Back
         </Button>
       </div>
     </>

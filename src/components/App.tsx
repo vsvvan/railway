@@ -11,14 +11,24 @@ import SearchBar from '../containers/SearchBar';
 import { ConInfo } from '../types';
 import { Summary } from './Summary';
 import { InformationBlock } from './InformationBlock';
+import { Provider } from 'react-redux';
+import { store } from '../store/store';
 
 type Props = {
   trains: TrainInfo[];
   userData: UserData;
+  chosenTrain: TrainInfo;
+  searchInfo: any;
   setChosenTrain: (train: TrainInfo) => void;
 };
 
-export const App = ({ trains, userData, setChosenTrain }: Props) => {
+export const App = ({
+  trains,
+  userData,
+  searchInfo,
+  chosenTrain,
+  setChosenTrain,
+}: Props) => {
   const [connections, setConnections] = useState<ConInfo>({
     from: '',
     to: '',
@@ -29,41 +39,63 @@ export const App = ({ trains, userData, setChosenTrain }: Props) => {
   });
 
   return (
-    <div className="App">
-      <Router>
-        <HeaderMainPage />
-        <Routes>
-          <Route
-            path="/railway/"
-            element={
-              <>
-                <SearchBar dispatch={setConnections} />
-                <InformationBlock />
-              </>
-            }
-          />
-          <Route
-            path="/connections"
-            element={
-              <TrainConnections
-                trains={trains}
-                setChosenTrain={setChosenTrain}
-              />
-            }
-          />
-          <Route
-            path="/checkout"
-            element={<Checkout trainInfo={trains[0]} />}
-          />
-          <Route
-            path="/checkout-order"
-            element={<Order trainInfo={trains[0]} userData={userData} />}
-          />
-          <Route path="/summary" element={<Summary trainInfo={trains[0]} />} />
-        </Routes>
-      </Router>
-      <Footer />
-    </div>
+    <Provider store={store}>
+      <div className="App">
+        <Router>
+          <HeaderMainPage />
+          <Routes>
+            <Route
+              path="/railway/"
+              element={
+                <>
+                  <SearchBar
+                    isMain={true}
+                    searchInfo={searchInfo}
+                    setConnections={setConnections}
+                  />
+                  <InformationBlock />
+                </>
+              }
+            />
+            <Route
+              path="/connections"
+              element={
+                <>
+                  <SearchBar
+                    isMain={false}
+                    searchInfo={searchInfo}
+                    setConnections={setConnections}
+                  />
+                  <TrainConnections
+                    trains={trains}
+                    searchInfo={searchInfo}
+                    setChosenTrain={setChosenTrain}
+                  />
+                </>
+              }
+            />
+            <Route path="/checkout" element={<Checkout />} />
+            <Route
+              path="/checkout-order"
+              element={
+                <Order
+                  trainInfo={chosenTrain}
+                  userData={userData}
+                  searchInfo={searchInfo}
+                />
+              }
+            />
+            <Route
+              path="/summary"
+              element={
+                <Summary trainInfo={chosenTrain} searchInfo={searchInfo} />
+              }
+            />
+          </Routes>
+        </Router>
+        <Footer />
+      </div>
+    </Provider>
   );
 };
 

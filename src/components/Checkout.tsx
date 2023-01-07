@@ -2,19 +2,20 @@ import { Button, Grid } from '@mui/material';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import { PassengerData } from './checkout/PassengerData';
-import { TrainTicketSelection } from './checkout/TrainTicketSelection';
+import TrainTicketSelection from '../containers/TrainTicketSelection';
 import { Payment } from './checkout/Payment';
 import { useNavigate } from 'react-router-dom';
-import { UserData } from '../types';
+import { PassengerInformation, UserData } from '../types';
 import { TrainInfo } from '../types';
 
 type Props = {
   userData: UserData;
   trainInfo: TrainInfo;
   setEmail: (email: string) => void;
+  addPassenger: (passenger: PassengerInformation) => void;
 };
 
-export const Checkout = ({ userData, setEmail }: Props) => {
+export const Checkout = ({ userData, setEmail, addPassenger }: Props) => {
   const navigate = useNavigate();
   const navigateToOrder = () => {
     navigate('/checkout-order');
@@ -36,6 +37,7 @@ export const Checkout = ({ userData, setEmail }: Props) => {
             userData={userData.passengerInformation}
             userEmail={userData.email}
             setEmail={setEmail}
+            addPassenger={addPassenger}
           />
           <TrainTicketSelection />
           <Payment />

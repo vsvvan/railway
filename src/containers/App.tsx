@@ -4,10 +4,12 @@ import { Dispatch, State, TrainInfo } from '../types';
 import { setChosenTrain } from '../store/chooseTrainReducer';
 
 const mapStateToProps = (state: State) => {
-  const { trains, userData } = state;
+  const { trains, userData, searchInfo, chosenTrain } = state;
   return {
     trains,
     userData,
+    searchInfo,
+    chosenTrain,
   };
 };
 

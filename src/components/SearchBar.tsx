@@ -35,19 +35,27 @@ const favouriteRoute2 = {
 };
 
 type SearchBarProps = {
-  dispatch: React.Dispatch<React.SetStateAction<ConInfo>>;
+  setConnections: React.Dispatch<React.SetStateAction<ConInfo>>;
   from: string;
   to: string;
+  searchInfo: any;
+  isMain: boolean;
   setFrom: (from: string) => void;
   setTo: (to: string) => void;
+  setdate: (date: string) => void;
+  setTime: (hours: number, minutes: number) => void;
 };
 
 export const SearchBar = ({
-  dispatch,
+  setConnections,
   from,
   to,
   setFrom,
   setTo,
+  setdate,
+  setTime,
+  searchInfo,
+  isMain,
 }: SearchBarProps) => {
   const [date, setDate] = React.useState<Dayjs | null>(dayjs(new Date()));
 
@@ -79,7 +87,7 @@ export const SearchBar = ({
     formState: { errors },
   } = useForm<FormValues>({ defaultValues: DefVals() });
   const onSubmit: SubmitHandler<FormValues> = (data) => {
-    dispatch({
+    setConnections({
       from: data.from,
       to: data.to,
       month: data.month,
@@ -95,47 +103,53 @@ export const SearchBar = ({
   };
 
   return (
-    <div className="SearchContainer">
+    <div className={isMain ? 'SearchContainer' : ''}>
       <div className="SearchBar">
         <form onSubmit={handleSubmit(onSubmit)} className="searchForm">
           <Grid container spacing={2}>
+            {isMain ? (
+              <>
+                <Grid item xs={12}>
+                  <h1>Choose your favorite route:</h1>
+                </Grid>
+                <Grid item xs={4}>
+                  <Button
+                    variant="outlined"
+                    style={{ padding: '0px 10px', backgroundColor: 'white' }}
+                    onClick={() => navigate('/checkout-order')}
+                  >
+                    <h2>
+                      <span>
+                        {favouriteRoute1.fromDestination}
+                        {' - '}
+                        {favouriteRoute1.toDestination}
+                      </span>
+                    </h2>
+                  </Button>
+                </Grid>
+                <Grid item xs={4}>
+                  <Button
+                    variant="outlined"
+                    style={{ padding: '0px 10px', backgroundColor: 'white' }}
+                    onClick={() => navigate('/checkout-order')}
+                  >
+                    <h2>
+                      <span>
+                        {favouriteRoute2.fromDestination}
+                        {' - '}
+                        {favouriteRoute2.toDestination}
+                      </span>
+                    </h2>
+                  </Button>
+                </Grid>
+                <Grid item xs={4}></Grid>
+                <hr className="line" />
+              </>
+            ) : null}
             <Grid item xs={12}>
-              <h1>Choose your favorite route:</h1>
-            </Grid>
-            <Grid item xs={4}>
-              <Button
-                variant="outlined"
-                style={{ padding: '0px 10px', backgroundColor: 'white' }}
-                onClick={() => navigate('/checkout-order')}
-              >
-                <h2>
-                  <span>
-                    {favouriteRoute1.fromDestination}
-                    {' - '}
-                    {favouriteRoute1.toDestination}
-                  </span>
-                </h2>
-              </Button>
-            </Grid>
-            <Grid item xs={4}>
-              <Button
-                variant="outlined"
-                style={{ padding: '0px 10px', backgroundColor: 'white' }}
-                onClick={() => navigate('/checkout-order')}
-              >
-                <h2>
-                  <span>
-                    {favouriteRoute2.fromDestination}
-                    {' - '}
-                    {favouriteRoute2.toDestination}
-                  </span>
-                </h2>
-              </Button>
-            </Grid>
-            <Grid item xs={4}></Grid>
-            <hr className="line" />
-            <Grid item xs={12}>
-              <h1 className="searchTitle">Connections and tickets:</h1>
+              <h1 className="searchTitle">
+                {isMain ? 'Connections and tickets:' : 'Connection search:'}
+              </h1>
             </Grid>
             <Grid item xs={5}>
               <Autocomplete
@@ -143,11 +157,12 @@ export const SearchBar = ({
                 id="fromDestination"
                 includeInputInList
                 options={cities.map((option) => option.city)}
+                defaultValue={searchInfo?.from}
                 renderInput={(params) => (
                   <TextField
                     {...params}
                     label="From"
-                    value={from}
+                    value={searchInfo?.from || from}
                     className="textField"
                   />
                 )}
@@ -171,11 +186,12 @@ export const SearchBar = ({
                 id="toDestination"
                 includeInputInList
                 options={cities.map((option) => option.city)}
+                defaultValue={searchInfo?.to}
                 renderInput={(params) => (
                   <TextField
                     {...params}
                     label="To"
-                    value={to}
+                    value={searchInfo?.to || to}
                     className="textField"
                   />
                 )}
@@ -205,6 +221,8 @@ export const SearchBar = ({
                 className="submitbtn"
                 size="large"
                 onClick={() => {
+                  setdate(dayjs(date).format('DD.MM.YYYY'));
+                  setTime(dayjs(date).hour(), dayjs(date).minute());
                   navigateToInfo();
                 }}
                 disabled={!from || !to}

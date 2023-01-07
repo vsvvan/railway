@@ -1,5 +1,18 @@
 import { ThunkDispatch } from '@reduxjs/toolkit';
 
+export const DiscountType: { [k in number]: string } = {
+  0: 'NO DISCOUNT',
+  1: 'ISIC card',
+};
+
+export const AgeGroups: { [k in number]: string } = {
+  0: 'Child (0-5 yrs)',
+  1: 'Child (6-15 yrs)',
+  2: 'Youth (16-25 yrs)',
+  3: 'Adult (26-61 yrs)',
+  4: 'Adult (62+ yrs)',
+};
+
 export type TrainInfo = {
   departureTime: string;
   arrivalTime: string;
@@ -14,15 +27,15 @@ export type TrainInfo = {
   capacity: {
     freePlaces1: number;
     freePlaces2: number;
-    byciclePlace: number;
+    bicyclePlace: number;
   };
+  date?: string;
 };
 
 export type Stop = {
   time: string;
   city: string;
 };
-export type DiscountType = 'NO DISCOUNT' | 'ISIC card';
 
 export type UserData = {
   passengerInformation: PassengerInformation[];
@@ -35,7 +48,7 @@ export type PassengerInformation = {
   id: number;
   name: string;
   surname: string;
-  discount: DiscountType;
+  discount: string;
   passengerGroup: number;
   registrationNumber?: string;
 };
@@ -43,6 +56,8 @@ export type PassengerInformation = {
 export type TrainTicketSelection = {
   ticketClass: string;
   seatSelection: string;
+  price?: string;
+  preferences?: string[];
 };
 
 export type Payment = {

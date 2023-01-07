@@ -7,9 +7,10 @@ import { useNavigate } from 'react-router-dom';
 
 type Props = {
   trainInfo: TrainInfo;
+  searchInfo: any;
 };
 
-export const Summary = ({ trainInfo }: Props) => {
+export const Summary = ({ trainInfo, searchInfo }: Props) => {
   const navigate = useNavigate();
   return (
     <>
@@ -22,7 +23,10 @@ export const Summary = ({ trainInfo }: Props) => {
           All information was sent to your email
         </h4>
         <br />
-        <strong>08.12.2022 12:13 Bratislava-Košice</strong>
+        <strong>
+          {searchInfo.date} {trainInfo.departureTime}{' '}
+          {trainInfo.fromDestination}-{trainInfo.toDestination}
+        </strong>
         <div
           className="ContentOfSummary"
           style={{ border: '1px solid #002664' }}

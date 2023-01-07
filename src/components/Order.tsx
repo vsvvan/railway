@@ -4,14 +4,21 @@ import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import { useNavigate } from 'react-router-dom';
 import TrainIcon from '@mui/icons-material/Train';
 import ScheduleIcon from '@mui/icons-material/Schedule';
-import { TrainInfo, UserData } from '../types';
+import {
+  AgeGroups,
+  DiscountType,
+  PassengerInformation,
+  TrainInfo,
+  UserData,
+} from '../types';
 
 type Props = {
   trainInfo: TrainInfo;
   userData: UserData;
+  searchInfo: any;
 };
 
-export const Order = ({ trainInfo, userData }: Props) => {
+export const Order = ({ trainInfo, userData, searchInfo }: Props) => {
   const navigate = useNavigate();
   return (
     <>
@@ -19,7 +26,7 @@ export const Order = ({ trainInfo, userData }: Props) => {
         <div className="DayStyle">
           <span>
             <h1>Train ticket information</h1>
-            <h2>Today 07.12.2022</h2>
+            <h2>Today {searchInfo.date}</h2>
           </span>
         </div>
         <div className="OrderContainer">
@@ -74,19 +81,30 @@ export const Order = ({ trainInfo, userData }: Props) => {
                   <Typography>
                     <strong>Personal Information</strong>{' '}
                   </Typography>
-                  {userData.passengerInformation.map((passenger) => {
-                    return (
-                      <div>
-                        <Typography>
-                          {passenger.name} {passenger.surname}
-                        </Typography>
-                        <Typography>
-                          1*Youth(16-26 yrs) ({passenger.discount})
-                        </Typography>
-                        <Typography>{userData.email}</Typography>
-                      </div>
-                    );
-                  })}
+                  <div
+                    className={`${
+                      userData.passengerInformation.length > 1
+                        ? 'MultipleUsers'
+                        : 'SingleUser'
+                    }`}
+                  >
+                    {userData.passengerInformation.map(
+                      (passenger: PassengerInformation) => {
+                        return (
+                          <div>
+                            <Typography>
+                              {passenger.name} {passenger.surname}
+                            </Typography>
+                            <Typography>
+                              1*{AgeGroups[passenger.passengerGroup]} (
+                              {DiscountType[+passenger.discount]})
+                            </Typography>
+                          </div>
+                        );
+                      },
+                    )}
+                  </div>
+                  <Typography>Email: {userData.email}</Typography>
                 </div>
               </Grid>
               <Grid item xs={1}>
@@ -116,7 +134,6 @@ export const Order = ({ trainInfo, userData }: Props) => {
                     Seat selection:{' '}
                     {userData.trainTicketSelection.seatSelection}
                   </Typography>
-                  <Typography>Seat selection: No preferences</Typography>
                 </div>
               </Grid>
               <Grid item xs={1}>
