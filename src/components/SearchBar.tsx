@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import dayjs, { Dayjs } from 'dayjs';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import RouteOutlinedIcon from '@mui/icons-material/RouteOutlined';
@@ -44,6 +44,7 @@ type SearchBarProps = {
   setTo: (to: string) => void;
   setdate: (date: string) => void;
   setTime: (hours: number, minutes: number) => void;
+  updateDestinations: (from: string, to: string) => void;
 };
 
 export const SearchBar = ({
@@ -56,8 +57,9 @@ export const SearchBar = ({
   setTime,
   searchInfo,
   isMain,
+  updateDestinations,
 }: SearchBarProps) => {
-  const [date, setDate] = React.useState<Dayjs | null>(dayjs(new Date()));
+  const [date, setDate] = useState<Dayjs | null>(dayjs(new Date()));
 
   const handleChange = (newDate: Dayjs | null) => {
     setDate(newDate);
@@ -156,7 +158,9 @@ export const SearchBar = ({
                 freeSolo
                 id="fromDestination"
                 includeInputInList
-                options={cities.map((option) => option.city)}
+                options={cities
+                  .filter((city) => city.city !== searchInfo?.to)
+                  .map((option) => option.city)}
                 defaultValue={searchInfo?.from}
                 renderInput={(params) => (
                   <TextField
@@ -185,7 +189,9 @@ export const SearchBar = ({
                 freeSolo
                 id="toDestination"
                 includeInputInList
-                options={cities.map((option) => option.city)}
+                options={cities
+                  .filter((city) => city.city !== searchInfo?.from)
+                  .map((option) => option.city)}
                 defaultValue={searchInfo?.to}
                 renderInput={(params) => (
                   <TextField
@@ -223,6 +229,7 @@ export const SearchBar = ({
                 onClick={() => {
                   setdate(dayjs(date).format('DD.MM.YYYY'));
                   setTime(dayjs(date).hour(), dayjs(date).minute());
+                  updateDestinations(searchInfo.from, searchInfo.to);
                   navigateToInfo();
                 }}
                 disabled={!from || !to}
