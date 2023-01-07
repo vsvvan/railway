@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/railway/static/css/main.88f05d4e.css",
-    "main.js": "/railway/static/js/main.5e7ad66b.js",
+    "main.css": "/railway/static/css/main.2397a928.css",
+    "main.js": "/railway/static/js/main.4871f99a.js",
     "static/media/subway_07.jpg": "/railway/static/media/subway_07.f77a4e80d5318e67d85c.jpg",
     "static/media/logo.svg": "/railway/static/media/logo.30ff0b91f1db7cf0d5032a58078b0ccf.svg",
     "static/media/appgallery-logo-sk.svg": "/railway/static/media/appgallery-logo-sk.3a3abd20e15d9a2f5a1370ea3205452d.svg",
@@ -10,11 +10,11 @@
     "static/media/google-play.svg": "/railway/static/media/google-play.c1e5687e8fe51b5bf473b7e3cad046ce.svg",
     "static/media/Logo-header.svg": "/railway/static/media/Logo-header.cf9a154f175eebe3026810f0a5c60cd7.svg",
     "index.html": "/railway/index.html",
-    "main.88f05d4e.css.map": "/railway/static/css/main.88f05d4e.css.map",
-    "main.5e7ad66b.js.map": "/railway/static/js/main.5e7ad66b.js.map"
+    "main.2397a928.css.map": "/railway/static/css/main.2397a928.css.map",
+    "main.4871f99a.js.map": "/railway/static/js/main.4871f99a.js.map"
   },
   "entrypoints": [
-    "static/css/main.88f05d4e.css",
-    "static/js/main.5e7ad66b.js"
+    "static/css/main.2397a928.css",
+    "static/js/main.4871f99a.js"
   ]
 }
