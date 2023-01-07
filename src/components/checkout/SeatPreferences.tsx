@@ -2,19 +2,29 @@ import { useState } from 'react';
 import './TrainTicketSelection.css';
 import { FormControlLabel, Checkbox, FormGroup } from '@mui/material';
 
-export const SeatPreferences = () => {
+type Props = {
+  changePreferences: (preference: string) => void;
+  removePreferences: (preference: string) => void;
+};
+
+export const SeatPreferences = ({
+  changePreferences,
+  removePreferences,
+}: Props) => {
   const [preferences, setPreferences] = useState<string[]>([]);
-  console.log({ preferences });
+
   const handleChangeSeatPreferences = (
     event: React.ChangeEvent<HTMLInputElement>,
   ) => {
     const index = preferences.indexOf(event.target.value);
     if (index === -1) {
       setPreferences([...preferences, event.target.value]);
+      changePreferences(event.target.value);
     } else {
       setPreferences(
         preferences.filter((preference) => preference !== event.target.value),
       );
+      removePreferences(event.target.value);
     }
   };
 

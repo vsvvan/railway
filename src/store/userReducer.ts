@@ -99,6 +99,17 @@ export const userSlice = createSlice({
     changePreferences: (state: UserData, action) => {
       state.trainTicketSelection.preferences?.push(action.payload);
     },
+    // @ts-ignore
+    removePreferences: (state: UserData, action) => {
+      state.trainTicketSelection.preferences =
+        state.trainTicketSelection.preferences?.filter(
+          (preference) => preference !== action.payload,
+        );
+    },
+    // @ts-ignore
+    changeCardNumber: (state: UserData, action) => {
+      state.payment.cardNumber = action.payload;
+    },
   },
 });
 
@@ -114,6 +125,8 @@ export const {
   changeClass,
   changeSeat,
   changePreferences,
+  removePreferences,
+  changeCardNumber,
 } = userSlice.actions;
 
 export const selectUsers = (state: State) =>

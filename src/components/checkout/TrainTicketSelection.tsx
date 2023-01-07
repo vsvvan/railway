@@ -11,12 +11,12 @@ import Sheet from '@mui/joy/Sheet';
 import { TrainInfo } from '../../types';
 import dayjs from 'dayjs';
 import './TrainTicketSelection.css';
-import { SeatPreferences } from './SeatPreferences';
+import SeatPreferences from '../../containers/SeatPreferences';
 
 type Props = {
   trainInfo: TrainInfo;
   changeClass: (type: string) => void;
-  changeSeat: (seat: string, preferences?: string[]) => void;
+  changeSeat: (seat: string) => void;
 };
 
 export const TrainTicketSelection = ({

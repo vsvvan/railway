@@ -1,4 +1,4 @@
-import { Button, Grid, IconButton, Typography } from '@mui/material';
+import { Button, Chip, Grid, IconButton, Typography } from '@mui/material';
 import EditIcon from '@mui/icons-material/Edit';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import { useNavigate } from 'react-router-dom';
@@ -132,7 +132,19 @@ export const Order = ({ trainInfo, userData, searchInfo }: Props) => {
                   </Typography>
                   <Typography>
                     Seat selection:{' '}
-                    {userData.trainTicketSelection.seatSelection}
+                    {userData.trainTicketSelection.seatSelection ===
+                    'choose-seat'
+                      ? userData.trainTicketSelection.preferences.map(
+                          (preference) => (
+                            <Chip
+                              variant="outlined"
+                              color="primary"
+                              size="small"
+                              label={preference}
+                            />
+                          ),
+                        )
+                      : userData.trainTicketSelection.seatSelection}
                   </Typography>
                 </div>
               </Grid>
@@ -152,7 +164,7 @@ export const Order = ({ trainInfo, userData, searchInfo }: Props) => {
               <Grid item xs={11}>
                 <div className="ContentOfSummary">
                   <Typography>
-                    <strong>Method of payment:</strong>{' '}
+                    <strong>Payment method:</strong>{' '}
                   </Typography>
                   <Typography>{userData.payment.paymentMethod}</Typography>
                   <Typography>

@@ -3,10 +3,10 @@ import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import { PassengerData } from './checkout/PassengerData';
 import TrainTicketSelection from '../containers/TrainTicketSelection';
-import { Payment } from './checkout/Payment';
 import { useNavigate } from 'react-router-dom';
 import { PassengerInformation, UserData } from '../types';
 import { TrainInfo } from '../types';
+import Payment from '../containers/Payment';
 
 type Props = {
   userData: UserData;

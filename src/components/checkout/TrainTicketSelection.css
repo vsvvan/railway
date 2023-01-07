@@ -7,6 +7,9 @@
 .PaymentInfoBox:first-child {
   border-bottom-color: white;
 }
+h3 {
+  margin-top: 0;
+}
 
 .TrainSeatBox {
   border: 1px solid #002664;

@@ -13,6 +13,10 @@
   white-space: nowrap;
 }
 
+.HeaderStyle h3 {
+  margin-top: 0px;
+}
+
 .ButtonPadding {
   padding: 15px 0 0 25px;
 }

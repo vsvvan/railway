@@ -57,7 +57,7 @@ export type TrainTicketSelection = {
   ticketClass: string;
   seatSelection: string;
   price?: string;
-  preferences?: string[];
+  preferences: string[];
 };
 
 export type Payment = {
