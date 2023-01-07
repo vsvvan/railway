@@ -39,10 +39,10 @@ export const App = ({
     hour: 0,
     minute: 0,
   });
-  const { passengerInformation } = userData;
+  const { passengerInformation, trainTicketSelection } = userData;
 
   useEffect(() => {
-    const price =
+    let price =
       passengerInformation
         .map((pass: PassengerInformation) => {
           if (chosenTrain) {
@@ -54,8 +54,11 @@ export const App = ({
           } else return 0;
         })
         .reduce((a, b) => a! + b!, 0) || 0;
-    setPrice(price);
-  }, [passengerInformation, chosenTrain]);
+    if (trainTicketSelection.ticketClass === '1st-class') {
+      price += 8.1*passengerInformation.length;
+    }
+    setPrice(parseFloat(price.toFixed(2)));
+  }, [passengerInformation, chosenTrain, trainTicketSelection ]);
 
   return (
     <Provider store={store}>

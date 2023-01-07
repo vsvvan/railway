@@ -66,15 +66,6 @@ export const Order = ({ trainInfo, userData, searchInfo }: Props) => {
                   </div>
                 </div>
               </Grid>
-              <Grid item xs={1}>
-                <IconButton
-                  color="primary"
-                  size="large"
-                  onClick={() => navigate('/connections')}
-                >
-                  <EditIcon />
-                </IconButton>
-              </Grid>
             </Grid>
           </div>
           <div className="ContentContainer">
