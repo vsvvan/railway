@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css';
 import { Footer } from './Footer';
 import { HeaderMainPage } from './HeaderMainPage';
 import { TrainConnections } from './TrainConnections';
-import { TrainInfo, UserData } from '../types';
+import { PassengerInformation, TrainInfo, UserData } from '../types';
 import Checkout from '../containers/Checkout';
 import { Order } from './Order';
 import SearchBar from '../containers/SearchBar';
@@ -20,6 +20,7 @@ type Props = {
   chosenTrain: TrainInfo;
   searchInfo: any;
   setChosenTrain: (train: TrainInfo) => void;
+  setPrice: (price: number) => void;
 };
 
 export const App = ({
@@ -28,6 +29,7 @@ export const App = ({
   searchInfo,
   chosenTrain,
   setChosenTrain,
+  setPrice,
 }: Props) => {
   const [connections, setConnections] = useState<ConInfo>({
     from: '',
@@ -37,6 +39,24 @@ export const App = ({
     hour: 0,
     minute: 0,
   });
+  const { passengerInformation } = userData;
+
+  useEffect(() => {
+    const price =
+      passengerInformation
+        .map((pass: PassengerInformation) => {
+          if (chosenTrain) {
+            if (pass.discount === 0) {
+              return +chosenTrain.price;
+            } else if (pass.discount === 1) {
+              return +chosenTrain.price / 2;
+            }
+          } else return 0;
+        })
+        .reduce((a, b) => a! + b!, 0) || 0;
+    console.log({ price });
+    setPrice(price);
+  }, [passengerInformation, chosenTrain]);
 
   return (
     <Provider store={store}>

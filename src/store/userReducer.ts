@@ -8,7 +8,6 @@ export const userSlice = createSlice({
   name: 'userData',
   initialState,
   reducers: {
-    // @ts-ignore
     setName: (state: UserData, action) => {
       return {
         ...state,
@@ -17,7 +16,6 @@ export const userSlice = createSlice({
         ),
       };
     },
-    // @ts-ignore
     setSurname: (state: UserData | null, action) => {
       return {
         ...state,
@@ -28,7 +26,6 @@ export const userSlice = createSlice({
         ),
       };
     },
-    // @ts-ignore
     setGroupAge: (state: UserData | null, action) => {
       return {
         ...state,
@@ -39,7 +36,6 @@ export const userSlice = createSlice({
         ),
       };
     },
-    // @ts-ignore
     setDiscount: (state: UserData | null, action) => {
       return {
         ...state,
@@ -50,11 +46,9 @@ export const userSlice = createSlice({
         ),
       };
     },
-    // @ts-ignore
     setEmail: (state: UserData | null, action) => {
       return { ...state, email: action.payload };
     },
-    // @ts-ignore
     setRegistrationNumber: (state: UserData | null, action) => {
       return {
         ...state,
@@ -65,17 +59,14 @@ export const userSlice = createSlice({
         ),
       };
     },
-    // @ts-ignore
     addPassenger: (state: UserData, action) => {
       state.passengerInformation.push(action.payload);
     },
-    // @ts-ignore
     removePassenger: (state: UserData, action) => {
       state.passengerInformation = state.passengerInformation.filter(
         (passenger) => passenger.id !== action.payload,
       );
     },
-    // @ts-ignore
     changeSeat: (state: UserData, action) => {
       return {
         ...state,
@@ -85,7 +76,6 @@ export const userSlice = createSlice({
         },
       };
     },
-    // @ts-ignore
     changeClass: (state: UserData, action) => {
       return {
         ...state,
@@ -95,20 +85,20 @@ export const userSlice = createSlice({
         },
       };
     },
-    // @ts-ignore
     changePreferences: (state: UserData, action) => {
       state.trainTicketSelection.preferences?.push(action.payload);
     },
-    // @ts-ignore
     removePreferences: (state: UserData, action) => {
       state.trainTicketSelection.preferences =
         state.trainTicketSelection.preferences?.filter(
           (preference) => preference !== action.payload,
         );
     },
-    // @ts-ignore
     changeCardNumber: (state: UserData, action) => {
       state.payment.cardNumber = action.payload;
+    },
+    setPrice: (state: UserData, action) => {
+      state.trainTicketSelection.price = action.payload;
     },
   },
 });
@@ -127,6 +117,7 @@ export const {
   changePreferences,
   removePreferences,
   changeCardNumber,
+  setPrice,
 } = userSlice.actions;
 
 export const selectUsers = (state: State) =>

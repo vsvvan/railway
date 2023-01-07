@@ -25,7 +25,7 @@ export const PassengerData = ({
     id: Math.max(...userData.map((user) => user.id)) + 1,
     name: '',
     surname: '',
-    discount: '0',
+    discount: 0,
     passengerGroup: 3,
   };
 

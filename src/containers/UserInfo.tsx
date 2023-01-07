@@ -20,7 +20,7 @@ const mapDispatchToProps = (dispatch: Dispatch) => ({
     dispatch(setSurname({ surname, id })),
   setGroupAge: (groupAge: number, id: number) =>
     dispatch(setGroupAge({ groupAge, id })),
-  setDiscount: (discount: string, id: number) =>
+  setDiscount: (discount: number, id: number) =>
     dispatch(setDiscount({ discount, id })),
   setRegistrationNumber: (number: string, id: number) =>
     dispatch(setRegistrationNumber({ number, id })),

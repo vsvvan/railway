@@ -48,7 +48,7 @@ export type PassengerInformation = {
   id: number;
   name: string;
   surname: string;
-  discount: string;
+  discount: number;
   passengerGroup: number;
   registrationNumber?: string;
 };
@@ -56,7 +56,7 @@ export type PassengerInformation = {
 export type TrainTicketSelection = {
   ticketClass: string;
   seatSelection: string;
-  price?: string;
+  price?: number;
   preferences: string[];
 };
 

@@ -191,7 +191,9 @@ export const Order = ({ trainInfo, userData, searchInfo }: Props) => {
               <Typography>
                 <strong>Summary</strong>
               </Typography>
-              <Typography>Total sum: 9.34</Typography>
+              <Typography>
+                Total sum: {userData.trainTicketSelection.price}
+              </Typography>
             </div>
             <strong></strong>
             <div className="AlignButton">

@@ -3,7 +3,7 @@
     {
       "id": 0,
       "passengerGroup": 2,
-      "discount": "1",
+      "discount": 1,
       "name": "Jakub",
       "surname": "Lipták",
       "registrationNumber": "2894573"

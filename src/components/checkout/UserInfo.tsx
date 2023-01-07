@@ -17,7 +17,7 @@ type Props = {
   setName: (name: string, id: number) => void;
   setSurname: (name: string, id: number) => void;
   setGroupAge: (groupAge: number, id: number) => void;
-  setDiscount: (discount: string, id: number) => void;
+  setDiscount: (discount: number, id: number) => void;
   setRegistrationNumber: (number: string, id: number) => void;
   removePassenger: (passengerId: number) => void;
 };
@@ -51,8 +51,9 @@ export const UserInfo = ({
     setGroupAge(+event.target.value, passengerInfo.id);
   };
   const handleChangeDiscount = (event: SelectChangeEvent) => {
-    setDiscountValue(event.target.value as string);
-    setDiscount(event.target.value, passengerInfo.id);
+    // @ts-ignore
+    setDiscountValue(event.target.value);
+    setDiscount(parseInt(event.target.value), passengerInfo.id);
   };
   return (
     <div style={{ display: 'flex', margin: '0 0  25px 0' }}>
@@ -85,7 +86,7 @@ export const UserInfo = ({
           <Grid item xs={6}>
             <FormControl sx={{ minWidth: 210 }}>
               <Select
-                value={discount}
+                value={discount.toString()}
                 variant="outlined"
                 inputProps={{
                   name: 'discount',
