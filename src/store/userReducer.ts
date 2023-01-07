@@ -8,6 +8,7 @@ export const userSlice = createSlice({
   name: 'userData',
   initialState,
   reducers: {
+    // @ts-ignore
     setName: (state: UserData, action) => {
       return {
         ...state,
@@ -16,6 +17,7 @@ export const userSlice = createSlice({
         ),
       };
     },
+    // @ts-ignore
     setSurname: (state: UserData | null, action) => {
       return {
         ...state,
@@ -26,6 +28,7 @@ export const userSlice = createSlice({
         ),
       };
     },
+    // @ts-ignore
     setGroupAge: (state: UserData | null, action) => {
       return {
         ...state,
@@ -36,6 +39,7 @@ export const userSlice = createSlice({
         ),
       };
     },
+    // @ts-ignore
     setDiscount: (state: UserData | null, action) => {
       return {
         ...state,
@@ -46,9 +50,11 @@ export const userSlice = createSlice({
         ),
       };
     },
+    // @ts-ignore
     setEmail: (state: UserData | null, action) => {
       return { ...state, email: action.payload };
     },
+    // @ts-ignore
     setRegistrationNumber: (state: UserData | null, action) => {
       return {
         ...state,
@@ -67,6 +73,7 @@ export const userSlice = createSlice({
         (passenger) => passenger.id !== action.payload,
       );
     },
+    // @ts-ignore
     changeSeat: (state: UserData, action) => {
       return {
         ...state,
@@ -76,6 +83,7 @@ export const userSlice = createSlice({
         },
       };
     },
+    // @ts-ignore
     changeClass: (state: UserData, action) => {
       return {
         ...state,
@@ -100,6 +108,21 @@ export const userSlice = createSlice({
     setPrice: (state: UserData, action) => {
       state.trainTicketSelection.price = action.payload;
     },
+    setM: (state: UserData, action) => {
+      state.payment.month = action.payload;
+    },
+    setY: (state: UserData, action) => {
+      state.payment.year = action.payload;
+    },
+    setCV: (state: UserData, action) => {
+      state.payment.value = action.payload;
+    },
+    setAgree: (state: UserData, action) => {
+      state.payment.agree = action.payload;
+    },
+    changePM: (state: UserData, action) => {
+      state.payment.paymentMethod = action.payload;
+    },
   },
 });
 
@@ -118,6 +141,11 @@ export const {
   removePreferences,
   changeCardNumber,
   setPrice,
+  setM,
+  setY,
+  setCV,
+  setAgree,
+  changePM,
 } = userSlice.actions;
 
 export const selectUsers = (state: State) =>

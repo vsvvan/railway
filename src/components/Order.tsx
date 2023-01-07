@@ -147,7 +147,7 @@ export const Order = ({ trainInfo, userData, searchInfo }: Props) => {
                             />
                           ),
                         )
-                      : userData.trainTicketSelection.seatSelection}
+                      : 'No preferences/Any'}
                   </Typography>
                 </div>
               </Grid>

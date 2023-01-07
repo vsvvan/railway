@@ -2,8 +2,7 @@ import dayjs from 'dayjs';
 
 export const getDescDay = (date: string) => {
   const dayOfWeek = dayjs(date).day();
-  console.log('11', dayOfWeek);
-  console.log(dayjs(new Date()).format('DD.MM.YYYY'));
+
   if (dayjs(date).diff(dayjs(new Date()).format('DD.MM.YYYY'), 'day') === 0) {
     return 'Today';
   } else if (

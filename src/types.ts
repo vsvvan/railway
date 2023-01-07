@@ -63,6 +63,10 @@ export type TrainTicketSelection = {
 export type Payment = {
   paymentMethod: string;
   cardNumber: string;
+  month?: string;
+  year?: string;
+  value?: string;
+  agree?: boolean;
 };
 
 export type State = {

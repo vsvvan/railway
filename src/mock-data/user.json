@@ -11,11 +11,11 @@
   ],
   "trainTicketSelection": {
     "ticketClass": "2nd Class",
-    "seatSelection": "No preferences/Any",
+    "seatSelection": "no-pref-seat",
     "preferences": []
   },
   "payment": {
-    "paymentMethod": "Credit card",
+    "paymentMethod": "credit-card",
     "cardNumber": "4475454545550044"
   },
   "email": "Jakub.Lipták@gmail.com"

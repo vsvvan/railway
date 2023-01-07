@@ -1,6 +1,13 @@
 import { connect } from 'react-redux';
 import { Dispatch, State } from '../types';
-import { changeCardNumber } from '../store/userReducer';
+import {
+  changeCardNumber,
+  setCV,
+  setM,
+  setY,
+  setAgree,
+  changePM,
+} from '../store/userReducer';
 import { Payment } from '../components/checkout/Payment';
 
 const mapStateToProps = (state: State) => {
@@ -9,6 +16,11 @@ const mapStateToProps = (state: State) => {
 
 const mapDispatchToProps = (dispatch: Dispatch) => ({
   changeCardNumber: (number: string) => dispatch(changeCardNumber(number)),
+  setM: (month: string) => dispatch(setM(month)),
+  setY: (year: string) => dispatch(setY(year)),
+  setCV: (value: string) => dispatch(setCV(value)),
+  setAgree: (value: boolean) => dispatch(setAgree(value)),
+  changePM: (value: string) => dispatch(changePM(value)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Payment);

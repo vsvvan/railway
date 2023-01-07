@@ -4,8 +4,7 @@ import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import { PassengerData } from './checkout/PassengerData';
 import TrainTicketSelection from '../containers/TrainTicketSelection';
 import { useNavigate } from 'react-router-dom';
-import { PassengerInformation, UserData } from '../types';
-import { TrainInfo } from '../types';
+import { PassengerInformation, TrainInfo, UserData } from '../types';
 import Payment from '../containers/Payment';
 
 type Props = {
@@ -23,6 +22,30 @@ export const Checkout = ({ userData, setEmail, addPassenger }: Props) => {
   const navigateToInfo = () => {
     navigate('/connections');
   };
+
+  const isPSValid = userData.passengerInformation
+    .map(
+      (pas: PassengerInformation) =>
+        pas.name.length > 0 &&
+        pas.surname.length > 0 &&
+        (pas.discount === 0 ||
+          (pas.discount === 1 && (pas.registrationNumber || '').length > 0)),
+    )
+    .every((val) => val === true);
+  const isTSValid =
+    userData.trainTicketSelection.ticketClass &&
+    (userData.trainTicketSelection.seatSelection === 'no-pref-seat' ||
+      (userData.trainTicketSelection.seatSelection === 'choose-seat' &&
+        userData.trainTicketSelection.preferences.length > 0));
+  const idPValid =
+    (userData.payment.paymentMethod === 'credit-account' ||
+      (userData.payment.paymentMethod === 'credit-card' &&
+        userData.payment.cardNumber.length === 16 &&
+        userData.payment.month &&
+        userData.payment.year &&
+        userData.payment.value)) &&
+    userData.payment.agree;
+
   return (
     <div style={{ padding: '40px 0 0 0' }}>
       <Grid
@@ -55,6 +78,7 @@ export const Checkout = ({ userData, setEmail, addPassenger }: Props) => {
               size="large"
               endIcon={<ArrowForwardIosIcon />}
               onClick={navigateToOrder}
+              disabled={!isPSValid || !isTSValid || !idPValid}
             >
               Continue
             </Button>

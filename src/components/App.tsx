@@ -54,7 +54,6 @@ export const App = ({
           } else return 0;
         })
         .reduce((a, b) => a! + b!, 0) || 0;
-    console.log({ price });
     setPrice(price);
   }, [passengerInformation, chosenTrain]);
 
