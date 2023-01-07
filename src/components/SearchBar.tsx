@@ -21,23 +21,17 @@ type FormValues = {
 };
 
 const favouriteRoute1 = {
-  departureTime: '12:13',
-  arrivalTime: '18:03',
   fromDestination: 'Bratislava',
   toDestination: 'Košice',
 };
 
 const favouriteRoute2 = {
-  departureTime: '08:13',
-  arrivalTime: '12:03',
   fromDestination: 'Košice',
   toDestination: 'Bratislava',
 };
 
 type SearchBarProps = {
   setConnections: React.Dispatch<React.SetStateAction<ConInfo>>;
-  from: string;
-  to: string;
   searchInfo: any;
   isMain: boolean;
   setFrom: (from: string) => void;
@@ -49,8 +43,6 @@ type SearchBarProps = {
 
 export const SearchBar = ({
   setConnections,
-  from,
-  to,
   setFrom,
   setTo,
   setdate,
@@ -60,6 +52,13 @@ export const SearchBar = ({
   updateDestinations,
 }: SearchBarProps) => {
   const [date, setDate] = useState<Dayjs | null>(dayjs(new Date()));
+  const [from, setF] = useState(searchInfo?.from || '');
+  const [to, setT] = useState(searchInfo?.to || '');
+
+  useEffect(() => {
+    setF(searchInfo?.from || '');
+    setT(searchInfo?.to || '');
+  }, [searchInfo]);
 
   const handleChange = (newDate: Dayjs | null) => {
     setDate(newDate);
@@ -99,9 +98,8 @@ export const SearchBar = ({
     });
   };
   const SwapDestinations = () => {
-    const toDestination = getValues('to');
-    setValue('to', getValues('from'));
-    setValue('from', toDestination);
+    setFrom(to);
+    setTo(from);
   };
 
   return (
@@ -161,12 +159,12 @@ export const SearchBar = ({
                 options={cities
                   .filter((city) => city.city !== searchInfo?.to)
                   .map((option) => option.city)}
-                defaultValue={searchInfo?.from}
+                value={from}
                 renderInput={(params) => (
                   <TextField
                     {...params}
                     label="From"
-                    value={searchInfo?.from || from}
+                    value={from}
                     className="textField"
                   />
                 )}
@@ -192,12 +190,12 @@ export const SearchBar = ({
                 options={cities
                   .filter((city) => city.city !== searchInfo?.from)
                   .map((option) => option.city)}
-                defaultValue={searchInfo?.to}
+                value={to}
                 renderInput={(params) => (
                   <TextField
                     {...params}
                     label="To"
-                    value={searchInfo?.to || to}
+                    value={to}
                     className="textField"
                   />
                 )}
