@@ -5,6 +5,7 @@ import { TrainCard } from './TrainCard';
 import { TrainInfo } from '../types';
 import { useNavigate } from 'react-router-dom';
 import dayjs from 'dayjs';
+import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 
 type Props = {
   trains: TrainInfo[];
@@ -26,7 +27,6 @@ export const TrainConnections = ({
     <>
       <div className="TrainConnectionsContainer">
         <span className="DayStyle">
-          <h1>Connection search</h1>
           <h2>Today {dayjs(new Date()).format('DD.MM.YYYY')}</h2>
         </span>
         <Button
@@ -72,6 +72,16 @@ export const TrainConnections = ({
           endIcon={<ExpandMoreIcon />}
         >
           Next connections
+        </Button>
+      </div>
+      <div className="TrainConnectionsContainer">
+        <Button
+          variant="outlined"
+          size="large"
+          startIcon={<ArrowBackIosIcon />}
+          onClick={() => navigate('/railway')}
+        >
+          Back
         </Button>
       </div>
     </>
